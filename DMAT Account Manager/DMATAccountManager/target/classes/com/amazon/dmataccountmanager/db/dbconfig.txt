@@ -1,0 +1,3 @@
+jdbc:sqlserver://localhost:1433;databaseName=dmatdb
+shubham
+1234

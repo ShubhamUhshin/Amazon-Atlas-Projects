@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.amazon.buspassmanagement.AppTest" time="0.848" tests="7" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\srvshu\eclipse-workspace\buspassmanagement\target\test-classes;C:\Users\srvshu\eclipse-workspace\buspassmanagement\target\classes;C:\Users\srvshu\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\srvshu\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\srvshu\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\11.2.0.jre8\mssql-jdbc-11.2.0.jre8.jar;C:\Users\srvshu\.m2\repository\com\microsoft\azure\msal4j\1.13.0\msal4j-1.13.0.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\oauth2-oidc-sdk\9.35\oauth2-oidc-sdk-9.35.jar;C:\Users\srvshu\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\content-type\2.2\content-type-2.2.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\lang-tag\1.6\lang-tag-1.6.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.22\nimbus-jose-jwt-9.22.jar;C:\Users\srvshu\.m2\repository\net\minidev\json-smart\2.4.8\json-smart-2.4.8.jar;C:\Users\srvshu\.m2\repository\net\minidev\accessors-smart\2.4.8\accessors-smart-2.4.8.jar;C:\Users\srvshu\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\srvshu\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\srvshu\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.2.1\jackson-databind-2.13.2.1.jar;C:\Users\srvshu\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.2\jackson-annotations-2.13.2.jar;C:\Users\srvshu\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.2\jackson-core-2.13.2.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="log4j2.formatMsgNoLookups" value="true"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Users\srvshu\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\srvshu\AppData\Local\Temp\surefire4874535313837408590\surefirebooter-20230125221932974_3.jar C:\Users\srvshu\AppData\Local\Temp\surefire4874535313837408590 2023-01-25T22-19-31_905-jvmRun1 surefire-20230125221932974_1tmp surefire_0-20230125221932974_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\srvshu\eclipse-workspace\buspassmanagement\target\test-classes;C:\Users\srvshu\eclipse-workspace\buspassmanagement\target\classes;C:\Users\srvshu\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\srvshu\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\srvshu\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\11.2.0.jre8\mssql-jdbc-11.2.0.jre8.jar;C:\Users\srvshu\.m2\repository\com\microsoft\azure\msal4j\1.13.0\msal4j-1.13.0.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\oauth2-oidc-sdk\9.35\oauth2-oidc-sdk-9.35.jar;C:\Users\srvshu\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\content-type\2.2\content-type-2.2.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\lang-tag\1.6\lang-tag-1.6.jar;C:\Users\srvshu\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.22\nimbus-jose-jwt-9.22.jar;C:\Users\srvshu\.m2\repository\net\minidev\json-smart\2.4.8\json-smart-2.4.8.jar;C:\Users\srvshu\.m2\repository\net\minidev\accessors-smart\2.4.8\accessors-smart-2.4.8.jar;C:\Users\srvshu\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\srvshu\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\srvshu\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.2.1\jackson-databind-2.13.2.1.jar;C:\Users\srvshu\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.2\jackson-annotations-2.13.2.jar;C:\Users\srvshu\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.2\jackson-core-2.13.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\srvshu"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-04-19"/>
+    <property name="java.home" value="C:\Users\srvshu\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\srvshu\eclipse-workspace\buspassmanagement"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\srvshu\AppData\Local\Temp\surefire4874535313837408590\surefirebooter-20230125221932974_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.3+7"/>
+    <property name="user.name" value="srvshu"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.3+7"/>
+    <property name="localRepository" value="C:\Users\srvshu\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\srvshu\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.3"/>
+    <property name="user.dir" value="C:\Users\srvshu\eclipse-workspace\buspassmanagement"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\srvshu\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/srvshu/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Users/srvshu/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\itacsvc;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\ACMEGuardian\;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Quarantine\;C:\Users\srvshu\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\Azure Data Studio\bin;C:\Users\srvshu\Desktop;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.3+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testAddFeedback" classname="com.amazon.buspassmanagement.AppTest" time="0.8">
+    <system-out><![CDATA[[DB] Driver Loaded Successfully....
+DB Configured using File :)
+[DB] Connection Created Successfully....
+]]></system-out>
+  </testcase>
+  <testcase name="testApproveRejectPass" classname="com.amazon.buspassmanagement.AppTest" time="0.002"/>
+  <testcase name="testAddStop" classname="com.amazon.buspassmanagement.AppTest" time="0.015"/>
+  <testcase name="testAddRoute" classname="com.amazon.buspassmanagement.AppTest" time="0.005"/>
+  <testcase name="testAdminLogin" classname="com.amazon.buspassmanagement.AppTest" time="0.002"/>
+  <testcase name="testUpdateVehicle" classname="com.amazon.buspassmanagement.AppTest" time="0.007"/>
+  <testcase name="testUserLogin" classname="com.amazon.buspassmanagement.AppTest" time="0.003"/>
+</testsuite>

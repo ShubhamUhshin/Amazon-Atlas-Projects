@@ -7,7 +7,7 @@ public class Categories {
 /*
  MSSQL:
  	create table Category(
-	categoryID INT IDENTITY(100,1),
+	categoryID INT IDENTITY(1,1),
 	title NVARCHAR(20) NOT NULL UNIQUE,
 	lastUpdatedOn DATETIME DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(categoryID));
@@ -33,6 +33,7 @@ public class Categories {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
+	// Get details from the user
 	public void getDetails(Categories category) {
 		
 		Scanner scanner = new Scanner(System.in);

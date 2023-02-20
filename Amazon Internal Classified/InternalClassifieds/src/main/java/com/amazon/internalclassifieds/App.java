@@ -15,10 +15,13 @@ public class App
          
         //DB db = DB.getInstance();
         //UserManagement manageUser = UserManagement.getInstance();
+         
+         // Checking if there is any filepath for database attributes
          if(args.length > 0) {
          	DB.FILEPATH = args[0];
          }
 
+         //Displaying Main Menu
          new Menu().showMainMenu();
         //db.closeConnection();
     }

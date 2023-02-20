@@ -12,8 +12,8 @@ import com.amazon.internalclassifieds.model.Orders;
 
 public class OrderManagement {
 	
+	// Creating object using Singleton design pattern
 	private static OrderManagement manageOrder = new OrderManagement();
-	
 	public static OrderManagement getInstance() {
 		return manageOrder;
 	}
@@ -54,12 +54,12 @@ public class OrderManagement {
 		// Set the price for Apartment
 		manageClassified.setPrice();
 		
-		//Retrieve the Classifieds which are available for sale
+		// Retrieve the Classifieds which are available for sale
 		List<Classifieds> classifiedDetail = new ArrayList<Classifieds>();
 		String sql = "SELECT * from Classifieds where status = " +1;
 		classifiedDetail = classifieddao.retrieve(sql);
 		if (!classifiedDetail.isEmpty()) {
-			//Display the Classifieds available to be bought.
+			// Display the Classifieds available to be bought.
 			for (Classifieds classified : classifiedDetail) {
 				classified.prettyPrintForUser(classified);
 			}
@@ -69,7 +69,7 @@ public class OrderManagement {
 			int classifiedID = Integer.parseInt(scanner.nextLine());
 			sql = "SELECT * fROM Classifieds WHERE classifiedID ="+classifiedID;
 			
-			//Retrieve the Classified detail user wants to buy
+			// Retrieve the Classified detail user wants to buy
 			classifiedDetail.clear();
 			classifiedDetail = classifieddao.retrieve(sql);
 			
@@ -125,10 +125,12 @@ public class OrderManagement {
 	
 	// Order summary
 	public void orderReport() {
-				
+		
+		// Retrieve the order
 		List<Orders> orderList = new ArrayList<Orders>();
 		orderList = orderdao.retrieve();
 		
+		// Display each order
 		for (Orders orderDetail : orderList)
 			orderDetail.prettyPrint(orderDetail);
 	}

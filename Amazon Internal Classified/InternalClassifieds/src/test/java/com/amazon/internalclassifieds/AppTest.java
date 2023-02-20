@@ -1,38 +1,72 @@
 package com.amazon.internalclassifieds;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Assert;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import com.amazon.internalclassifieds.controller.UserManagement;
+import com.amazon.internalclassifieds.db.UserDAO;
+import com.amazon.internalclassifieds.model.Users;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest {
+	
+	UserManagement manageTestUser = UserManagement.getInstance();
+	
+	@Test
+	public void testAdminLogin() {
+		
+	Users user = new Users();
+	// Hardcoding admin email and password to test login function 
+	user.email = "srvshu@amazon.com";
+	user.password = "Admin123";
+	
+	boolean result = manageTestUser.loginUser(user);
+	
+	// Assertion -> Either Test Cases Passes or It will Fail :)
+	Assert.assertEquals(true, result);
+	
+	// For Admin, the userType should be 1
+	Assert.assertEquals(1, user.userType);
+	
+	}
+	
+	@Test
+	public void testUserLogin() {
+		
+	Users user = new Users();
+	// Hardcoding User email and password to test login function 
+	user.email = "jb@example.com";
+	user.password = "jb123";
+	
+	boolean result = manageTestUser.loginUser(user);
+	
+	// Assertion -> Either Test Cases Passes or It will Fail :)
+	Assert.assertEquals(true, result);
+	
+	// For User, the userType should be 2
+	Assert.assertEquals(2, user.userType);
+
+	}
+	
+	@Test
+	public void testUserRegister() {
+		
+	Users user = new Users();
+	// Hardcoding User details to test register function
+	user.name = "TestUser";
+	user.userType = 2;
+	user.phone = "11111 11111";
+	user.address = "test Address";
+	user.email = "testUser@example.com";
+	user.password = "testUser123";
+	
+	UserDAO userdao = new UserDAO();
+	int result = userdao.insert(user);
+	
+	// Assertion -> Either Test Cases Passes or It will Fail :)
+	Assert.assertTrue(result>0);
+
+	}
+	
 }
+    

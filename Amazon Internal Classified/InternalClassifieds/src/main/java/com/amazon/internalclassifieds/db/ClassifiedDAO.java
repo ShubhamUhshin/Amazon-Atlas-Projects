@@ -10,24 +10,28 @@ public class ClassifiedDAO implements DAO<Classifieds> {
 
 	DB db = DB.getInstance();
 	
+	// Inserting into classifieds
 	public int insert(Classifieds Object) {
 		String sql = "INSERT INTO Classifieds (productName, headline, brand, description, status, condition, userID, categoryID, price, pictures) values ('"+Object.productName+"','"+Object.headline+"','"+Object.brand+"','"+Object.description+"',"+Object.status+",'"+Object.condition+"',"+Object.userID+","+Object.categoryID+","+Object.price+",'"+Object.pictures+"')";
 		return db.executeSQL(sql);
 	}
 
-	//For Admin
+	//For Admin.
+	// Deleting from classifieds table based on the classifiedID
 	public int delete(Classifieds Object) {
 		// TODO Auto-generated method stub
 		String sql = "DELETE FROM Classifieds where classifiedID = "+Object.classifiedID;
 		return db.executeSQL(sql);
 	}
 
+	// Updating classified table based on the classifiedID
 	public int update(Classifieds Object) {
 		// TODO Auto-generated method stub
 		String sql = "UPDATE Classifieds set productName = '"+Object.productName+"', headline = '"+Object.headline+"', brand = '"+Object.brand+"', description = '"+Object.description+"', status = "+Object.status+", condition = '"+Object.condition+"', price = "+Object.price+", categoryID = "+Object.categoryID+", pictures = '"+Object.pictures+"' where classifiedID = "+Object.classifiedID;
 		return db.executeSQL(sql);
 	}
 
+	// Retrieving all data from Classifieds table
 	public List<Classifieds> retrieve() {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * from Classifieds";
@@ -66,6 +70,7 @@ public class ClassifiedDAO implements DAO<Classifieds> {
 		return classifieds;
 	}
 
+	// Retrieving data from Classified table based on the sql query
 	public List<Classifieds> retrieve(String sql) {
 		// TODO Auto-generated method stub
 		ResultSet set = db.executeQuery(sql);

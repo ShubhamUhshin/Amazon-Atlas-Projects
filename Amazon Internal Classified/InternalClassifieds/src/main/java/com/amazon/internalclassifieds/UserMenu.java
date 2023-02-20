@@ -10,8 +10,8 @@ import com.amazon.internalclassifieds.controller.UserManagement;
 
 public class UserMenu extends Menu{
 	
+	// Creating object using Singleton design pattern
 	private static UserMenu userMenu = new UserMenu();
-	
 	public static UserMenu getInstance() {
 		return userMenu;
 	}
@@ -20,6 +20,7 @@ public class UserMenu extends Menu{
 	ClassifiedManagement manageClassified = ClassifiedManagement.getInstance();
 	OrderManagement manageOrder = OrderManagement.getInstance();
 	
+	// Displaying the user menu
 	public void showMenu() {
 		
 		System.out.println("Navigating to User Menu...");
@@ -28,10 +29,11 @@ public class UserMenu extends Menu{
 		System.out.println("Hello, "+userSession.user.name);
 		System.out.println("Its: "+new Date());
 		System.out.println("^^^^^^^^^^^^^^^^^^^");
-		
+		// using a boolean variable to terminate the infinite loop
 		boolean quit = false;
 		
 		while(true) {
+			// Using try catch block to avoid control to go back to main menu for incorrect input
 			try {
 				System.out.println("1: Manage Profile");
 				System.out.println("2: Post a Classified");
@@ -43,7 +45,7 @@ public class UserMenu extends Menu{
 				System.out.println("Select an Option");
     	
 				int choice = Integer.parseInt(scanner.nextLine());
-    	
+				// Calling the respective function based on the user choice
 				switch (choice) {
 					case 1:
 						
@@ -80,8 +82,7 @@ public class UserMenu extends Menu{
 						break;
 
 					case 3:
-						manageClassified.displayClassified();
-							
+						manageClassified.displayClassifiedForSale();
 						break;
 				
 					case 4:
@@ -89,7 +90,7 @@ public class UserMenu extends Menu{
 						break;
 						
 					case 5:
-						manageClassified.update();
+						manageClassified.updateClassified();
 						break;
 						
 					case 6:
@@ -100,6 +101,7 @@ public class UserMenu extends Menu{
 					
 					case 7:
 						System.out.println("Thank You for Using User App !!");
+						// Changing the value of quit to true when the user wants to quit 
 						quit = true;
 						break;
 
@@ -107,7 +109,7 @@ public class UserMenu extends Menu{
 						System.err.println("Invalid Choice...");
 						break;
 					}
-    	
+				// If the user has selected 7, i.e. Quit, terminating the infinite loop
 				if(quit) {
 					break;
 				}

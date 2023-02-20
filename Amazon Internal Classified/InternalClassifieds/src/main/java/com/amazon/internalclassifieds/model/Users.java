@@ -14,7 +14,7 @@ import java.util.Scanner;
     userStatus BIT NOT NULL,    --(1-Active, 0 Inactive)
     createdOn DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(userID));
- */
+*/
 
 public class Users {
 	//Attributes
@@ -45,6 +45,7 @@ public class Users {
 		this.createdOn = createdOn;
 	}
 
+	// Get details from the user
 	public void getDetails(Users user) {
 		
 		Scanner scanner = new Scanner(System.in);
@@ -86,7 +87,8 @@ public class Users {
 		}
 		
 	}
-	
+	// Admin and User will see different attributes
+	// For Admin
 	public void prettyPrintForAdmin(Users user) {
         System.out.println("~~~~~");
         System.out.println("UserID:\t\t"+user.userID);
@@ -108,6 +110,7 @@ public class Users {
         System.out.println("~~~~~");
     }
 
+	// For User
     public void prettyPrintForUser(Users user) {
         System.out.println("~~~~~");
         System.out.println("Name:\t\t"+user.name);
@@ -132,7 +135,5 @@ public class Users {
 		return "Users [userID=" + userID + ", name=" + name + ", phone=" + phone + ", email=" + email + ", password="
 				+ password + ", address=" + address + ", userType=" + userType + ", userStatus=" + userStatus
 				+ ", createdOn=" + createdOn + "]";
-	}
-
-		
+	}	
 }

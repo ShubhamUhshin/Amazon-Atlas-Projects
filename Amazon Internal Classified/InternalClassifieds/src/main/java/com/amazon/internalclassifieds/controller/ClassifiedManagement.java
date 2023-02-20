@@ -12,8 +12,8 @@ import com.amazon.internalclassifieds.model.Classifieds;
 
 public class ClassifiedManagement {
 	
+	// Creating object using Singleton design pattern
 	private static ClassifiedManagement manageClassified = new ClassifiedManagement();
-	
 	public static ClassifiedManagement getInstance() {
 		return manageClassified;
 	}
@@ -22,9 +22,10 @@ public class ClassifiedManagement {
 	Classifieds classified = new Classifieds();
 	
 	CategoryDAO categorydao = new CategoryDAO();
-	
 	CategoryManagement manageCategory = CategoryManagement.getInstance();
 	Categories categories = new Categories();
+	
+	UserManagement manageUser = UserManagement.getInstance();
 	
 	Scanner scanner = new Scanner(System.in);
 	
@@ -69,11 +70,13 @@ public class ClassifiedManagement {
 	// For Admin
 	public boolean removeClassified() {
 		
+		// Using choice to delete a particular classified or all classifieds
 		System.out.println("Do you want to remove all rejected classified or a particular classified");
 		System.out.println("1. for All Rejected Classifieds");
 		System.out.println("2. for a particular Classified");
 		int choice = Integer.parseInt(scanner.nextLine());
 		
+		// To check if deletion worked
 		boolean deletion = true;
 		
 		// Delete all Rejected Classifieds
@@ -92,7 +95,7 @@ public class ClassifiedManagement {
 		
 		// Delete a particular Classified
 		else  if (choice == 2) {
-			
+			// Retrieve all classifieds
 			List<Classifieds> classified = new ArrayList<Classifieds>();
 			classified = classifieddao.retrieve();
 			// Display each classified
@@ -113,12 +116,19 @@ public class ClassifiedManagement {
 				deletion = false;
 		}
 		
+		// If admin makes an invalid input
+		else {
+			System.err.println("Invalid Choice");
+			return false;
+		}
+		
+		// If we are able to delete, we return true
 		return deletion;
 		
 	}
 	
 	// For User
-	public boolean update() {
+	public boolean updateClassified() {
 	
 		// Retrieving all the classified from a certain user
 		String sql = "SELECT * from Classifieds where userID = "+userSession.user.userID;
@@ -135,14 +145,15 @@ public class ClassifiedManagement {
 		sql = "Select * from Classifieds where classifiedID = " +classifiedID;
 		List <Classifieds> classifiedDetail = classifieddao.retrieve(sql);
 		
+		// If the Classified is sold, it can't be updated
 		if (classifiedDetail.get(0).status == 3) {
 			System.err.println("You can't modify a Classified already Sold");
 			return false;
 		}
-		//Ask the user to update the details
+		// Ask the user to update the details
 		classified.getDetails(classifiedDetail.get(0));
 		
-		//Update the details in SQL.
+		// Update the details in SQL.
 		if (classifieddao.update(classifiedDetail.get(0))>0)
 			return true;
 		
@@ -151,13 +162,13 @@ public class ClassifiedManagement {
 	
 	// For User.
 	// User can see all the classified which have been approved and is available for transaction
-	public void displayClassified() {
+	public void displayClassifiedForSale() {
 		
-		//Fetch User Detail
+		// Fetch User Detail
 		String sql = "Select * from Classifieds where status= "+1;
 		List <Classifieds> classifiedList = classifieddao.retrieve(sql);
 		
-		//Display the Details
+		// Display the Details
 		for (Classifieds classified : classifiedList) {
 			classified.prettyPrintForUser(classified);
 		}
@@ -168,7 +179,7 @@ public class ClassifiedManagement {
 		String sql = "Select * from Classifieds where userID= "+userSession.user.userID;
 		List <Classifieds> classifiedList = classifieddao.retrieve(sql);
 		
-		//Display the Details
+		// Display the Details
 		for (Classifieds classified : classifiedList) {
 			classified.prettyPrintForUser(classified);
 		}
@@ -180,8 +191,6 @@ public class ClassifiedManagement {
 		// Getting the user ID of current user
 		classified.userID = userSession.user.userID;
 		
-		UserManagement manageUser = UserManagement.getInstance();
-		
 		// Check if the user is active or not.
 		// Only Active Users can post a classified. 
 		if (manageUser.checkUserStatus()) {
@@ -189,23 +198,23 @@ public class ClassifiedManagement {
 		// Asking the user to add the classified details
 			classified.getDetails(classified);
 			
-			//-----------------------------------------------------------------------
-			
+			// Retrieving the category list
      		List<Categories> categories = new ArrayList<Categories>();
      		categories = categorydao.retrieve();
      		
+     		// Displaying Category Details
      		for (Categories displayCategory : categories) {
-     			System.out.print("{ ");
-     			System.out.print(displayCategory.categoryID+":"+displayCategory.title);
-     			System.out.println(" }");
+     			System.out.print("[ ");
+     			System.out.print(displayCategory.categoryID+"-"+displayCategory.title);
+     			System.out.println(" ]");
      		}
 			
+     		// Based on the categories, the Admin/User should input the categoryID
      		System.out.println("Enter the CategoryID for your Product: ");
     		String categoryID = scanner.nextLine();
     		if (!categoryID.isEmpty())
     			classified.categoryID = Integer.parseInt(categoryID);
     		
-    		//-----------------------------------------------------------------------
 			// Adding the classified to table
 			if (classifieddao.insert(classified)>0)
 				return true;

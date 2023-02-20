@@ -16,11 +16,13 @@ public class UserManagement {
 	Scanner scanner = new Scanner(System.in);
 	passwordEncryptor encryptor = passwordEncryptor.getInstance();
 	
+	// Creating object using Singleton design pattern
 	private static UserManagement manageUser = new UserManagement();
-	
 	public static UserManagement getInstance() {
 		return manageUser;
 	}
+	
+	// Populating Admin and an User
 	private UserManagement(){
 		
 		/*
@@ -54,21 +56,26 @@ public class UserManagement {
 	//For Admin
 	public boolean activateUser() {
 
+		// Retrieving the user List
         List <Users> users = new ArrayList<Users>();
         users = userdao.retrieve();
+        // Displaying the user List
         for (Users userDetails : users) {
             user.prettyPrintForAdmin(userDetails);
         }
 
+        // Activating/Deactivating the user based on the userID
         System.out.println("Enter the UserID of the User to Activate/Deactivate: ");
         int userID = Integer.parseInt(scanner.nextLine());
 
+        // Retrieving User Detail based on the user ID
         String sql = "Select * From Users Where userID = "+userID;
-        List <Users> usertoActivate = new ArrayList<Users>();
-        usertoActivate = userdao.retrieve(sql);
-        user = usertoActivate.get(0);
+        List <Users> userActivate = new ArrayList<Users>();
+        userActivate = userdao.retrieve(sql);
+        user = userActivate.get(0);
 
-        System.out.println("\n 1-Activate \n 0-Deactivate");
+        // Asking the Admin choice, whether to activate or deactivate
+        System.out.println("\n 1-Activate \t 0-Deactivate");
         int status = Integer.parseInt(scanner.nextLine());
         user.userStatus=(status==1) ? 1 : 0;
 
@@ -107,10 +114,13 @@ public class UserManagement {
     }
 	*/
     
-	//For User
-	public boolean register(Users user) {
+	// For User
+	public boolean registerUser(Users user) {
 		
+		// Adding the user Details
 		user.getDetails(user);
+		
+		// As the user's usertype is 2, manually storing the userType to 2
 		user.userType = 2;
 		if (userdao.insert(user)>0)
 			return true;
@@ -118,14 +128,14 @@ public class UserManagement {
 		return false;
 	}
 	
-	//For User
+	// For User
 	public void displayUser() {
 		
-		//Fetch User Detail
+		// Fetch User Detail
 		String sql = "Select * from Users where email= '"+userSession.user.email+"'";
 		List <Users> userDetail = userdao.retrieve(sql);
 		
-		//Display the Details
+		// Display the Details
 		user.prettyPrintForUser(userDetail.get(0));
 	}
 
@@ -146,6 +156,7 @@ public class UserManagement {
 		return false;
 	}
 	
+	/*
 	//There is an error with the logic, while insert, the email is duplicate which creates violation of query as email should be unique
 	public boolean passwordReset() {
 		
@@ -174,21 +185,25 @@ public class UserManagement {
 		}
 		return false;
 	}
-	
-	//For both Admin and User
-		public boolean login(Users user) {
-			
-			String sql = "Select * from Users where email = '" +user.email +"' and password = '"+encryptor.encryptor(user.password) +"'";
-			List <Users> userDetail = userdao.retrieve(sql);
-			if(userDetail.size() > 0) {
-				Users user1 = userDetail.get(0);
-				user.name = user1.name;
-				user.userType = user1.userType;
-				user.userID = user1.userID;
-				user.userStatus = user1.userStatus;
-				return true;
-			}
-			
-			return false;
+	*/
+	// For both Admin and User
+	public boolean loginUser(Users user) {
+		
+		// Logging in based on email and encrypted password
+		String sql = "Select * from Users where email = '" +user.email +"' and password = '"+encryptor.encryptor(user.password) +"'";
+		// Retrieving the user data
+		List <Users> userDetail = userdao.retrieve(sql);
+		// If the user email and password is correct
+		if(userDetail.size() > 0) {
+			// Populating the user detail to user oject
+			Users user1 = userDetail.get(0);
+			user.name = user1.name;
+			user.userType = user1.userType;
+			user.userID = user1.userID;
+			user.userStatus = user1.userStatus;
+			return true;
 		}
+		
+		return false;
+	}
 }

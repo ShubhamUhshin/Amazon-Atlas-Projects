@@ -11,22 +11,27 @@ public class UserDAO implements DAO<Users>{
 	DB db = DB.getInstance();
 	passwordEncryptor encryptor = passwordEncryptor.getInstance();
 	
-	
+	// Inserting into Users Table
 	public int insert(Users Object) {
 		String sql = "INSERT INTO Users (name, phone, email, password, address, userType, userStatus) VALUES ('"+Object.name+"', '"+Object.phone+"', '"+Object.email+"', '"+encryptor.encryptor(Object.password)+"', '"+Object.address+"', '"+Object.userType+"', '"+Object.userStatus+"')";
 		return db.executeSQL(sql);
 	}
 
+	// Deleting from user table based on the email
+	// This function is a dummy function as we have implemented DAO.
+	// This function is never used  
 	public int delete(Users Object) {
 		String sql = "DELETE FROM Users WHERE email = '"+Object.email+"'";
 		return db.executeSQL(sql);
 	}
 
+	// Updating users based on email ID
 	public int update(Users Object) {
 		String sql = "UPDATE Users set name = '"+Object.name+"', phone='"+Object.phone+"', address='"+Object.address+"', userType='"+Object.userType+"',userStatus='"+Object.userStatus+"' WHERE email = '"+Object.email+"'";
 		return db.executeSQL(sql);
 	}
 
+	// Retrieving all data from Users table
 	public List<Users> retrieve() {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * from Users";
@@ -62,6 +67,7 @@ public class UserDAO implements DAO<Users>{
 		return users;
 	}
 
+	// Retrieving data from User table based on the sql query
 	public List<Users> retrieve(String sql) {
 		// TODO Auto-generated method stub
 		ResultSet set = db.executeQuery(sql);

@@ -9,8 +9,8 @@ import com.amazon.internalclassifieds.controller.UserManagement;
 
 public class AdminMenu extends Menu {
 	
+	// Creating singleton design pattern
 	private static AdminMenu adminMenu = new AdminMenu();
-	
 	public static AdminMenu getInstance() {
 		return adminMenu;
 	}
@@ -20,7 +20,7 @@ public class AdminMenu extends Menu {
 	CategoryManagement manageCategory = CategoryManagement.getInstance();
 	OrderManagement manageOrder = OrderManagement.getInstance();
 	
-	
+	// Displaying Admin Menu
 	public void showMenu() {
 		
 		System.out.println("*********************");
@@ -32,6 +32,7 @@ public class AdminMenu extends Menu {
 		boolean quit = false;
 		
 		while(true) {
+			// If the Admin enters incorrect data, try block will stop the control to go back to the main menu
 			try {
 				System.out.println("*********************");
 	        	System.out.println("1: Approve/Reject Classifieds");
@@ -43,7 +44,7 @@ public class AdminMenu extends Menu {
 	        	System.out.println("Select an Option");
 	        	
 	        	int choice = Integer.parseInt(scanner.nextLine());
-	        	
+	        	// Based on the user choice, calling the respective function
 	        	switch (choice) {
 					case 1:
 						manageClassified.approvalOfClassified();
@@ -79,6 +80,7 @@ public class AdminMenu extends Menu {
 						break;
 					
 					case 6:
+						//If the user wants to quit, we will break the infinite loop
 						System.out.println("Thank You for Using Admin App !!");
 						quit = true;
 						break;

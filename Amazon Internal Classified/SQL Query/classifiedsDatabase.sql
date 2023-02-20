@@ -21,7 +21,7 @@ select * from Users;
 -----------------------------------------------------------------------------------------
 
 create table Category(
-	categoryID INT IDENTITY(100,1),
+	categoryID INT IDENTITY(1,1),
 	title NVARCHAR(20) NOT NULL UNIQUE,
 	lastUpdatedOn DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	PRIMARY KEY(categoryID));

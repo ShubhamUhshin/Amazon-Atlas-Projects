@@ -18,12 +18,13 @@ public class DB {
 	Connection connection;
 	Statement statement;
 	
+	// // Creating object using Singleton design pattern
 	private static DB db = new DB();
-	
 	public static DB getInstance() {
 		return db;
 	}
 	
+	// Loading SQL driver
 	private DB() {
 		try {
 			//database connection
@@ -42,14 +43,20 @@ public class DB {
 
 	}
 
+	// Creating SQL Connection
 	private void createConnection() {
 		// TODO Auto-generated method stub
+		// Checking if there is any filepath in the Command line argument
 		try {
 			File file = new File(FILEPATH);
 			if(file.exists()) {
 				FileReader reader = new FileReader(file);
 				BufferedReader buffer = new BufferedReader(reader);
 				
+				// Copying the file details in URL, USER and Password
+				// The file contains URL in 1st line
+				// Username is contained in 2nd line
+				// Password is contained in 3rd line
 				URL = buffer.readLine();
 				USER = buffer.readLine();
 				PASSWORD = buffer.readLine();
@@ -62,7 +69,9 @@ public class DB {
 				System.err.println("Cannot read the DB Config File...");
 			}
 			
+			// Storing in the URL, databasename, username, password in url
 			String url = URL+";user="+USER+";password="+PASSWORD+";trustServerCertificate=true";
+			// Creating connection using connection statement
 			connection = DriverManager.getConnection(url);
 			System.out.println("[DB] Connection Created Successfully....");
 			
@@ -72,6 +81,8 @@ public class DB {
 		}
 	}
 	
+	// Executing SQL Queries
+	// This Function is used to update in SQL Table
 	public int executeSQL(String sql) {
 		
 		int result = 0;
@@ -90,6 +101,8 @@ public class DB {
 		return result;
 	}
 	
+	// Result Set is used to store data from SQL
+	// This Function is used to retrieve data from SQL table
 	public ResultSet executeQuery(String sql) {
 		
 		ResultSet set = null;
@@ -107,6 +120,7 @@ public class DB {
 		return set;
 	}
 
+	// Closing SQL Connection
 	public void closeConnection() {
 		try {
 			connection.close();

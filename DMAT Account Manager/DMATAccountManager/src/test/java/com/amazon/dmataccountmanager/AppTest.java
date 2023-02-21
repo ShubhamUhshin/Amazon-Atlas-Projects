@@ -1,38 +1,48 @@
 package com.amazon.dmataccountmanager;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Assert;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import com.amazon.dmataccountmanager.controller.UserManagement;
+import com.amazon.dmataccountmanager.db.UserDAO;
+import com.amazon.dmataccountmanager.model.Users;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest {
+
+	UserDAO userdao = new UserDAO();
+	UserManagement manageUser = UserManagement.getInstance();
+	
+	@Test
+	public void testUserLogin() {
+		
+		Users user = new Users();
+		// Hardcoding admin accountNumber and password to test login function 
+		user.accountNumber = "PH5429";
+		user.password = "Shubham123";
+		
+		boolean result = manageUser.login(user);
+		
+		// Assertion -> Either Test Cases Passes or It will Fail :)
+		Assert.assertEquals(true, result);		
+	}
+	
+	@Test
+	public void testUserRegister() {
+		
+	Users user = new Users();
+	// Hardcoding User details to test register function
+	user.userName = "TestUser";
+	user.accountNumber = "Test10";
+	user.password = "testUser123";
+	user.accountBalance = 1000.00;
+	
+	
+	UserDAO userdao = new UserDAO();
+	int result = userdao.insert(user);
+	
+	// Assertion -> Either Test Cases Passes or It will Fail :)
+	Assert.assertTrue(result>0);
+
+	}
 }

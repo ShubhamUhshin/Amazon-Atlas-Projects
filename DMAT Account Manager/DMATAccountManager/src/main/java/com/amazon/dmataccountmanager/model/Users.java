@@ -49,7 +49,7 @@ create table Users(
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
-
+	// User Input for account details
 	public void getDetails(Users user) {
 		
 		Scanner scanner = new Scanner(System.in);
@@ -59,6 +59,8 @@ create table Users(
 		if (!name.isEmpty())
 			user.userName = name;
 		
+		// If it is an update function, accountNumber won't be null
+		// So this part of the code only works for register
 		if (user.accountNumber == null) {
 			
             String accountNumber;
@@ -85,47 +87,6 @@ create table Users(
 			user.accountBalance = Integer.parseInt(accountBalance);
 
 	}
-	
-	
-	public void printTable(Object object) {
-	    
-		Class<?> clazz = object.getClass();
-	    Field[] fields = clazz.getDeclaredFields();
-		
-	    String[][] data = new String[2][fields.length];
-	    data[0] = new String[fields.length];
-	    data[1] = new String[fields.length];
-		
-	    for (int i = 0; i < fields.length; i++) {
-	      Field field = fields[i];
-	      field.setAccessible(true);
-	      try {
-		        data[0][i] = field.getName();
-		        data[1][i] = String.valueOf(field.get(object));
-		      } catch (IllegalAccessException e) {
-		        e.printStackTrace();
-		      }
-		   }
-		
-	    int[] columnWidths = new int[data[0].length];
-	    
-	    for (String[] row : data) {
-	      for (int i = 0; i < row.length; i++) {
-	    	  columnWidths[i] = Math.max(columnWidths[i], row[i].length());
-	      }
-	    }
-		
-	    for (String[] row : data) {
-	      for (int i = 0; i < row.length; i++) {
-	        System.out.print("| " + row[i]);
-	        for (int j = row[i].length(); j <= columnWidths[i]; j++) {
-	          System.out.print(" ");
-	        }
-	      }
-	      System.out.println(" |");
-		}
-	}
-
 
 	@Override
 	public String toString() {

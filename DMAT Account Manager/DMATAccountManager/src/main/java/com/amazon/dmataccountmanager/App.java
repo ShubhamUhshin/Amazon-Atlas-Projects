@@ -13,10 +13,12 @@ public class App
         System.out.println( "Welcome to DMAT Account Manager" );
         System.out.println("---------------------------------");
         
+     // Checking if there is any filepath for database attributes
         if(args.length > 0) {
         	DB.FILEPATH = args[0];
         }
         
+        // Displaying Main Menu
         new Menu().showMainMenu();
     }
 }

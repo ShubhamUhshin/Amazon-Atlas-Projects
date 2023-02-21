@@ -10,25 +10,29 @@ public class ShareDAO implements DAO<Shares>{
 	
 	DB db = DB.getInstance();
 	
-	//Shares are hard-coded in the database
+	// Shares are hard-coded in the database
+	// This is a dummy function as ShareDAO implements DAO interface
 	public int insert(Shares object) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
-	//Shares will not be updated in the database as Share prices are fixed
+	// Shares are updated using scheduler.
+	// This method is automatically called and prices are randomly changed
 	public int update(Shares object) {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "Update Shares SET price ="+object.price+" where ShareID = "+object.shareID;
+		return db.executeSQL(sql);
 	}
 	
-	//Shares table data is fixed
+	// Shares table data is never deleted
+	// This is a dummy function as ShareDAO implements DAO interface
 	public int delete(Shares object) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	
+	// Retrieving all data from Orders table
 	public List<Shares> retrieve() {
 		String sql = "SELECT * FROM Shares";
 		
@@ -56,7 +60,7 @@ public class ShareDAO implements DAO<Shares>{
 		return shares;
 	}
 
-	
+	// Retrieving data from Classified table based on the sql query
 	public List<Shares> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

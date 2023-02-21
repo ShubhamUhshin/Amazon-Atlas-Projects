@@ -10,22 +10,28 @@ public class TransactionDAO implements DAO<Transactions>{
 	
 	DB db = DB.getInstance();
 
+	// Inserting into Orders table
+	// This function is called whenever any user sells or buys share
 	public int insert(Transactions object) {
 		String sql = "INSERT INTO Transactions (shareID, userID, shareCount, pricePerShare, transactionCharges, sttCharges, type) VALUES ('"+object.shareID+"', '"+object.userID+"', '"+object.shareCount+"', '"+object.pricePerShare+"',"+object.transactionCharges+","+object.sttCharges+","+object.type+")";
 		return db.executeSQL(sql);
 	}
 	
-	//Transaction table will not be updated as its just like order history
+	// Transaction table will not be updated as its just like order history
+	// This is a dummy function as TransactionDAO implements DAO interface
 	public int update(Transactions object) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	
+	// This is a dummy function as TransactionDAO implements DAO interface
+	// Delete function is never used
 	public int delete(Transactions object) {
 		String sql = "DELETE FROM Transactions WHERE transactionID = '"+object.transactionID+"'";
 		return db.executeSQL(sql);
 	}
 
+	// Retrieving all data from Transaction table
 	public List<Transactions> retrieve() {
 		String sql = "SELECT * FROM Transactions";
 		
@@ -57,6 +63,7 @@ public class TransactionDAO implements DAO<Transactions>{
 		return transactions;
 	}
 
+	// Retrieving data from Transaction table based on the sql query
 	public List<Transactions> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

@@ -10,21 +10,26 @@ public class PortfolioDAO implements DAO<Portfolios>{
 	
 	DB db = DB.getInstance();
 
+	// Inserting into Portfolios table
 	public int insert(Portfolios object) {
 		String sql = "INSERT INTO Portfolios (userID, shareID, transactionID, companyName, shareCount) VALUES ('"+object.userID+"', '"+object.shareID+"', '"+object.transactionID+"', '"+object.companyName+"',"+object.shareCount+")";
 		return db.executeSQL(sql);
 	}
-
+	
+	// Updating Portfolio
+	// This function is used when user buys or sells some of his shares
 	public int update(Portfolios object) {
 		String sql = "UPDATE Portfolios SET shareCount = "+object.shareCount+" WHERE shareID = '"+object.shareID+"'";
 		return db.executeSQL(sql);
 	}
 
+	// Deleting from Portfolios table
 	public int delete(Portfolios object) {
 		String sql = "DELETE FROM Portfolios WHERE userID = "+object.userID+" and shareID = "+object.shareID;
 		return db.executeSQL(sql);
 	}
 
+	// Retrieving all data from Portfolio table
 	public List<Portfolios> retrieve() {
 		String sql = "SELECT * FROM Portfolios";
 		
@@ -53,6 +58,7 @@ public class PortfolioDAO implements DAO<Portfolios>{
 		return portfolios;
 	}
 
+	// Retrieving data from Portfolio table based on the sql query
 	public List<Portfolios> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

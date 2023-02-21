@@ -30,6 +30,7 @@ public class Shares {
 		this.lastUpdatedOn = lastUpdatedOn;
 	}
 	
+	// Displaying Share details
 	public void prettyPrint(Shares share) {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("ShareID:\t"+share.shareID);
@@ -39,13 +40,14 @@ public class Shares {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
+	// This function is called when view report function is executed 
+	// Displaying share details based on the shareID
 	public void prettyPrintForTransaction(Shares share) {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Company Name:\t\t"+share.companyName);
-		System.out.println("SYMBOL:\t\t\t"+share.symbol);
-		
-	
+		System.out.println("SYMBOL:\t\t\t"+share.symbol);	
 	}
+	
 	@Override
 	public String toString() {
 		return "Shares [shareID=" + shareID + ", SYMBOL=" + symbol + ", companyName=" + companyName + ", price=" + price

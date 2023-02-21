@@ -90,26 +90,18 @@ select * from Portfolios;
 
 --HardCoded Shares inserted into Shares Table: 
 
-INSERT INTO Shares (SYMBOL, companyName, price)
-VALUES ('AAPL', 'Apple Inc.', 140.00),
-       ('GOOG', 'Alphabet Inc.', 2200.00),
-       ('MSFT', 'Microsoft Corporation', 200.00),
-       ('AMZN', 'Amazon.com Inc.', 3000.00),
-       ('FB', 'Facebook Inc.', 240.00),
-       ('BABA', 'Alibaba Group Holding Limited', 220.00),
-       ('V', 'Visa Inc.', 200.00),
-       ('JPM', 'JP Morgan Chase & Co.', 100.00),
-       ('PG', 'Procter & Gamble Co.', 120.00),
-       ('BAC', 'Bank of America Corp.', 30.00),
-       ('T', 'AT&T Inc.', 40.00),
-       ('WFC', 'Wells Fargo & Co.', 50.00),
-       ('KO', 'The Coca-Cola Co.', 60.00),
-       ('PFE', 'Pfizer Inc.', 70.00),
-       ('XOM', 'Exxon Mobil Corporation', 80.00),
-       ('GE', 'General Electric Co.', 90.00),
-       ('MCD', 'McDonald''s Corporation', 100.00),
-       ('DIS', 'The Walt Disney Company', 110.00),
-       ('JNJ', 'Johnson & Johnson', 120.00),
-       ('VZ', 'Verizon Communications Inc.', 130.00);
+INSERT INTO shares (SYMBOL, companyName, price)
+VALUES 
+('TATASTEEL', 'Tata Steel Limited', 1530.00),
+('RELIANCE', 'Reliance Industries Limited', 2550.00),
+('HDFCBANK', 'HDFC Bank Limited', 1464.00),
+('INFY', 'Infosys Limited', 1620.00),
+('TCS', 'Tata Consultancy Services Limited', 3436.00),
+('HINDUNILVR', 'Hindustan Unilever Limited', 2363.00),
+('ITC', 'ITC Limited', 226.75),
+('ONGC', 'Oil and Natural Gas Corporation Limited', 119.10),
+('BHARTIARTL', 'Bharti Airtel Limited', 693.45),
+('WIPRO', 'Wipro Limited', 589.85);
+
 
 -------------------------------------------------------------------------------------------

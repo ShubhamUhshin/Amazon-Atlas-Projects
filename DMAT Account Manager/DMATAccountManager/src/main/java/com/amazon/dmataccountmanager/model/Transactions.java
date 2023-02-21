@@ -42,6 +42,7 @@ public class Transactions {
 		this.type = type;
 	}
 	
+	// Displaying transaction 
 	public void prettyPrint(Transactions transaction) {
 		
 		System.out.println("ShareID:\t\t"+transaction.shareID);

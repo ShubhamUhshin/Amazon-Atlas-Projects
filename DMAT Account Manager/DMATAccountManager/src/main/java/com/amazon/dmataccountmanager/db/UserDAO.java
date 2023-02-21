@@ -11,6 +11,7 @@ public class UserDAO implements DAO<Users> {
 	DB db = DB.getInstance();
 	passEncryption encrypt = passEncryption.getInstance();
 
+	// Inserting into Users Table
 	public int insert(Users object) {
 		String sql = "INSERT INTO Users (userName, accountNumber, password, accountBalance) VALUES ('"+object.userName+"', '"+object.accountNumber+"', '"+encrypt.encryptor(object.password)+"', '"+object.accountBalance+"')";
 		return db.executeSQL(sql);
@@ -21,11 +22,15 @@ public class UserDAO implements DAO<Users> {
 		return db.executeSQL(sql);
 	}
 
+	// Deleting from user table based on the account number
+	// This function is a dummy function as UserDAO implements DAO
+	// This function is never used  
 	public int delete(Users object) {
 		String sql = "DELETE FROM Users WHERE accountNumber = '"+object.accountNumber+"'";
 		return db.executeSQL(sql);
 	}
 
+	// Retrieving all data from Users table
 	public List<Users> retrieve() {
 		String sql = "SELECT * FROM Users";
 		
@@ -54,6 +59,7 @@ public class UserDAO implements DAO<Users> {
 		return users;
 	}
 
+	// Retrieving data from User table based on the sql query
 	public List<Users> retrieve(String sql) {
 		ResultSet set = db.executeQuery(sql);
 		

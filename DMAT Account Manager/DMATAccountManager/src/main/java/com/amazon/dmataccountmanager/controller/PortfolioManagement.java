@@ -13,8 +13,8 @@ public class PortfolioManagement {
 	Portfolios portfolio = new Portfolios();
 	PortfolioDAO portfoliodao = new PortfolioDAO();
 	
+	// Creating object using Singleton design pattern
 	private static PortfolioManagement managePortfolios = new PortfolioManagement();
-	
 	public static PortfolioManagement getInstance() {
 		return managePortfolios;
 	}
@@ -22,7 +22,10 @@ public class PortfolioManagement {
 	private PortfolioManagement() {
 	}
 	
+	// Displaying portfolio
 	public void displayPortfolio() {
+		
+		// Displaying the portfolio for the current user
         String sql = "SELECT * FROM Portfolios WHERE userID= '"+userSession.user.userID+"'";
         List <Portfolios> portfolios = portfoliodao.retrieve(sql);
 
@@ -31,10 +34,4 @@ public class PortfolioManagement {
             portfolio.prettyPrint(portfolioDetails);
         }
     }
-	
-	public boolean updatePortfolio(Portfolios portfolios) {
-		
-		return false;
-	}
-
 }

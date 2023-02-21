@@ -2,8 +2,8 @@ package com.amazon.dmataccountmanager.db;
 
 import java.util.List;
 
-//Database Access Object
-//CRUD operations on a Table 
+// Database Access Object
+// CRUD operations on a Table 
 public interface DAO<T> {
 
 	int insert(T object);

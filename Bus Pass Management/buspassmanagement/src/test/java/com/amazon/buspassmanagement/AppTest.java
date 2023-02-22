@@ -3,6 +3,7 @@ package com.amazon.buspassmanagement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -206,5 +207,75 @@ public class AppTest {
 		testFeedback.userID = BusPassSession.user.id;
 		boolean result = (feedbackdaoTest.insert(testFeedback)>0);
 		Assert.assertEquals(true,result);
+	}
+	@Test
+	// Check pass validity
+	public void  testPassValidity() {
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        Date date1 = calendar.getTime();
+	    String sql = "SELECT * from BusPass where validTill > '"+dateFormat.format(date1)+"' and buspassID ="+6;
+	    List<BusPass> busPass = buspassdaoTest.retrieve(sql);
+	    boolean result = true;
+		if (busPass.isEmpty())
+			result = false;
+		
+		Assert.assertEquals(true,result);
+	}
+	
+	@Test
+	// Check vehicle on a particular route
+	public void testCheckVehicle() {
+		
+		String sql = "SELECT * from Vehicles where routeId= "+13;
+		List<Vehicles> vehicle = vehicledaoTest.retrieve(sql);
+		boolean result = true;
+		if (vehicle.isEmpty())
+			result = false;
+		
+		Assert.assertEquals(true,result);
+			
+		
+	}
+	@Test
+	// Check Test Stop
+	public void testStop() {
+		
+		String sql = "SELECT * from Stops where routeID = "+13;
+		List<Stops> stop = stopdaoTest.retrieve(sql);
+		boolean result = true;
+		if (stop.isEmpty())
+			result = false;
+	
+		Assert.assertEquals(true,result);
+	}
+	
+	@Test
+	// Check if a route has 2 stops 
+	public void testNoOfStops() {
+		
+		String sql = "SELECT * from Stops where routeID = "+13;
+		List<Stops> stop = stopdaoTest.retrieve(sql);
+		boolean result = false;
+		if (stop.size()>1)
+			result = true;
+	
+		Assert.assertEquals(true,result);
+	}
+	
+	@Test
+	// Check if a user can raise a complaint
+	public void raiseComplaint() {
+		
+		Feedbacks feedback = new Feedbacks();
+		feedback.type = 2;
+		feedback.description = "This is Feedbacks Testing";
+		feedback.title = "Complaint";
+		feedback.userID = 4;
+		feedback.raisedBy = "fionna@example.com";
+		int result = feedbackdaoTest.insert(feedback);
+		Assert.assertTrue(result>0);
+	
 	}
 }

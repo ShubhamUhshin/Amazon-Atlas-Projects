@@ -1,11 +1,19 @@
 package com.amazon.buspassmanagement.controller;
 
 import java.util.List;
+import java.util.Scanner;
+
 import com.amazon.buspassmanagement.BusPassSession;
+import com.amazon.buspassmanagement.db.FeedbacksDAO;
 import com.amazon.buspassmanagement.model.Feedbacks;
 
-public class FeedbacksManagement extends Management{
 
+public class FeedbacksManagement {
+
+	Scanner scanner = new Scanner(System.in);
+	Feedbacks feedbacks = new Feedbacks();
+	FeedbacksDAO feedbackdao = new FeedbacksDAO();
+	
 	private FeedbacksManagement() {
 	}
 	
@@ -42,13 +50,14 @@ public class FeedbacksManagement extends Management{
 						deleteFeedback();
 						break;
 					case 4:
+						// if Admin wants to quit
 						quit = true;
 						break;
 						
 					default:
 						System.err.println("Invalid Choice");
 					}
-					
+					// using admin choice to terminate infinite loop
 					if(quit)
 						break;
 				}
@@ -58,6 +67,8 @@ public class FeedbacksManagement extends Management{
 			} 	
 		}
 		
+		// Getting Feedback details
+		// For User
 		public void getDetails() {
 			
 			System.out.println("Capturing Feedback Details....");
@@ -83,6 +94,7 @@ public class FeedbacksManagement extends Management{
 
 		}
 		// Handler for the Feedback
+		// For user
 		public void createFeedback() {
 			
 			getDetails();
@@ -96,8 +108,13 @@ public class FeedbacksManagement extends Management{
 			System.out.println(message);
 		}
 		
+		// For Admin
 		public void deleteFeedback() {
+			
+			// Display feedback
 			viewFeedbacks();
+			
+			// Deleting feedback based on feedback ID
 			System.out.println("Enter Feedback ID to be deleted: ");
 			feedbacks.feedbackID = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
 			int result = feedbackdao.delete(feedbacks);
@@ -105,6 +122,8 @@ public class FeedbacksManagement extends Management{
 			System.out.println(message);
 		}
 		
+		// Display all Feedbacks
+		// For Admin
 		public void viewFeedbacks() {
 			List<Feedbacks> feedbacks = feedbackdao.retrieve();
 			for(Feedbacks object : feedbacks) {
@@ -112,6 +131,8 @@ public class FeedbacksManagement extends Management{
 			}
 		}
 		
+		// Display feedbacks of a specific user
+		// For Admin
 		public void viewFeedbacksByUser(int userID) {
 			
 			String sql = "SELECT * from Feedbacks where userID = "+userID;

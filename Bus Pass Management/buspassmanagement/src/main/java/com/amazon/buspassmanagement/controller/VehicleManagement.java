@@ -2,18 +2,31 @@ package com.amazon.buspassmanagement.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import com.amazon.buspassmanagement.BusPassSession;
+import com.amazon.buspassmanagement.db.RoutesDAO;
+import com.amazon.buspassmanagement.db.VehiclesDAO;
 import com.amazon.buspassmanagement.model.Routes;
 import com.amazon.buspassmanagement.model.Vehicles;
 
-public class VehicleManagement extends Management {
+public class VehicleManagement {
 	
+	Scanner scanner = new Scanner(System.in);
+	
+	RoutesManagement manageRoutes = RoutesManagement.getInstance();
+	
+	Routes routes = new Routes();
+	Vehicles vehicles = new Vehicles();
+	RoutesDAO credao = new RoutesDAO();
+	VehiclesDAO vehiclesDAO = new VehiclesDAO();
+	
+	// Singleton design pattern
 	private static VehicleManagement manageVehicle = new VehicleManagement();
-	
 	public static VehicleManagement getInstance() {
 		return manageVehicle;
 	}
 	
+	// Displaying vehicle menu
 	public void manageVehicle() {
 		
 		while(true) {
@@ -56,6 +69,7 @@ public class VehicleManagement extends Management {
 					break;
 					
 				case 5:
+					// If the Admin wants to quit
 					quit = true;
 					break;
 					
@@ -63,6 +77,7 @@ public class VehicleManagement extends Management {
 					System.err.println("Invalid choice");
 				}
 				
+				// Terminating the infinite loop based on admin choice
 				if (quit)
 					break;
 			}
@@ -72,6 +87,7 @@ public class VehicleManagement extends Management {
 		} 	
 	}
 
+	// Adding vehicle
 	public void addVehicleDetails(Vehicles vehicles) {
 		//scanner.nextLine();
 		
@@ -115,12 +131,14 @@ public class VehicleManagement extends Management {
 	}
 	
 
+	// Adding Vehicle
 	public boolean addVehicle() {
 		vehicles.adminID = BusPassSession.user.id;;
 		addVehicleDetails(vehicles);
 		return vehiclesDAO.insert(vehicles) > 0;
 	}
 	
+	// Displaying Vehicle
 	public void displayVehicles() {
 		List <Vehicles> vehicle = new ArrayList<>();
 		vehicle = vehiclesDAO.retrieve();
@@ -129,6 +147,7 @@ public class VehicleManagement extends Management {
 		}
 	}
 	
+	// Retrieve vehicle on a route
 	public void retrieveVehicles(Routes routes) {
 		List <Vehicles> vehicle = new ArrayList<>();
 		String sql = "select * from Vehicles where routeID = '"+routes.routeID+"'";
@@ -137,6 +156,8 @@ public class VehicleManagement extends Management {
 			vehicles.prettyPrintForAdmin(vehiclesDetail);
 		}
 	}
+	
+	// Updating Vehicle
 	public boolean updateVehicle() {
 		displayVehicles();
 		System.out.println("Enter Vehicle ID to be updated: ");
@@ -151,6 +172,7 @@ public class VehicleManagement extends Management {
 		return vehiclesDAO.update(vehicles) > 0;
 	}
 	
+	// Deleting Vehicle
 	public boolean deleteVehicle() {
 		scanner.nextLine();
 		displayVehicles();

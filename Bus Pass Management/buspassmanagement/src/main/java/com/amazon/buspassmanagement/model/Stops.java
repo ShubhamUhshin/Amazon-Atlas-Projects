@@ -32,6 +32,8 @@ public class Stops {
 		this.adminID = adminID;
 		this.createdOn = createdOn;
 	}
+	
+	// Display stops for Admin
 	public void prettyPrintForAdmin(Stops stops) {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Stop ID:\t\t"+stops.stopID);
@@ -43,6 +45,7 @@ public class Stops {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
+	// Display stops for User
 	public void prettyPrintForUser(Stops stops) {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Stop address:\t\t"+stops.address);

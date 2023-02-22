@@ -11,6 +11,7 @@ public class FeedbacksDAO implements DAO<Feedbacks> {
 	
 	DB db = DB.getInstance();
 	
+	// Inserting into Feedback
 	public int insert(Feedbacks object) {
 		String sql = "INSERT INTO Feedbacks (userID, title, description, type, raisedBy) "
 				+ "VALUES ( "+object.userID+", '"+object.title+"', '"+object.description+"', "+object.type+", '"+object.raisedBy+"')";
@@ -24,11 +25,13 @@ public class FeedbacksDAO implements DAO<Feedbacks> {
 		return db.executeSQL(sql);
 	}
 
+	// Deleting from Feedback
 	public int delete(Feedbacks object) {
 		String sql = "DELETE from Feedbacks WHERE feedbackID = "+object.feedbackID;
 		return db.executeSQL(sql);
 	}
 
+	// Retrieving all data from Feedback table
 	public List<Feedbacks> retrieve() {
 		String sql = "SELECT * from Feedbacks";
 		
@@ -60,6 +63,7 @@ public class FeedbacksDAO implements DAO<Feedbacks> {
 		return feedbacks;
 	}
 
+	// Retrieving from feedback table using user query
 	public List<Feedbacks> retrieve(String sql) {
 				
 		ResultSet set = db.executeQuery(sql);

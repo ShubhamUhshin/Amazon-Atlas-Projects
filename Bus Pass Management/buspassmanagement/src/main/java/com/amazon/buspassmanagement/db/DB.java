@@ -11,6 +11,8 @@ import java.sql.Statement;
 
 public class DB {
 
+	// File address
+	// If there is a file from Command Line, this value will be overridden
 	public static String FILEPATH = "C:\\Users\\srvshu\\eclipse-workspace\\buspassmanagement\\src\\main\\java\\com\\amazon\\buspassmanagement\\db\\dbconfig.txt";
 	public static String URL = "";
 	public static String USER = "";
@@ -19,18 +21,19 @@ public class DB {
 	Connection connection;  // API from JDBC Package to store connection :)
 	Statement statement;	// API from JDBC Package to execute SQL Statements :)
 
+	// Singleton Design Pattern to create object
 	private static DB db = new DB();
-	
 	public static DB getInstance() {
 		return db;
 	}
+	
 	private DB() {
 		
 		try {
-			//database connection
+			// database connection
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 				
-			//Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			// Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 				
 			System.out.println("[DB] Driver Loaded Successfully....");
 				
@@ -42,14 +45,20 @@ public class DB {
 		}
 
 	}
+	// Creating database connection
 	private void createConnection() {
 		try {
 			
+			// Checking if there is a filepath given in command line
 			File file = new File(FILEPATH);
 			if(file.exists()) {
 				FileReader reader = new FileReader(file);
 				BufferedReader buffer = new BufferedReader(reader);
 				
+				// Reading the file and scraping value from file
+				// 1st line of file contains database URL
+				// 2nd Line contains Username
+				// 3rd Line contains Password
 				URL = buffer.readLine();
 				USER = buffer.readLine();
 				PASSWORD = buffer.readLine();
@@ -62,7 +71,9 @@ public class DB {
 				System.err.println("Cannot read the DB Config File...");
 			}
 			
+			// Combining URL, username and password
 			String url = URL+";user="+USER+";password="+PASSWORD+";trustServerCertificate=true";
+			// Using connection statement to connect to the database
 			connection = DriverManager.getConnection(url);
 			System.out.println("[DB] Connection Created Successfully....");
 			
@@ -89,6 +100,8 @@ public class DB {
 		}
 	}
 	*/
+	
+	// Used for inserting into database
 	public int executeSQL(String sql) {
 		
 		int result = 0;
@@ -107,6 +120,7 @@ public class DB {
 		return result;
 	}
 	
+	// Used to Retrieve data from SQL using resultset
 	public ResultSet executeQuery(String sql) {
 		
 		ResultSet set = null;
@@ -124,6 +138,7 @@ public class DB {
 		return set;
 	}
 
+	// Closing connection
 	public void closeConnection() {
 		try {
 			connection.close();

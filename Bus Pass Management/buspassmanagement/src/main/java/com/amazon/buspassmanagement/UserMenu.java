@@ -6,12 +6,13 @@ import com.amazon.buspassmanagement.model.User;
 
 public class UserMenu extends Menu{
 	
+	// Creating object with Singleton design pattern 
 	private static UserMenu userMenu = new UserMenu();
-	
 	public static UserMenu getInstance() {
 		return userMenu;
 	}
 	
+	// Displaying user menu
 	public void showMenu() {
 		
 		System.out.println("Navigating to User Menu...");
@@ -30,7 +31,7 @@ public class UserMenu extends Menu{
 		
 		// An empty scanner.nextLine as we are reading string after int :)
 		//scanner.nextLine();
-		
+		// Based on the choice, corresponding function is called
 		switch(initialChoice) {
 		
 			case 1:
@@ -60,6 +61,8 @@ public class UserMenu extends Menu{
 				System.out.println ("Successfully Registered!!!");
 				System.out.println("Kindly Login to continue");
 				
+				// break is missing on purpose
+				// Using fall through to make the user login after register
 			case 2:
 				System.out.println("Enter Your Email:");
 				user.email = scanner.nextLine();
@@ -73,6 +76,7 @@ public class UserMenu extends Menu{
 					System.err.println("Invalid Credentials. Please Try Again !!");
 				}
 				else
+					// Storing the user data in buspassSession object
 					BusPassSession.user = user;
 				
 				break;
@@ -86,6 +90,7 @@ public class UserMenu extends Menu{
 				System.out.println("Thank You for Using Bus Pass App");
 				break;
 		}
+			// The type of user is 2
 			if(result && user.type == 2) {
 				System.out.println("^^^^^^^^^^^^^^^^^^^");
 				System.out.println("Welcome to User App");
@@ -94,7 +99,7 @@ public class UserMenu extends Menu{
 				System.out.println("^^^^^^^^^^^^^^^^^^^");
 		
 				boolean quit = false;
-		
+				// After logijn, displaying user feature
 				while(true) {
 					try {
 						System.out.println("1: View Routes");
@@ -106,7 +111,7 @@ public class UserMenu extends Menu{
 						System.out.println("Select an Option");
 	        	
 						int choice = Integer.parseInt(scanner.nextLine());
-	        	
+						// Based on the user choice, performing respective functionalities
 						switch (choice) {
 							case 1:
 								manageRoutes.displayRoutes();
@@ -128,9 +133,10 @@ public class UserMenu extends Menu{
 								System.out.println("My Profile");
 								user.prettyPrint();
 								
+								// Allowing the user to modify his profile
 								System.out.println("Do you wish to update Profile (1: update 0: cancel)");
 								choice = Integer.parseInt(scanner.nextLine());
-								
+								// If user chooses 1, he can modify the profile
 								if(choice == 1) {
 									
 									//scanner.nextLine();
@@ -177,6 +183,7 @@ public class UserMenu extends Menu{
 	
 							case 7:
 								System.out.println("Thank You for Using User App !!");
+								// if user wants to quit
 								quit = true;
 								break;
 		
@@ -185,6 +192,7 @@ public class UserMenu extends Menu{
 								break;
 							}
 	        	
+						// using user choice to terminate infinite loop
 						if(quit) {
 							break;
 						}

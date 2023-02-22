@@ -6,12 +6,13 @@ import com.amazon.buspassmanagement.model.User;
 
 public class AdminMenu extends Menu {
 	
+	// Using singleton design to create admin menu object
 	private static AdminMenu adminMenu = new AdminMenu();
-	
 	public static AdminMenu getInstance() {
 		return adminMenu;
 	}
 	
+	// Displaying Admin menu
 	public void showMenu() {
 		System.out.println("Navigating to Admin Menu...");
 		
@@ -28,7 +29,7 @@ public class AdminMenu extends Menu {
 		adminUser.password = scanner.nextLine();
 		
 		boolean result = auth.loginUser(adminUser);
-		
+		// The type of admin user is 1
 		if(result && adminUser.type == 1) {
 		
 			BusPassSession.user = adminUser;
@@ -76,6 +77,7 @@ public class AdminMenu extends Menu {
 							
 						case 6:
 							System.out.println("Thank You for Using Admin App !!");
+							// To terminate the infinite loop
 							quit = true;
 							break;
 			
@@ -83,7 +85,7 @@ public class AdminMenu extends Menu {
 							System.err.println("Invalid Choice...");
 							break;
 					}
-		        	
+		        	// If user wants to quit
 		        	if(quit) {
 		        		break;
 		        	}

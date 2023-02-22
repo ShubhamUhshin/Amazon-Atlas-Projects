@@ -15,24 +15,28 @@ public class RoutesDAO implements DAO<Routes> {
 	DB db = DB.getInstance();
 	
 	@Override
+	// Insert into Routes
 	public int insert(Routes object) {
 		String sql = "INSERT INTO Routes (title,description,adminID) VALUES ('"+object.title+"','"+object.description+"',"+object.adminID+")";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Deleting from Routes
 	public int delete(Routes object) {
 		String sql = "DELETE FROM Routes WHERE routeID = '"+object.routeID+"'";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Updating into Routes
 	public int update(Routes object) {
 		String sql = "UPDATE Routes set title = '"+object.title+"', description='"+object.description+"' , adminID='"+object.adminID +"' WHERE routeID = '"+object.routeID +"'";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Retrieving all data from Routes table 
 	public List<Routes> retrieve() {
 		String sql = "SELECT * from Routes";
 		
@@ -64,6 +68,7 @@ public class RoutesDAO implements DAO<Routes> {
 	}
 
 	@Override
+	// Retrieving data from Routes based on SQL query
 	public List<Routes> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

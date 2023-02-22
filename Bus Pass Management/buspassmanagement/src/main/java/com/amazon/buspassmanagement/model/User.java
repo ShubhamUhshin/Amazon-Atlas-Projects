@@ -44,6 +44,7 @@ public class User {
 			this.createdOn = createdOn;
 		}
 
+		// Displaying user details
 		public void prettyPrint() {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("Name:\t\t"+name);

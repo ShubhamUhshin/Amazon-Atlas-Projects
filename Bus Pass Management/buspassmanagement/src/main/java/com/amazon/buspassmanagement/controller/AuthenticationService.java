@@ -1,16 +1,24 @@
 package com.amazon.buspassmanagement.controller;
 
+import com.amazon.buspassmanagement.db.UserDAO;
+
 import com.amazon.buspassmanagement.db.passwordEncryptor;
 
 //import java.util.Iterator;
 //import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Scanner;
 import com.amazon.buspassmanagement.model.User;
 
-public class AuthenticationService extends Management{
+public class AuthenticationService {
 
 	private static AuthenticationService service = new AuthenticationService();
 	passwordEncryptor encryptor = passwordEncryptor.getInstance();
+	
+	Scanner scanner = new Scanner(System.in);
+
+	UserDAO dao = new UserDAO();
+	
 	// Dummy DataBase in RAM
 	//LinkedHashMap<Integer, User> users = new LinkedHashMap<Integer, User>();
 	
@@ -49,11 +57,12 @@ public class AuthenticationService extends Management{
 		*/
 	}
 	
+	// Singleton design pattern to create object
 	public static AuthenticationService getInstance() {
 		return service;
 	}
 	
-
+	// For both Admin and User
 	public boolean loginUser(User user) {
 			
 		String sql = "SELECT * FROM Users WHERE email = '"+user.email+"' AND password = '"+encryptor.encryptor(user.password)+"'";
@@ -70,11 +79,13 @@ public class AuthenticationService extends Management{
 		return false; 
 	}
 	
+	// For User
 	public boolean registerUser(User user) {
 		
 		return dao.insert(user) > 0;
 	}
 	
+	// For and User
 	public boolean updateUser(User user) {
 		return dao.update(user) > 0;
 	}

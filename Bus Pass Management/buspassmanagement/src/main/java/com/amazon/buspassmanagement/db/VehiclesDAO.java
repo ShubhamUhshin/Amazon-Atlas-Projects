@@ -10,6 +10,7 @@ public class VehiclesDAO implements DAO<Vehicles>{
 
 	DB db = DB.getInstance();
 	@Override
+	// Inserting into Vehicles
 	public int insert(Vehicles object) {
 		
 		String sql = "INSERT INTO Vehicles (regNo, type, filledSeats, totalSeats, startPickUpTime, startDropOffTime, vehicleAvailability, driverID, routeID, adminID) VALUES ('"+object.regNo+"', '"+object.type+"', '"+object.filledSeats+"', '"+object.totalSeats+"', '"+object.startPickUpTime+"', '"+object.startDropOffTime+"', "+object.vehicleAvailability+", "+object.driverID+", "+object.routeID+", "+object.adminID+")";
@@ -17,6 +18,7 @@ public class VehiclesDAO implements DAO<Vehicles>{
 	}
 
 	@Override
+	// Deleting from Vehicles
 	public int delete(Vehicles object) {
 
 		String sql = "DELETE FROM Vehicles WHERE regNo = '"+object.regNo+"'";
@@ -24,6 +26,7 @@ public class VehiclesDAO implements DAO<Vehicles>{
 	}
 
 	@Override
+	// Updating into Vehicles
 	public int update(Vehicles object) {
 
 		String sql = "UPDATE Vehicles set regNo = '"+object.regNo+"', type='"+object.type+"', filledSeats='"+object.filledSeats+"', totalSeats='"+object.totalSeats+"', startPickUpTime='"+object.startPickUpTime+"', startDropOffTime='"+object.startDropOffTime+"', vehicleAvailability='"+object.vehicleAvailability+"', driverID='"+object.driverID+"', routeID='"+object.routeID+"' WHERE vehicleID = '"+object.vehicleID+"'";
@@ -31,6 +34,7 @@ public class VehiclesDAO implements DAO<Vehicles>{
 	}
 
 	@Override
+	// Retrieving all data from Vehicles
 	public List<Vehicles> retrieve() {
 		String sql = "SELECT * from Vehicles";
 		
@@ -70,6 +74,7 @@ public class VehiclesDAO implements DAO<Vehicles>{
 	}
 
 	@Override
+	// Retrieving data from vehicle based on sql
 	public List<Vehicles> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

@@ -14,6 +14,7 @@ public class UserDAO implements DAO<User>{
 	passwordEncryptor encryptor = passwordEncryptor.getInstance();
 	
 	@Override
+	// Inserting into User table
 	public int insert(User object) {
 		
 		String sql = "INSERT INTO Users (name, phone, email, password, address, department, type) VALUES ('"+object.name+"', '"+object.phone+"', '"+object.email+"', '"+encryptor.encryptor(object.password)+"', '"+object.address+"', '"+object.department+"', "+object.type+")";
@@ -21,6 +22,7 @@ public class UserDAO implements DAO<User>{
 	}
 
 	@Override
+	// Deleting from User table
 	public int delete(User object) {
 		
 		String sql = "DELETE FROM Users WHERE email = '"+object.email+"'";
@@ -28,6 +30,7 @@ public class UserDAO implements DAO<User>{
 	}
 
 	@Override
+	// Updating into User table
 	public int update(User object) {
 		
 		String sql = "UPDATE Users set name = '"+object.name+"', phone='"+object.phone+"', password='"+encryptor.encryptor(object.password)+"', address='"+object.address+"', department='"+object.department+"' WHERE email = '"+object.email+"'";
@@ -35,6 +38,7 @@ public class UserDAO implements DAO<User>{
 	}
 
 	@Override
+	//Retrieving all data from Users table
 	public List<User> retrieve() {
 		
 		String sql = "SELECT * from Users";
@@ -72,6 +76,7 @@ public class UserDAO implements DAO<User>{
 	}
 	
 	@Override
+	// Retrieving from User Table using SQL query
 	public List<User> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

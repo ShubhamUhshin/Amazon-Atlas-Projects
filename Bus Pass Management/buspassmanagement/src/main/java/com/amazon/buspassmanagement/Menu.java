@@ -30,7 +30,7 @@ public class Menu {
 				System.out.println("Select an Option");
 				
 				int choice = Integer.parseInt(scanner.nextLine());
-			
+				// Displaying menu based on the user choice
 				if (choice == 3) {
 					System.out.println("Thank You For using Bus Pass Management App");
 					DB db = DB.getInstance();
@@ -38,6 +38,9 @@ public class Menu {
 					break;
 				}	
 				try {
+					// Using menu factory to display the menu
+					// If user chooses 1, admin menu is displayed
+					// If user chooses 2, user menu is displayed
 					MenuFactory.getMenu(choice).showMenu();
 				}
 				catch (Exception e) {

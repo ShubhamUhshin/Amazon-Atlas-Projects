@@ -33,6 +33,7 @@ public class Routes {
 		
 	}
 	
+	// Display route of Admin 
 	public void prettyPrintForAdmin(Routes routes) {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Route ID:\t\t"+routes.routeID);
@@ -43,6 +44,7 @@ public class Routes {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 	}
 	
+	// Display route for User
 	public void prettyPrintForUser(Routes routes) {
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Route ID:\t\t"+routes.routeID);

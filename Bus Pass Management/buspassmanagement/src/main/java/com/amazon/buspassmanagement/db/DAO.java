@@ -1,7 +1,7 @@
 package com.amazon.buspassmanagement.db;
 
 import java.util.List;
-
+// Creating Interface
 public interface DAO<T>{
 
 	int insert (T object);

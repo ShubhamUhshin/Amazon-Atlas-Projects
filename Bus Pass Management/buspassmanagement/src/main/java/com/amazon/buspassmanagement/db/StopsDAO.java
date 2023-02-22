@@ -11,24 +11,28 @@ public class StopsDAO implements DAO<Stops>{
 	DB db = DB.getInstance();
 	
 	@Override
+	// Inserting into Stops table
 	public int insert(Stops object) {
 		String sql = "INSERT INTO Stops (address,sequenceOrder,routeID,adminID) VALUES ('"+object.address+"','"+object.sequenceOrder+"','"+object.routeID+"',"+object.adminID+")";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Deleting from Stops
 	public int delete(Stops object) {
 		String sql = "DELETE FROM Stops WHERE routeID = '"+object.routeID+"'";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Updating into Stops
 	public int update(Stops object) {
 		String sql = "UPDATE Stops set address = '"+object.address+"', sequenceOrder='"+object.sequenceOrder+"' , routeID='"+object.routeID +"' , adminID='"+object.adminID +"' WHERE stopID = '"+object.stopID +"'";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Retrieving all data from Stops table
 	public List<Stops> retrieve() {
 		
 		String sql = "SELECT * from Stops";
@@ -61,6 +65,7 @@ public class StopsDAO implements DAO<Stops>{
 	}
 
 	@Override
+	// Retrieving data from Stops table using SQL
 	public List<Stops> retrieve(String sql) {
 		
 		ResultSet set = db.executeQuery(sql);

@@ -40,6 +40,7 @@ public class BusPass {
 		this.createdOn = createdOn;
 	}
 
+	// Displaying bus pass
 	public void prettyPrint() {
 		System.out.println("~~~~~~~~~~~BusPass~~~~~~~~~~");
 		System.out.println("buspass ID:\t\t"+buspassID);

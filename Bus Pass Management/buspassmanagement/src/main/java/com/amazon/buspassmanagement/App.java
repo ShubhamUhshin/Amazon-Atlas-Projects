@@ -12,6 +12,7 @@ public class App {
         //App app = new App();
         Menu menu = new Menu();
         
+        // Taking file from Command line argument
         if(args.length > 0) {
         	DB.FILEPATH = args[0];
         }

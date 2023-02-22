@@ -11,18 +11,21 @@ public class BusPassDAO implements DAO<BusPass> {
 	DB db = DB.getInstance();
 	
 	@Override
+	// Inserting into BusPass
 	public int insert(BusPass object) {
 		String sql = "INSERT INTO BusPass (userID, routeID, status) VALUES ("+object.userID+", "+object.routeID+", "+object.status+")";
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Deleting from BusPass
 	public int delete(BusPass object) {
 		String sql = "DELETE FROM BusPass WHERE buspassID = "+object.buspassID;
 		return db.executeSQL(sql);
 	}
 
 	@Override
+	// Updating from BusPass
 	public int update(BusPass object) {
 		String sql = "UPDATE BusPass set approvedRejectedOn = '"+object.approvedRejectedOn
 				+"', validTill = '"+object.validTill+"', status = "+object.status +" WHERE buspassID = "+object.buspassID;
@@ -30,6 +33,7 @@ public class BusPassDAO implements DAO<BusPass> {
 	}
 
 	@Override
+	// Retrieving all data from BusPass 
 	public List<BusPass> retrieve() {
 		String sql = "SELECT * from BusPass";
 		
@@ -63,6 +67,7 @@ public class BusPassDAO implements DAO<BusPass> {
 	}
 
 	@Override
+	// Retrieving data based on sql
 	public List<BusPass> retrieve(String sql) {
 		ResultSet set = db.executeQuery(sql);
 		

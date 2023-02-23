@@ -28,6 +28,19 @@ public class UserManagement {
 	}
 	
 	private UserManagement() {
+		
+		/*
+		Users user1 = new Users();
+		
+		user1.userName = "Shubham";
+		user1.accountNumber = "PH5429";
+		user1.password = "Shubham123";
+		user1.accountBalance = 10000.00;
+		
+		
+		//userDAO insert to database
+		userdao.insert(user1);
+		*/
 	}
 	
 	PortfolioManagement managePortfolio = PortfolioManagement.getInstance();

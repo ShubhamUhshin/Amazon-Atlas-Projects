@@ -1,11 +1,11 @@
 com\amazon\buspassmanagement\db\StopsDAO.class
+com\amazon\buspassmanagement\duplicatePass.class
 com\amazon\buspassmanagement\db\UserDAO.class
 com\amazon\buspassmanagement\db\passwordEncryptor.class
 com\amazon\buspassmanagement\model\Routes.class
 com\amazon\buspassmanagement\MenuFactory.class
 com\amazon\buspassmanagement\db\BusPassDAO.class
 com\amazon\buspassmanagement\model\BusPass.class
-com\amazon\buspassmanagement\controller\Management.class
 com\amazon\buspassmanagement\UserMenu.class
 com\amazon\buspassmanagement\Menu.class
 com\amazon\buspassmanagement\App.class

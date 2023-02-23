@@ -18,7 +18,7 @@ public class DB {
 	Connection connection;
 	Statement statement;
 	
-	// // Creating object using Singleton design pattern
+	// Creating object using Singleton design pattern
 	private static DB db = new DB();
 	public static DB getInstance() {
 		return db;
@@ -88,10 +88,10 @@ public class DB {
 		int result = 0;
 		
 		try {
-			//System.out.println("[DB] Executing SQL Query | "+sql);
+			// System.out.println("[DB] Executing SQL Query | "+sql);
 			statement = connection.createStatement();
 			result = statement.executeUpdate(sql); // executeUpdate -> is used to perform insert/update/delete in table
-			//System.out.println("[DB] SQL Query Executed...");
+			// System.out.println("[DB] SQL Query Executed...");
 		} 
 		
 		catch (Exception e) {

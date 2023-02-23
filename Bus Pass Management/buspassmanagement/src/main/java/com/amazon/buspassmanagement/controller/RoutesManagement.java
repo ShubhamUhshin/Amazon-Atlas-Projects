@@ -218,7 +218,7 @@ public class RoutesManagement {
 	}
 	
 	// Update Route
-	// For User
+	// For Admin
 	public int updateRoute() {
 		
 		//display the routes table

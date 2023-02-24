@@ -43,8 +43,15 @@ public class TransactionManagement {
 	}
 
 	public void sellTransaction() {
-		//displaying the Portfolio for the user..
+		// displaying the Portfolio for the user..
 		portfolioService.displayPortfolio();
+		String sql = "Select * from Portfolios where userID="+userSession.user.userID;
+		
+		if (portfoliodao.retrieve(sql).isEmpty()) {
+			System.out.println("No Shares to sell");
+			return;
+		}
+		
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("Enter the Share ID: ");
 		int shareID = Integer.parseInt(scanner.nextLine());
@@ -55,9 +62,14 @@ public class TransactionManagement {
 		double totalStockPrice = 0;
 		
 		// Fetching the share user wants to sell
-		String sql = "Select * from Portfolios where shareID="+shareID;
+		sql = "Select * from Portfolios where shareID="+shareID;
 		List<Portfolios> portfolioToUpdate = new ArrayList<Portfolios>();
 		portfolioToUpdate = portfoliodao.retrieve(sql);
+		if (portfolioToUpdate.isEmpty()) {
+			System.err.println("No shares to sell");
+			return;
+		}
+		
 		portfolio = portfolioToUpdate.get(0);
 		
 		// Checking if user wants to sell all shares or some of it
@@ -248,11 +260,5 @@ public class TransactionManagement {
 		else {
 			System.out.println("Insufficient Amount");
 		}
-	}
-	
-	public void displayTransaction() {
-		
-	//	String sql ="select * from Transactions where userID ="+userSession.user.userID;
-	
 	}
 }

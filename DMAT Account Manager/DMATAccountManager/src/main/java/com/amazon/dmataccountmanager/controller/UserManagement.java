@@ -1,5 +1,7 @@
 package com.amazon.dmataccountmanager.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -227,12 +229,31 @@ public class UserManagement {
 		
 		else if (userChoice == 2) {
 			// If choice is 2, displaying based on the date based string
+			
+		    String dateFormat = "yyyy-MM-dd"; // expected date format
+		    SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+	        sdf.setLenient(false);
 			System.out.println("Enter the date range in the format YYYY-MM-DD");
 			System.out.println("Enter From Date");
 			String Date1 = scanner.nextLine();
+			try {
+	            Date date = sdf.parse(Date1);
+	            // System.out.println(Date1 + " is a valid date in " + dateFormat + " format.");
+	        } catch (Exception e) {
+	            System.out.println(Date1 + " is not a valid date in " + dateFormat + " format.");
+	        	return;
+	        }
+			
 			System.out.println("Enter to Date");
 			String Date2 = scanner.nextLine();
 			// Storing the query to display transactions in date range
+			try {
+	            Date date = sdf.parse(Date2);
+	            // System.out.println(Date2 + " is a valid date in " + dateFormat + " format.");
+	        } catch (Exception e) {
+	            System.out.println(Date2 + " is not a valid date in " + dateFormat + " format.");
+	        	return;
+	        }
 			sql = "Select * from Transactions where userID = "+userSession.user.userID+" and transactedOn between '"+Date1+"' and '"+Date2+"'";		
 		
 		}

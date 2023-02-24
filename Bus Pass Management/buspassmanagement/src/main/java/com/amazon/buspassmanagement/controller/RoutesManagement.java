@@ -86,7 +86,7 @@ public class RoutesManagement {
 					if (deleteRoute())
 						System.out.println("Deleted Route");
 					else
-						System.err.println("Something went wrong");
+						System.err.println("NO Route to Delete");
 					break;
 					
 				case 5:
@@ -271,17 +271,43 @@ public class RoutesManagement {
 		
 		// Deleting based on routeId
 		System.out.println("Enter the route ID:");
+		routes.routeID = Integer.parseInt(scanner.nextLine());
 		
-        routes.routeID = Integer.parseInt(scanner.nextLine());
-        buspass.routeID = vehicles.routeID = stops.routeID = routes.routeID;
+		routeList.clear();
+		String sql = "SELECT * from Routes where routeID = " +routes.routeID;
+		routeList = credao.retrieve(sql);
+		
+		if (routeList.isEmpty())
+			return false;
+		
+		buspass.routeID = vehicles.routeID = stops.routeID = routes.routeID;
         
         System.out.println("This will delete the Stops, vehicles running on this route and BusPasses created for this Route");
         System.out.println("Do you wish to continue Deleting this route /n1. Yes 2. No");
         int choice = Integer.parseInt(scanner.nextLine());
         // Deleting stops and vehicle 
         if (choice == 1) {
-	        busPassdao.delete(buspass);
-	        vehiclesDAO.delete(vehicles);
+        	sql ="SELECT * from BusPass where routeID = "+routes.routeID;
+        	List <BusPass> busPassList = busPassdao.retrieve(sql);
+        	for (BusPass pass : busPassList)
+        		try{
+        			busPassdao.delete(pass);
+        		}
+	        	catch (Exception e) {
+					System.out.println("No BusPass for this route");
+				}
+        	
+        	sql ="SELECT * from Vehicles where routeID = "+routes.routeID;
+        	List <Vehicles> vehicleList = vehiclesDAO.retrieve(sql);
+        	for (Vehicles vehicle : vehicleList)
+        		
+        		try{
+        			vehiclesDAO.delete(vehicle);
+        		}
+	        	catch (Exception e) {
+	        		System.out.println("No Vehicles for this route");
+				}
+        	
 	        stopsdao.delete(stops);
 	        if (credao.delete(routes) > 0)
 	        	return true;

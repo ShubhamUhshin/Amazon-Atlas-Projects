@@ -109,7 +109,7 @@ public class TransactionManagement {
 			// Portfolio - update function - updating shareCount in Portfolio
 			if (portfolio.shareCount>0)
 				if(portfoliodao.update(portfolio)>0) {
-					System.out.println("Portfolio updated");
+					System.out.println("Selling Shares");
 				}
 				else {
 					System.out.println("Something went wrong in updating the portfolio");
@@ -137,7 +137,7 @@ public class TransactionManagement {
 			transaction.userID = userSession.user.userID;
 			
 			if(transactiondao.insert(transaction)>0) {
-				System.out.println("Transaction details inserted");
+				System.out.println("Shares Sold");
 			}
 			else {
 				System.out.println("Something went wrong while inserting the transaction details");
@@ -210,7 +210,7 @@ public class TransactionManagement {
 			
 			// Inserting into transaction table
 			if(transactiondao.insert(transaction)>0) {
-				System.out.println("Transaction details inserted");
+				System.out.println("Buying Shares");
 			}
 			else {
 				System.out.println("Something went wrong while inserting the transaction details");
@@ -227,7 +227,7 @@ public class TransactionManagement {
 				
 				// Portfolio - update function - updating shareCount in Portfolio
 				if(portfoliodao.update(portfolioToUpdate.get(0))>0) {
-					System.out.println("Portfolio updated");
+					System.out.println("Shares bought");
 				}
 				else {
 					System.out.println("Something went wrong in updating the portfolio");
@@ -249,7 +249,7 @@ public class TransactionManagement {
 				portfolio.transactionID = transactionDetail.get(0).transactionID;
 				
 				if (portfoliodao.insert(portfolio)>0)
-						System.out.println("Portfolio updated");
+						System.out.println("Shares bought");
 				
 				else {
 					System.out.println("Something went wrong in updating the portfolio");

@@ -110,7 +110,7 @@ public class BusPassManagement{
 		// As initially record will be inserted by User where it is a request
 		pass.status = 1; // initial status as requested :)
 		
-		String sql = "SELECT * from BusPass where uid = "+pass.userID;
+		String sql = "SELECT * from BusPass where userID = "+pass.userID;
 		
 		List<BusPass> buspass = busPassdao.retrieve(sql);
 		boolean passAvailable = false;
@@ -189,7 +189,7 @@ public class BusPassManagement{
 		if(routeID == 0) {
 			objects = busPassdao.retrieve();
 		}else {
-			String sql = "SELECT * from BusPass where routeID = "+routeID;
+			String sql = "SELECT * from BusPass where routeID = "+routeID+" and status = "+1;
 			objects = busPassdao.retrieve(sql);
 		}
 		
@@ -200,7 +200,7 @@ public class BusPassManagement{
 	
 	public void viewPassRequestsByUser(int userID) {
 		
-		String sql = "SELECT * from BusPass where userID = "+userID;
+		String sql = "SELECT * from BusPass where userID = "+userID+" and status ="+1;
 		List<BusPass> objects = busPassdao.retrieve(sql);
 		
 		for(BusPass object : objects) {
@@ -292,11 +292,38 @@ public class BusPassManagement{
 		}
 	// Pass request based on date	
 	public void viewPassRequestsForDate() {
-		System.out.println("Enter from date range in YYYY-MM-DD");
+		System.out.println("Enter from date range in yyyy-MM-dd");
 		String date1 = scanner.nextLine();
+		
+        String dateFormat = "yyyy-MM-dd"; // expected date format
+        // Checking whether the date is in the correct format
+        // Taking care of unwanted exception
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        sdf.setLenient(false); // enforce strict parsing
+        
+        try {
+            Date date = sdf.parse(date1);
+        } catch (Exception e) {
+            System.out.println(date1 + " is not a valid date in " + dateFormat + " format.");
+            return;
+        }
+        
+        // Checking whether the date is in the correct format
+        // Taking care of unwanted exception	
 		System.out.println("Enter to date YYYY-MM-DD");
 		String date2 = scanner.nextLine();
-		String sql = "SELECT * from BusPass where approvedRejectedOn between '"+date1+"' and '"+date2+"' AND validTill between '"+date1 +"' AND  '"+date2+"'";
+		
+		sdf.setLenient(false); // enforce strict parsing
+        
+        try {
+            Date date = sdf.parse(date2);
+        } catch (Exception e) {
+            System.out.println(date2 + " is not a valid date in " + dateFormat + " format.");
+            return;
+        }
+        
+        // Retrieving buspass which are requested after a given date
+		String sql = "SELECT * from BusPass where requestedOn between '"+date1+"' and '"+date2+"' and status ="+1;
 		List<BusPass> objects = null;
 		objects = busPassdao.retrieve(sql);
 		

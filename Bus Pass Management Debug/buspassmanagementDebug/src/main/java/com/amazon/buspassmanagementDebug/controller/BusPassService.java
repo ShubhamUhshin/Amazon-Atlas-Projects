@@ -150,7 +150,7 @@ public class BusPassService {
 		String date1 = scanner.nextLine();
 		System.out.println("Enter to date YYYY-MM-DD");
 		String date2 = scanner.nextLine();
-		String sql = "SELECT * from BusPass where approvedRejectedOn between '"+date1+"' and '"+date2+"' AND validTill between '"+date1 +"' AND  '"+date2+"'";
+		String sql = "SELECT * from BusPass where requestedOn between '"+date1+"' and '"+date2+"' AND validTill between '"+date1 +"' AND  '"+date2+"'";
 		List<BusPass> objects = null;
 		objects = passDAO.retrieve(sql);
 		

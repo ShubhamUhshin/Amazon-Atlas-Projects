@@ -85,12 +85,12 @@ public class Menu {
 	            	case 3:
 	            		// Closing scanner
 	            		scanner.close();
-	            		
+	            		// Shutting down dynamic stock scheduler
+	            		scheduler.shutdown();
 	            		// Closing database connection
 	            		DB db = DB.getInstance();
 	            		db.closeConnection();
-	            		// Shutting down dynamic stock scheduler
-	            		scheduler.shutdown();
+	            		
 	            		System.out.println("Thank You For using DMAT Account Manager");
 	            		// If the user wants to quit, we change the value of quit
 	            		quit = true;

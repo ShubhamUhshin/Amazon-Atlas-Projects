@@ -1,5 +1,6 @@
 package com.amazon.buspassmanagementDebug;
 
+import com.amazon.buspassmanagementDebug.controller.AuthenticationService;
 import com.amazon.buspassmanagementDebug.db.DB;
 
 public class App {
@@ -16,7 +17,7 @@ public class App {
         if(args.length > 0) {
         DB.FILEPATH = args[0];
         }
-        
+        // AuthenticationService.getInstance();
         menu.showMainMenu();
 		
     }

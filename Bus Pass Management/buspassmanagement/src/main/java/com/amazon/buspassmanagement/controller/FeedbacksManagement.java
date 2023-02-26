@@ -90,7 +90,14 @@ public class FeedbacksManagement {
 			}
 			
 			System.out.println("Enter Description:");
-			feedbacks.description = scanner.nextLine();
+			String description = scanner.nextLine();
+			
+			if (description.isBlank() || description.isEmpty()) {
+				feedbacks.description = "Suspend pass for 0 months";
+			}
+			else {
+				feedbacks.description = description;
+			}
 
 		}
 		// Handler for the Feedback

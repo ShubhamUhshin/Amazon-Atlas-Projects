@@ -1,6 +1,9 @@
 package com.amazon.buspassmanagement;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -39,7 +42,14 @@ public class AppTest {
 		user.email = "fionna@example.com";
 		//user.password = "sia123";
 		user.password = "fionna123";
-		
+		try {
+			// Encoded to Hash i.e. SHA-256 so as to match correctly
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(user.password.getBytes(StandardCharsets.UTF_8));
+			user.password = Base64.getEncoder().encodeToString(hash);
+		}catch (Exception e) {
+			System.err.println("Something Went Wrong: "+e);
+		}
 		boolean result = authService.loginUser(user);
 		
 		// Assertion -> Either Test Cases Passes or It will Fail :)
@@ -54,6 +64,14 @@ public class AppTest {
 		user.email = "shubham@example.com";
 		user.password = "admin123";
 		
+		try {
+			// Encoded to Hash i.e. SHA-256 so as to match correctly
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(user.password.getBytes(StandardCharsets.UTF_8));
+			user.password = Base64.getEncoder().encodeToString(hash);
+		}catch (Exception e) {
+			System.err.println("Something Went Wrong: "+e);
+		}
 		boolean result = authService.loginUser(user);
 		
 		// Assertion -> Either Test Cases Passes or It will Fail :)
@@ -69,7 +87,7 @@ public class AppTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
         Date date1 = calendar.getTime();
-	    String sql = "SELECT * from BusPass where validTill > '"+dateFormat.format(date1)+"' and id ="+7;
+	    String sql = "SELECT * from BusPass where validTill >= '"+dateFormat.format(date1)+"' and uid ="+2;
 	    List<BusPass> busPass = busPassDAO.retrieve(sql);
 	    boolean result = true;
 		if (busPass.isEmpty())
@@ -82,7 +100,7 @@ public class AppTest {
 	// Check vehicle on a particular route
 	public void testCheckVehicle() {
 		
-		String sql = "SELECT * from Vehicle where routeId= "+3;
+		String sql = "SELECT * from Vehicle where routeId= "+1;
 		List<Vehicle> vehicle = vehicleDAO.retrieve(sql);
 		boolean result = true;
 		if (vehicle.isEmpty())
@@ -96,7 +114,7 @@ public class AppTest {
 	// Check Test Stop
 	public void testStop() {
 		
-		String sql = "SELECT * from Stop where routeId= "+3;
+		String sql = "SELECT * from Stop where routeId= "+1;
 		List<Stop> stop = stopDAO.retrieve(sql);
 		boolean result = true;
 		if (stop.isEmpty())
@@ -109,7 +127,7 @@ public class AppTest {
 	// Check if a route has 2 stops 
 	public void testNoOfStops() {
 		
-		String sql = "SELECT * from Stop where routeId= "+3;
+		String sql = "SELECT * from Stop where routeId= "+1;
 		List<Stop> stop = stopDAO.retrieve(sql);
 		boolean result = false;
 		if (stop.size()>1)
@@ -126,7 +144,7 @@ public class AppTest {
 		feedback.type = 2;
 		feedback.description = "This is Feedback Testing";
 		feedback.title = "Complaint";
-		feedback.userId = 4;
+		feedback.userId = 2;
 		feedback.raisedBy = "fionna@example.com";
 		int result = feedbackdao.insert(feedback);
 		Assert.assertTrue(result>0);

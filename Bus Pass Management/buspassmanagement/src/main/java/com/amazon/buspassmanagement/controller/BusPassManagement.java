@@ -27,8 +27,6 @@ public class BusPassManagement{
 	public static BusPassManagement getInstance() {
 		return manageBusPass;
 	}
-
-	BusPass pass = new BusPass();
 	
 	public void manageBusPass() {
 		// Admin
@@ -105,25 +103,25 @@ public class BusPassManagement{
 		getDetails();
 		
 		// Add the User ID Implicitly.
-		pass.userID = BusPassSession.user.id;
+		buspass.userID = BusPassSession.user.id;
 		
 		// As initially record will be inserted by User where it is a request
-		pass.status = 1; // initial status as requested :)
+		buspass.status = 1; // initial status as requested :)
 		
-		String sql = "SELECT * from BusPass where userID = "+pass.userID;
+		String sql = "SELECT * from BusPass where userID = "+buspass.userID;
 		
-		List<BusPass> buspass = busPassdao.retrieve(sql);
+		List<BusPass> buspasses = busPassdao.retrieve(sql);
 		boolean passAvailable = false;
-		for (BusPass passDetail : buspass)
-			if (passDetail.routeID == pass.routeID && passDetail.status!=3) {
+		for (BusPass passDetail : buspasses)
+			if (passDetail.routeID == buspass.routeID && passDetail.status!=3) {
 				passAvailable = true;
 				break;
 			}
 		
 		if (passAvailable)
-			throw new duplicatePass(pass.routeID);
+			throw new duplicatePass(buspass.routeID);
 		else {
-			int result = busPassdao.insert(pass);
+			int result = busPassdao.insert(buspass);
 			String message = (result > 0) ? "Pass Requested Successfully" : "Request for Pass Failed. Try Again.."; 
 			System.out.println(message);
 		}
@@ -143,14 +141,14 @@ public class BusPassManagement{
 	public void approveRejectPassRequest() {
 
         System.out.println("Enter Bus Pass ID: ");
-        pass.buspassID = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
+        buspass.buspassID = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
 
         System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
         System.out.println("2: Approve");
         System.out.println("3: Cancel");
         System.out.println("Enter Approval Choice: ");
         System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-        pass.status = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
+        buspass.status = Integer.parseInt(scanner.nextLine());//scanner.nextInt();
 
         // Using SimpleDateFormat for the desired format for timestamp of approvedrejected on
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -158,20 +156,20 @@ public class BusPassManagement{
         Calendar calendar = Calendar.getInstance();
         Date date1 = calendar.getTime();
         // formatting the current datetime into desired format
-        pass.approvedRejectedOn = dateFormat.format(date1);
+        buspass.approvedRejectedOn = dateFormat.format(date1);
         // If the pass is approved, it would be valid for a year.
-        if(pass.status == 2) {
+        if(buspass.status == 2) {
         	// Getting the time stamp of currentyear+1
             calendar.add(Calendar.YEAR, 1);
             Date date2 = calendar.getTime();
             // Formatting and adding in validTill
-            pass.validTill = dateFormat.format(date2);
+            buspass.validTill = dateFormat.format(date2);
         }else {
         	// If the pass is rejected, the validTill would be of the same day
-            pass.validTill = pass.approvedRejectedOn;
+            buspass.validTill = buspass.approvedRejectedOn;
         }
         // Updating the bus pass
-        int result = busPassdao.update(pass);
+        int result = busPassdao.update(buspass);
         String message = (result > 0) ? "Pass Request Updated Successfully" : "Updating Pass Request Failed. Try Again.."; 
         System.out.println(message);
     }

@@ -1,5 +1,8 @@
 package com.amazon.buspassmanagementDebug;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.Base64;
 import java.util.Date;
 
 import com.amazon.buspassmanagementDebug.model.User;
@@ -28,7 +31,14 @@ public class AdminMenu extends Menu{
 		
 		System.out.println("Enter Your Password:");
 		adminUser.password = scanner.nextLine();
-		
+		try {
+			// Encoded to Hash i.e. SHA-256 so as to match correctly
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] hash = digest.digest(adminUser.password.getBytes(StandardCharsets.UTF_8));
+			adminUser.password = Base64.getEncoder().encodeToString(hash);
+		}catch (Exception e) {
+			System.err.println("Something Went Wrong: "+e);
+		}
 		boolean result = auth.loginUser(adminUser);
 		
 		if(result && adminUser.type == 1) {

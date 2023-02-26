@@ -18,6 +18,7 @@ import com.amazon.buspassmanagement.db.BusPassDAO;
 import com.amazon.buspassmanagement.db.FeedbacksDAO;
 import com.amazon.buspassmanagement.db.RoutesDAO;
 import com.amazon.buspassmanagement.db.StopsDAO;
+import com.amazon.buspassmanagement.db.UserDAO;
 import com.amazon.buspassmanagement.db.VehiclesDAO;
 import com.amazon.buspassmanagement.model.User;
 import com.amazon.buspassmanagement.model.Vehicles;
@@ -65,7 +66,6 @@ public class AppTest {
 		
 		User user = new User();
 		user.email = "john@example.com";
-		//user.password = "sia123";
 		user.password = "john123";
 		
 		boolean result = authTest.loginUser(user);
@@ -75,7 +75,25 @@ public class AppTest {
 		Assert.assertEquals(2, user.type);
 		
 	}
+	@Test
+	public void testUserRegister() {
+		
+	User user = new User();
+	// Hardcoding User details to test register function
+	user.name = "TestUser1";
+	user.type = 2;
+	user.phone = "11111 11111";
+	user.address = "test Address";
+	user.email = "testUser1@example.com";
+	user.password = "testUser1123";
+	user.department = "Test";
+	UserDAO userdao = new UserDAO();
+	int result = userdao.insert(user);
 	
+	// Assertion -> Either Test Cases Passes or It will Fail :)
+	Assert.assertTrue(result>0);
+
+	}
 	@Test
     public void testAddRoute() {
 
@@ -114,11 +132,10 @@ public class AppTest {
 
         BusPassSession.user = user;
 
-        String[] stops = {"Rameswaram","Manamadurai Jn","Vijayawada Jn","Balharshah",
-                "Rani Kamalapati Habibganj","V Lakshmibai Jhansi Jhs","Delhi Safdarjng"};
+        String[] stops = {"Rameswaram","Manamadurai Jn"};
 
         stop.adminID=BusPassSession.user.id;
-        stop.routeID=13; //Manually giving routeID
+        stop.routeID = 1; //Manually giving routeID
 
         while(idx<stops.length) {
             stop.address = stops[idx];
@@ -143,7 +160,7 @@ public class AppTest {
 		
 		authTest.loginUser(user);
 		BusPassSession.user = user;
-		testVehicles.vehicleID = 3;
+		testVehicles.vehicleID = 1;
 		testVehicles.adminID = BusPassSession.user.id;
 		testVehicles.regNo = "Test007";
 		testVehicles.type = 1;
@@ -152,8 +169,8 @@ public class AppTest {
 		testVehicles.startPickUpTime = "8:00AM";
 		testVehicles.startDropOffTime = "6:00PM";
 		testVehicles.vehicleAvailability = 1;
-		testVehicles.driverID = 13;
-		testVehicles.routeID = 13;
+		testVehicles.driverID = 2;
+		testVehicles.routeID = 1;
 		
 		int result = vehicledaoTest.update(testVehicles);
 		//Assert.assertEquals(true,result);
@@ -171,7 +188,7 @@ public class AppTest {
 		BusPassSession.user = user;
 		
 		BusPass testBusPass = new BusPass();
-		testBusPass.buspassID = 6;
+		testBusPass.buspassID = 1;
 		
 		testBusPass.status = 2;
 		
@@ -215,7 +232,7 @@ public class AppTest {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
         Date date1 = calendar.getTime();
-	    String sql = "SELECT * from BusPass where validTill > '"+dateFormat.format(date1)+"' and buspassID ="+6;
+	    String sql = "SELECT * from BusPass where validTill > '"+dateFormat.format(date1)+"' and buspassID ="+1;
 	    List<BusPass> busPass = buspassdaoTest.retrieve(sql);
 	    boolean result = true;
 		if (busPass.isEmpty())
@@ -228,7 +245,7 @@ public class AppTest {
 	// Check vehicle on a particular route
 	public void testCheckVehicle() {
 		
-		String sql = "SELECT * from Vehicles where routeId= "+13;
+		String sql = "SELECT * from Vehicles where routeId= "+1;
 		List<Vehicles> vehicle = vehicledaoTest.retrieve(sql);
 		boolean result = true;
 		if (vehicle.isEmpty())
@@ -242,7 +259,7 @@ public class AppTest {
 	// Check Test Stop
 	public void testStop() {
 		
-		String sql = "SELECT * from Stops where routeID = "+13;
+		String sql = "SELECT * from Stops where routeID = "+1;
 		List<Stops> stop = stopdaoTest.retrieve(sql);
 		boolean result = true;
 		if (stop.isEmpty())
@@ -255,7 +272,7 @@ public class AppTest {
 	// Check if a route has 2 stops 
 	public void testNoOfStops() {
 		
-		String sql = "SELECT * from Stops where routeID = "+13;
+		String sql = "SELECT * from Stops where routeID = "+1;
 		List<Stops> stop = stopdaoTest.retrieve(sql);
 		boolean result = false;
 		if (stop.size()>1)
@@ -272,7 +289,7 @@ public class AppTest {
 		feedback.type = 2;
 		feedback.description = "This is Feedbacks Testing";
 		feedback.title = "Complaint";
-		feedback.userID = 4;
+		feedback.userID = 2;
 		feedback.raisedBy = "fionna@example.com";
 		int result = feedbackdaoTest.insert(feedback);
 		Assert.assertTrue(result>0);

@@ -49,18 +49,17 @@ public class AppTest {
 	}
 	
 	// Commented because of maven build failure as duplicate email was used for register
-	/*
 	@Test
 	public void testUserRegister() {
 		
 	Users user = new Users();
 	// Hardcoding User details to test register function
-	user.name = "TestUser";
+	user.name = "TestUser1";
 	user.userType = 2;
-	user.phone = "11111 11111";
+	user.phone = "11111-11111";
 	user.address = "test Address";
 	user.email = "testUser@example.com";
-	user.password = "testUser123";
+	user.password = "testUser1";
 	
 	UserDAO userdao = new UserDAO();
 	int result = userdao.insert(user);
@@ -69,7 +68,6 @@ public class AppTest {
 	Assert.assertTrue(result>0);
 
 	}
-	*/
 	
 }
     

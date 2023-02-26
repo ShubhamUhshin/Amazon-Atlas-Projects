@@ -118,7 +118,12 @@ public class UserMenu extends Menu{
 								break;
 								
 							case 2:
-								busPass.requestPass();
+								try {
+									busPass.requestPass();
+								}
+								catch (Exception e) {
+									// TODO: handle exception
+								}
 								break;
 	
 							case 3:
@@ -181,7 +186,7 @@ public class UserMenu extends Menu{
 								break;
 	
 	
-							case 7:
+							case 6:
 								System.out.println("Thank You for Using User App !!");
 								// if user wants to quit
 								quit = true;

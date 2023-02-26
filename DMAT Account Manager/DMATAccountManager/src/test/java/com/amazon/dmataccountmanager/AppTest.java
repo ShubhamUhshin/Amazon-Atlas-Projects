@@ -27,15 +27,15 @@ public class AppTest {
 		Assert.assertEquals(true, result);		
 	}
 	// Commented because of maven build failure as duplicate account Number was used for register
-	/*
+
 	@Test
 	public void testUserRegister() {
 		
 	Users user = new Users();
 	// Hardcoding User details to test register function
-	user.userName = "TestUser";
-	user.accountNumber = "Test10";
-	user.password = "testUser123";
+	user.userName = "TestUser1";
+	user.accountNumber = "Test1";
+	user.password = "testUser1";
 	user.accountBalance = 1000.00;
 	
 	
@@ -46,5 +46,4 @@ public class AppTest {
 	Assert.assertTrue(result>0);
 
 	}
-	*/
 }

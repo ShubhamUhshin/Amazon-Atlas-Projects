@@ -1,5 +1,8 @@
 package com.amazon.buspassmanagementDebug.controller;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.Base64;
 import java.util.List;
 
 import com.amazon.buspassmanagementDebug.db.UserDAO;
@@ -18,8 +21,8 @@ public class AuthenticationService {
 		
 		User user1 = new User();
 		user1.id = 1;
-		user1.name = "John Watson";
-		user1.email = "john@example.com";
+		user1.name = "Shubham";
+		user1.email = "shubham@example.com";
 		user1.password = "admin123";
 		user1.type = 1;		// admin
 		
@@ -52,6 +55,15 @@ public class AuthenticationService {
 		user1.department = "admin";
 		user1.type = 1;		// admin
 		
+		try {
+				// Encoded to Hash i.e. SHA-256 so as to match correctly
+				MessageDigest digest = MessageDigest.getInstance("SHA-256");
+				byte[] hash = digest.digest(user1.password.getBytes(StandardCharsets.UTF_8));
+				user1.password = Base64.getEncoder().encodeToString(hash);
+			}catch (Exception e) {
+				System.err.println("Something Went Wrong: "+e);
+			}
+			
 		User user2 = new User();
 		user2.id = 2;
 		user2.name = "Fionna Flynn";
@@ -62,6 +74,15 @@ public class AuthenticationService {
 		user2.department = "hr";
 		user2.type = 2;		// user or visitor
 		
+		try {
+				// Encoded to Hash i.e. SHA-256 so as to match correctly
+				MessageDigest digest = MessageDigest.getInstance("SHA-256");
+				byte[] hash = digest.digest(user2.password.getBytes(StandardCharsets.UTF_8));
+				user2.password = Base64.getEncoder().encodeToString(hash);
+			}catch (Exception e) {
+				System.err.println("Something Went Wrong: "+e);
+			}
+			
 		// Add 2 Users in DataBase
 		UserDAO dao = new UserDAO();
 		dao.insert(user1);

@@ -1,30 +1,27 @@
 package com.amazon.railwaycrossing;
 
-public class userMenu extends Menu{
+public class adminMenu extends Menu {
 	
-	private static userMenu userMenu = new userMenu();
+	private static adminMenu adminMenu = new adminMenu();
 	
-	public static userMenu getInstance() {
-		return userMenu;
+	public static adminMenu getInstance() {
+		return adminMenu;
 	}
-
+	
 	public void showMenu() {
-		
 		boolean quit = false;
 		
 		while (true) {
 			try {
 				
 				System.out.println("------------------------------------");
-				System.out.println("1. Display Railway Crossing");
-				System.out.println("2. Display Crossing Status");
+				System.out.println("1. Add Railway Crossing");
+				System.out.println("2. Delete Railway Crossing");
 				System.out.println("3. Search Railway Crossing");
-				System.out.println("4. Sort Crossing");
-				System.out.println("5. QUIT");
+				System.out.println("4. Update Railway Crossing Status");
+				System.out.println("5. LogOut");
 				
 				int choice = Integer.parseInt(scanner.nextLine());
-				
-				System.out.println("------------------------------------");
 				
 				switch (choice) {
 				
@@ -42,7 +39,7 @@ public class userMenu extends Menu{
 					
 				case 4:
 					// Update Status of Railway Crossing
-				
+					
 				case 5:
 					quit = true;
 					break;
@@ -62,4 +59,5 @@ public class userMenu extends Menu{
 		}
 		
 	}
+
 }

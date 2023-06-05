@@ -23,7 +23,8 @@ public class DB {
 	private DB() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			
+			System.out.println("***************");
+			System.out.println();
 			System.out.println("Driver Loaded");
 			createConnection();
 		}
@@ -49,6 +50,8 @@ public class DB {
 			// Using connection statement to connect to the database
 			connection = DriverManager.getConnection(url);
 			System.out.println("[DB] Connection Created Successfully....");
+			System.out.println();
+			System.out.println("***************");
 		}
 		
 		catch (Exception e){

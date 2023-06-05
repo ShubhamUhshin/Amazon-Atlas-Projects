@@ -20,7 +20,7 @@ public class Users {
 	public int userType;
 	
 	public Users(){
-		
+		// Default Constructor
 	}
 
 	public Users(int userID, String name, String email, String password, int userType) {

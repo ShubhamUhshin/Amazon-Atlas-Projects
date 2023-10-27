@@ -1,0 +1,307 @@
+Defect Reporting:
+======================
+
+Error:
+========
+A human action that produces an incorrect result. If someone
+makes an error or mistake in using the software, this may lead
+directly to a problem - the software is used incorrectly and so does
+not behave as we expected.
+
+Defect:
+=============
+A flaw in a component or system that can cause the
+component or system to fail to perform its required functions are
+called Defects or sometimes Bugs or Faults
+
+Failure:
+===========
+A defect, if encountered during execution, may cause a
+failure of the component or system. When the software code has
+been built, it is executed and then any defects may cause the system
+to fail to do what it should do (or do something it shouldn't), causing
+a Failure. Not all defects result in failures; some stay dormant in the
+code and we may never notice them.
+
+What is Defect:
+=================
+
+An incorrect or incomplete implementation of the functionality mentioned
+in the requirement specification document (FS or Use case)
+
+A missing functionality mentioned in the requirement specification
+document (FS or Use case)
+
+Any deviation made in the screen layout from that mentioned in the GUI
+Standards document
+
+Nonconformance to the requirements mentioned in the requirement
+specification document (FS or Use case)
+
+A defect is therefore anything that, alters the program's ability in a
+negative sense, to completely and effectively meet the user's /
+client’s requirement.
+
+What is not Defect:
+====================
+Any suggestion / observation logged by the tester.
+
+Any functionality that is expected by the tester but not mentioned in
+the requirements specification document (FS or Use case)
+
+This could be an enhancement
+
+
+When is defects are found:
+==============================
+
+A defect is found in the following phases of the Project Life Cycle:
+
+Requirements Definition - Defining the requirements that meets the needs of
+the organization / client
+
+Design - Design to accomplish the defined requirements
+
+Coding - Programs to accomplish the defined requirements and design
+
+Unit Testing - Testing done by the developer for each piece of code
+individually
+
+Integration Testing - Testing done by the testing team while integrating the
+modules into the system
+
+System Testing - Testing done by the testing team taking the entire system
+into consideration
+
+Acceptance Testing - Testing done by the Client before accepting the
+product delivered
+
+Defects found during unit, integration , system testing and acceptance
+testing are called as Application defects.
+
+How to write a defect:
+==============================
+While writing a defect the following details must be taken care:
+
+Defect must be written concurrent with or immediately following test
+execution
+
+Describe the entire scenario that led to the defect.
+
+Attachment of the screen shot must be provided (if applicable)
+
+Language clarity must be taken care of
+
+Ambiguous statements should be avoided.
+
+Data used for testing (if applicable)
+
+Trace the defect to the requirement mentioned in the requirement
+specification document (if applicable)
+
+How to not write a defect:
+=================================
+A defect must not be written as follows:
+
+Describing the defect without the entire scenario
+
+Describing the defect without clarity in the language used
+
+Describing the defect without the evidence
+
+Defects found during requirements definition, design and coding phase
+are called Review comments.
+
+Defect Severity and Priority:
+======================================
+Severity - The severity of a defect is the impact of the defect on the software.
+
+The severity classification is as follows:
+
+Critical: The defect affects critical functionality or critical data. It does not have a
+workaround. Example: Unsuccessful installation, complete failure of a feature.
+
+Major: The defect affects major functionality or major data. It has a workaround but is not
+obvious and is difficult. Example: A feature is not functional from one module but the task is
+doable if 10 complicated indirect steps are followed in another module/s.
+
+Minor: The defect affects minor functionality or non-critical data. It has an easy workaround.
+Example: A minor feature that is not functional in one module but the same task is easily
+doable from another module.
+
+Cosmetic: The defect does not affect functionality or data. It does not even need a
+workaround. It does not impact productivity or efficiency. It is merely an inconvenience.
+Example: Petty layout discrepancies, spelling/grammatical errors
+
+Priority - Priority of the defect indicates the importance and order in which the defect
+should be fixed.
+
+The priority classification is as follows:
+
+Urgent: Must be fixed in the next build.
+
+High: Must be fixed in any of the upcoming builds but should be included in the release.
+
+Medium: May be fixed after the release / in the next release.
+
+Low: May or may not be fixed at all.
+
+Defect LifeCycle:
+======================
+The defect that is recorded goes through the following state:
+
+Open - Initially when the defect is logged
+
+Assigned - When is assigned to the developer for fixing the defect
+
+Resolved - When the developer has fixed the defect
+
+Retest - Tester is retesting the defect after the fix
+
+Re-Open - When the defect is re-tested and found that it still persists.
+
+Closed - When the defect is re-tested and found that it is fixed.
+
+Rejected - When the defect is invalid.
+
+Defect Report:
+===================
+What is a Defect Report ? Why do we write them?
+
+Defect report is a technical document
+
+Describes failure mode in system under test (SUT)
+
+The only tangible “product” of testing
+
+Written to increase product quality
+
+Documents a specific quality problem quality of SUT
+
+Communicates to developers
+
+Structured testing foundational to good defect reports
+
+Use deliberate, careful approach to testing.
+
+Follow written test cases or run automated ones per written or
+standardized process
+
+Defect reporting begins when expected and observed results differ
+
+Defect Tracking System:
+========================
+Defects are everywhere! How do you keep track of them and ensure
+that the bugs get fixed?
+
+Defect Tracking:
+=======================
+
+Tracking all the defects found in each phase of the project life cycle to
+ensure that it is tracked to closure i.e. either fixed or rejected with
+reason
+
+Defect Tracking/Management System:
+====================================
+
+A software into which all the defects found in different phases of the
+software life cycle are logged and tracked to closure
+
+Ensures that the final product is in compliance with the defined
+requirements
+
+Ensures that the defect with the Severity and Priority gets fixed based
+on the criticality.
+
+Defect tracking tools:
+==========================
+HP ALM
+JIRA
+Bugzilla
+Rally
+
+
+Example:
+=================
+
+Summary:
+==============
+Email field is not accepting numerical values.
+
+Description:
+================
+Email field in the log in page is not accepting numberical values, it's accepting
+only alphabets and special charaters.
+
+Env: Dev1
+
+Data: abc@gmail.com
+
+Steps to Reproduce:
+=====================
+1) Log into xyz application
+2) Enter the email id value with numbers
+
+Actual Result:
+===============
+Numbers are not accepted in the email field
+
+Expected Result:
+====================
+Numbers must be accepted in the email field.
+
+Attachment: Screenshots
+
+Severity: High
+
+
+
+Password setting rules:
+============================
+1 upper case
+1 lower case
+Special character
+1 numerical
+Total 8 characters
+
+
+Defect Raising Steps:
+======================
+Summary: Password is getting accepted even though it doesnt met the password setting criteria.
+
+
+
+Description:
+===================
+When the password is been changed, its getting accepted eventhoug the password setting criterias are not met.
+
+Env: Dev2
+Data: saranya@gmail.com
+Password: abcdef12
+
+Steps to Reproduce:
+======================
+1) Naviagte to Facebook sign up page
+2) Enter the First Name and Last Name
+3) Enter the email id or phone number
+4) Enter the New Password which diesn't meet the critera
+5) Select the DOB
+6) Select the Gender
+7) Click on Sign up button
+
+Actual Result:
+================
+The user id is created
+
+Expected Result:
+===================
+New Password field should throw an inline error message.
+
+Severity: High
+Requirement link: facebook.com epic
+Test cases impacted # (how many test cases I am not able to execute bcz of this defect): 5
+Assign: Dev Group id.
+
+
+
+

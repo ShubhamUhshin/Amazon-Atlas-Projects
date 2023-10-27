@@ -1,0 +1,25 @@
+array = {1,2,3,4,5}
+searchElement = 4
+
+found = {
+	lenearSeach(array,searchElement)
+	array = {1,2,3,4,5}
+	index -> 0,1,2,3,4
+	searchElement = 4
+	found = false;
+	loop{
+		i = 0 ; 0 < 5
+		1 == 4 -> Condition false
+		i = 1 ; 1 < 5
+		2 == 4 -> condition false
+		i++ -> 
+		i = 2
+		3 == 4 -> condition false
+		i=3;
+		4 == 4 -> condition true
+		found = true;
+		break
+	    }
+	return true;
+	}
+found = true

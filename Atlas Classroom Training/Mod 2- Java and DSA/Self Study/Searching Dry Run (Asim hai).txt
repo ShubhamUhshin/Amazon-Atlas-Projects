@@ -1,0 +1,29 @@
+array -> 1 2 1 1 1
+searchElement -> 1
+
+Frequency of searchElement
+
+count -> 0
+loop -> i - 0 array.length;
+
+	i = 0;
+	array[0] == searchElement
+		true -> count + 1
+
+	i = 1
+	array[1] == searchElement
+		true -> count + 1
+
+display count / return count
+
+
+public int elementCount (int[] array, int searchElement){
+	
+	int count = 0; //count is frequency
+	for (int i=0;i<array.length;i++){
+		if (array[i] == searchElement){
+			count = count + 1; //count++
+		}
+	return count;
+}
+

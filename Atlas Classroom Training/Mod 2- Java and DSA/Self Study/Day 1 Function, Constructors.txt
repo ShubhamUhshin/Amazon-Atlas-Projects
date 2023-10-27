@@ -1,0 +1,85 @@
+7th Dec
+
+Topics to study
+		- Functions (Excluding Recursive Function) -DONE
+		- Constructors - DONE
+			
+		- Functions
+
+			+ Accessibility (Access Specifier) of a function/Method:
+			Private, Public, Protected, default
+				Public -> Can be Accessed from anywhere
+				Protected -> Can be Accessed within same package and subclass in different package
+				Private -> Cannot be accessed outside the class 
+				Default -> Can be Accessed within same package
+				
+			+ Static and Non Static Methods	
+				Static Methods -> Belongs to class
+				Non Static -> belongs to object 
+				
+			+ Return Type
+				Void
+				int,float etc.
+				
+			+ Function/Method Overloading
+				Different functions with same name but different datatypes, order or number of parameters.
+				Also known as compile time Polymorphism.
+				
+			+ Function Overriding
+				These are Methods with same name in different classes, so when we call a function, the derived class is given precedence, for using method/variable of parent class, super keyword is used. 
+				
+
+				  Class A								-> Parent/Super/Driver/Base
+				  		Method sum, difference
+				  		Variable (String) name
+				  Class B -> Inherits Class A			-> Child/sub/derived
+				  		Method sum.
+				  		Variable (String) name
+				 
+				  
+				  + Call sum() in class B, 
+				  		derived class (SubClass) sum will be used.
+				  		sum of Class A -> super.sum()
+				  		super.name;
+				 
+				+ public static void main ->
+				
+				  Class A								-> Parent/Super/Driver/Base
+				  		Method sum, difference
+				  		Variable (String) name
+				  Class B -> Inherits Class A			-> Child/sub/derived
+				  		Method sum.
+				  		Variable (String) name
+				 
+				  
+				  + Call sum() in class B, 
+				  		derived class (SubClass) sum will be used.
+				  		sum of Class A -> super.sum()
+				  		super.name;
+				 				 
+			+ Global and Local Parameters:
+				Global parameters/variables are not defined within any function/method or block. It is defined in the class body
+				Local Parameters are defined inside any function/method block.
+				Scope of Global variable is throughout the scope of class whereas for local, the scope is throughout the function/method block.
+				
+			Refer Functions.java file
+			
+			
+		- Constructors
+			+ To initialize variable/data members -> when object is created
+			+ This is a special function
+	
+			+ 3 Types
+				- Parameterized
+					In parameterized constructor, we define the parameters and initialize it with values.
+					this -> It is used to refer to the current instance of the object
+					Note: If we have a parameterized constructor without a default constructor and create object without declaring parameters, it throws error.
+					
+				- Non Parameterized
+					We initialize the global variables with a default value.
+					
+				- Default
+					When the constructor is not created by the user, during object creation, default constructor is created by the interpreter
+					
+				- Destructor
+					When the scope of the object ends, destructor deletes all the data created by constructor of the object.

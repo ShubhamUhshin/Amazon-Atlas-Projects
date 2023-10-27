@@ -1,0 +1,45 @@
+Class 2
+
+	Java
+		JSE
+			Java standard Edition-> Core Java
+			Develop Desktop Apps or Use it with Android to develop Mobile Apps
+		JEE
+			Java Enterprise Edition->Advanced
+				(Enterprise solves issues of organisations)
+				Code in the server side. Bank etc.
+		JME
+			Java Mobile Edition
+			to develop mobile apps in feature phones
+			
+			
+	WAP to take two queens in a chessboard with condition that they are not in the same row, column or diagonal
+	
+	
+	Arrays
+		Implicit
+			int arr[]={10,20,30};
+		Explicit
+			int arr[] = new int[] {10,20,30};
+			
+		Compile Time and Run Time:)
+		
+		
+		
+		
+	Class
+		class<class name>{
+			field;
+			method;
+			}
+			
+		We can have fields, methods, constructors, blocks, nested class and methods
+		
+		
+		
+		When method processes primitive datatype, it is call by value, when it is multiple values like array, it is call by reference
+		
+		
+		When a value is copied or something is done on primitive data type, it is called call by value,
+		When a value is copied via objects, it is called by reference.
+		

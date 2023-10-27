@@ -1,0 +1,5 @@
+WAP to print the sum of 1st n whole numbers.
+WAP to count the factors of a number.
+WAP to find the maximum number in an array.
+WAP to find the minimum number in an array.
+WAP to delete a linked list using recursion.

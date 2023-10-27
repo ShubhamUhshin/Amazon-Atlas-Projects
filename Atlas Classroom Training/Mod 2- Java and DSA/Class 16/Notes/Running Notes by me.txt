@@ -1,0 +1,47 @@
+Class 16
+
+	File Handling
+		Introduction
+		
+			Generally we are working on text file (.txt, .csv, .cpp, .java etc)
+		
+			We have streams(Fig 1) with the help of which we can perform these read write operations.
+			
+			OutputStream is used in the flow of data from Java file to the text file. (Output Operation) /WRITE
+			InputStream is used in the flow of data from the textfile to Java. (Input operation)/READ
+			
+			There are two standard methods to perform I/O operations:
+				1. Data as Bytes
+					FileInputStream            -   >Byte/Binary Stream (Files as audio, video, image etc. + Text Files
+					FileOutputStream           -
+					
+				2. Data as Text
+					FileReader                 -    > Text Streams (Files are .txt, .csv files)
+					FileWriter                 -
+					
+			Ref Fig1 Introduction
+					
+		API-> Aplication Programming Interfaces
+			It's a Program which we can use to solve our problem. Can be Internal or External.
+			
+			File IO APIs will throw Checked Exceptions, hence it is better to code them in try catch block.
+			e.printStackTrace() in catch block helps to track the error.
+			
+			-> File file = new File("Filename.txt");
+				We have a inbuilt class File which takes filename as constructor.
+				File file = new File("Path"); We can also give the file path here.
+				Some file functions are:
+				- getName() -> Shows the fileName which we are working on.
+				- gePath() -> Shows the path of the file.
+				- canRead() -> true or false based on read permission.
+				- canWrite() -> true or false based on write permission.
+				- canExecute() -> true or false based on execute permission.
+				- createNewFile() -> Creates a new file.
+				- exists() -> Check if the file exists or not.
+				- renameTo(filename) -> renames the file.
+				- delete() -> To delete a file.
+				- isFile() -> Checks if it is a file.
+				- isDirectory() -> Checks if it is directory.
+				- endWith(".jpg") -> Returns all jpg files.
+				
+				

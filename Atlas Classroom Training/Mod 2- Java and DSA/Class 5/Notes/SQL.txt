@@ -1,0 +1,56 @@
+MODULE 3- SQL
+	Introduction
+		Data: Facts that have implicit meaning.
+		Database: A collection of related data.
+		
+	Flat File Database
+		The program is written in C or COBOL is used to manage and arrange the data.
+		For every modification, we need to open COBOL, then search for the line and modify.
+		For addition of a column, i.e. changes in notepad, we needed to make a lot of changes in the code.
+		
+	Drawbacks of Flat File Database:
+		Difficulty to access Data:
+			To access a data, say a number of people from the same city, we need to write codes.
+			
+		Data Isolation
+			We had many independent files, which made the data fetching and processing a lot difficult.
+			
+		Integrity Problems
+			
+		Security
+		
+		
+	DBMS
+		Used to manage and control a database or a set of database
+		Makes the data easier to retrieve, manipulate and produce info.
+		Consisits of set of program to manage the data
+		Provides an environment that is both convenient and easy.
+		
+	3-tier Architechture
+		- Darabase (Data) Tier
+			Database resides along with query processing languages.
+			We also have relations that define the data and their constraints at this level.
+			Data is stored here, fetched from here.
+			
+		- Application (Middle) tier
+			The application server and the programs that access the database.
+			This layer provides the functionality (Basically what we know as backend)
+			
+		- User (Presentation) Tier
+			THis is the front end which the User can see. 
+			
+			
+	Advantages of DBMS
+		Redundancy
+			It stores single copy of data, i.e. it removes Multiple copies of data
+			It allows multiple users to work on a data
+			It restricts unauthorized access to data
+			We can store data permanently, i.e. not only till program execution.
+			Provides storage structure(indexes) for efficient  Query processing.
+			Provides backup and recovery services
+			Providing multiple views i.e. admin will see the data differently, user will see data differently
+			Create complex relationships among data (Joins etc)
+			
+			
+	Database Ad
+			

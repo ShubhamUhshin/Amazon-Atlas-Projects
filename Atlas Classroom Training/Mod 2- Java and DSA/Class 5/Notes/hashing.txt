@@ -1,0 +1,43 @@
+Class 5
+	Data Structures
+	
+		Set
+			It has unique value.
+			
+		HashSet
+			It is important because of it's time complexity.
+			Insert/Add, Search/contains, Delete/Remove has time complexity of O(1).
+			CREATION
+				HashSet<Integer> set = new HashSet<>(); // Same as ArrayList
+				
+			INSERT
+				set.add(value); //Duplicate value not allowed.
+				//add is also a function in arraylist.
+				
+			SEARCh
+				set.contains(value) //It returns true or false
+				enecccbeddbfvvcbdciggglecnvfhfunruvuicivehnv
+				
+				
+				
+			
+		Hash Table
+			Reduces time complexity.
+			Data Structure that offers very fast insertion and searching, almost O(1).
+			Relatively easy to program as compared to trees.
+			Based on arrays, hence difficult to expand.
+			No convenient way to visit the items in a hash table in any kind of order.
+			
+		Hashing
+			A range of key values can be 
+			
+			
+			
+			
+			
+		Wrapper Class	
+			For every primitive data type, we have a wrapper class in Java.
+			For instance,
+				int age = 0;
+				Integer age = Integer.valueOf(10);
+				Integer age = 20;

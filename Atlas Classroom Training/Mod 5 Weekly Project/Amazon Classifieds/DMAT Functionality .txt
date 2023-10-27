@@ -1,0 +1,43 @@
+1) Deposit Money - Shubham
+	Enter the Amount
+	Add to the User Amount.
+	Update User Table
+	
+2) Withdraw Money - Aman Srivastava
+	Enter the Amount 
+	Check if the balance is sufficient
+	If yes->
+		deduct the amount from user amount
+		Update User Table
+	If no
+		Display Insufficient Amount
+		
+3) Buy Transaction - Asim
+	Display Shares Table
+	Input ShareID, No of Shares
+	Calculate Total Stock price (price per share * number of shares) (Add Tax as well)
+	Check if Account balance >= Total Stock Price (Including Tax)
+		If condition true, Execute Buy -> 	Amount from User Account Deducted
+											Share details added in Portfolio
+											Transaction Table updated
+											
+		If condition False, Display insufficient balance and ask whether user wants to add balance(using choice {1 to add balance, 2 to cancel}).
+			If user chooses 1, call deposit function.
+
+4) Sell Transaction - Amandeep
+	Display Portfolio Table of that user
+	Input ShareID, No of Shares
+	Check if No. of shares in account >= No. of shares input
+	If condition true, Execute Sell ->
+		Calculate Total Stock price (price per share * number of shares)(Add Tax as well)
+		 	Amount into User Account Credited
+			Share details removed from Portfolio
+			Transaction Table updated
+											
+		If condition False, Display insufficient balance and ask whether user wants to add balance(using choice {1 to add balance, 2 to cancel}).
+			If user chooses 1, call deposit function.
+
+5) Transaction Report - Annu 
+	Query on Transaction Table where UserID -> UserSession->userID and transactionID -> corresponding transactionID present in Portfolio Table.
+	Store the above query in list.
+	Create a pretty print in transaction class in model, to display in a certain format.

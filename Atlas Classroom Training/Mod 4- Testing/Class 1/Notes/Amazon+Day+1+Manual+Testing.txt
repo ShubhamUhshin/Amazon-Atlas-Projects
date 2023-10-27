@@ -1,0 +1,252 @@
+Project
+=========
+Building a software. 
+
+Domain:
+======
+Online banking app
+Insurance app
+Airlines
+Retail
+
+Requirements/Specifications:
+============================
+What needs to be done.
+
+What is Software Testing?
+Correctness and Completeness
+Error Defect Failure and Fault
+Any suggestions/observation/any functionalities that
+you expect --- Not a defect.
+
+
+Why we need Software Testing -- Deliver a quality product
+
+Objective of Testing:
+========================
+Fit for purpose
+Works as per requirements
+
+Testing improves quality:
+=========================
+Finding defects
+Preventing defetct
+Reducing the risk
+
+Quality of a good tester:
+==========================
+Curiosity
+Cautious
+Not easlily getting convinced with defects
+
+
+Why do we need a tester:
+==========================
+Defect free softwarre
+Prevents failure in operation env.
+To prevent loss of business
+Fixing the defects at early stage.
+
+
+Causes of software Defects:
+=============================
+Communication
+Poor documnetation
+Time pressure
+Coding errors
+Env conditions
+
+
+Principles of Testing:
+======================
+Testing shows presence of defect:
+===================================
+Testing can identify the defects, but cannot prove
+that there are no defects at all in the software.
+Testing always reduces the number of uncovered defects.
+
+Exhaustive testing is impossible:
+====================================
+All the inputs and outputs combination cannot be tested
+So we can use risk and priorities to focus testing efforts
+
+Early Testing:
+==============
+Start testing as soon as possible
+Focus on the requirements.
+
+Defect Clustering:
+===================
+More number of defects from a small module
+
+Pesticide Paradox:
+=====================
+Should not use the same process for a longer time,
+since it may not help to find more new defects.
+Agriculture eg.
+
+Testing is context dependent:
+===============================
+Testing depends on the domain or application
+IRCTC -- Performance testing
+
+Absence of error fallacy:
+==========================
+No use of delivering a software if its unusable to the customers,,
+even with zero defects
+
+Psychology of testing:
+============================
+Build a stable software by having eye for detail
+Highly quality conscious
+Assertive and Dilpomatic
+Do more negative scenario testing and build a confidence
+the application works properly/stable.
+
+Independent tetsing is more effective:
+========================================
+Developers
+different member within a team
+Or from different modules
+From differnt organization
+
+Communication is important.
+
+Roles in QA:
+=============
+Program manager
+QA Lead
+Test Analyst
+Test Engineer
+
+Testing Env:
+============
+Dev env (dev1, dev2, dev3......)
+====================================
+Use dev env only at the starting phase of the project
+Unstable
+deployments planned at regular interval of time
+
+Integrated env (cert1, sit1..)
+===============================
+Code is deployed completely for the application/software
+Stable
+Automation testing
+
+UAT env (prod like):
+====================
+Similar to prod
+End to end functionalities can be tested
+More stable
+
+Factors deciding how much testing needed:
+===========================================
+Technical Risks
+Business Project Risks
+Project Risks
+
+Project Constarints:
+=======================
+Time
+Budget
+
+How much Testing is enough?:
+===============================
+Priottize the tests
+What to test most
+What not to test
+
+SDLC (Software Developement Life Cycle):
+============================================
+Numerous development life cycle
+Depending the project goal and aims
+Time to market (How fast we deliver the product to
+end user)
+Life cycle adopted for a project sill have a big
+impact in the testing activities.
+
+
+Requirements Gathering:
+========================
+FDS - Functional Design Specification 
+SRS - Softwarre Requirement Sepecification
+Requirments 
+PDF/Word/links
+o/p -- FDS
+
+Analysis:
+===========
+Feasibility study
+o/p -- Finalizied Requirement document
+
+Design:
+===========
+Pictorial representation
+o/p - High level design and Low leve design documents
+
+Development:
+===========
+Coding starts at this stage
+
+Testing:
+==========
+Verifying the application/ software against the requirements
+
+Deployment:
+=============
+Application/Software is deployed without disturbing the
+existing application.
+
+Deployment can happen based on the region
+
+Unpeak time
+
+Maintenance:
+=================
+Small team to handle any new small features
+To fix the prod issues
+Monitoring 24*7
+
+
+When should sw testing occur?
+==================================
+Requirements
+Design
+Development
+Testing
+Deployment
+Maintenance
+
+Types of SDLC:
+===============
+Waterfall - linear
+V Model
+
+Entry Criteria:
+==================
+The conditions that must be met before starting the
+testing.
+
+Exit Criteria:
+-=====================
+The conditions that should be full filled before
+completing the testing activities (sign off)
+
+Verfication:
+===========
+To ensure the selected product meet their specified
+requirements.
+
+V Model:
+==========
+Static and Dynamic testing happens parallely
+Identify the defects at early stage
+differnt varients to V model, commonly used one is below:
+Component Testing
+Integartion Testing
+System Testing
+Acceptance Testing
+
+
+
+

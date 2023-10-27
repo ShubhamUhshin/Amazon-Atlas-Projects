@@ -1,0 +1,104 @@
+D-MAT
+	
+	1st Page (When Program executes)
+	
+	1: Register
+		UserID - Unique, Auto Increment
+		User Name - Not Unique
+		Account Number Int - Unique
+		Fund - Int/Money
+		ShareID - Int - Unique - Optional
+		Share Name - Unique
+		Number of Shares - Int
+		Share Price - Int/Money
+		PIN - Int (6 digit Password used during Login)
+		
+		After creation we can either ask for login or directly log in.
+	
+	2. Login
+		Account Number and Pin for Log in
+		
+		Log In Menu
+			0 – Quit
+			1 – Display Demat account details
+				Display Transaction Date, Number of shares and Price of shares for specific User (UserID) from Transaction Table
+			2 – Deposit Money
+				Enter amount to be added and add the amount to Fund in User Table
+			3 – Withdraw Money
+				Enter the amount and subtract the amount from Fund in User Table
+			4 – Buy transaction
+				+Enter the stock name to buy
+				+ Enter number of shares
+				= Calculate the total amount (Price * number of shares)
+				= Check if account has sufficient funds
+				= If yes, 
+					Add the transaction details in Transaction Table.
+					Change Funds
+					
+					
+			5 – Sell transaction
+			6 – View transaction report
+			
+			
+			
+			
+	Tables
+	User Table
+		UserID - Unique, Auto Increment [Primary Key]
+		User Name - Not Unique
+		Account Number Int - Unique
+		Fund - Int/Money
+		PIN - Int (6 digit Password used during Login)
+		{For login we can use acc number and PIN}
+		
+		
+		{Need to think something about how we will come to know if a user has kept a share on sell}
+		
+	Transaction Table
+		Transaction ID- Int [Primary Key][Unique]
+		Transaction Date - Date/DateTime (System Date and Time for the transaction)
+		Number of Shares - Int 
+		Price - Int/Money
+		
+	Shares Table -- To populate the shares initially and to show the users which all shares are available for trading.
+			
+		{ShareID, Share Name and Share Price will not be entered in the User Table}
+		SharesID - Int [Auto Increment] [Primary Key]
+		Share Name - String (Unique)
+		Share Price - Int/Money 
+		Number Of Shares - Int
+		lastUpdatedOn - DateTime (updates when a share is bought or sold)
+		
+	Portfolio -> User Specific
+		ID - Int [Primary Key] auto increment
+		UserID - Int [Foreign key]
+		Share Name - String [Foreign Key]
+		Share Price - Int/Money [Foreign Key]
+		Number of shares - int [Foreign Key]
+		transactedOn - DateTime
+		
+		-> When number of shares becomes 0, we remove the share from the table.
+		
+		
+	Example ->	
+	ShareID	ShareName	Price	Number Of Shares
+	1			Tata	400			20					
+	2			Amazon	500			50						
+	
+	
+	
+	Function ->
+	Sell Function -> Shares Table-> No of shares for sell, price of each share.
+	Buy Function -> Display Shares Table (List of shares available to be bought)- Enter shareID and number of shares -> Line 29. 
+						Add fund to the User who sold it based on the ID.
+						
+						
+						
+						
+						
+						
+	
+	
+	Note: Blue colour is for Main Menu.
+			Orange colour is for user Menu.
+			Yellow colour is for doubt.

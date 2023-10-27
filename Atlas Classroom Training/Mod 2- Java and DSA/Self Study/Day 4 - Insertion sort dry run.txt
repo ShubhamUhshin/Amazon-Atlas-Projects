@@ -1,0 +1,72 @@
+array= 5 10 1 2 7
+index= 0 1  2 3 4
+
+
+1st Iteration -> i=1; Index ith value = 10
+	value = array[1] (10)
+	j=i-1 (0)<-> 0 condition array[0](5) > value
+	
+
+array= 5 10 1 2 7
+index= 0 1  2 3 4
+
+2nd Iteration i = 2
+	value = array[2] = 1
+	j=i-1 condition j>=0 
+	j=1, array[1](10) > value
+	
+	true 10 > 1 -> Replace 1 with 10,
+	array= 5 10 10 2 7
+
+	j=0, array[0](5) > value
+	true 10 > 1 -> Replace 10(at index 1) with 5,
+	array= 5 5 10 2 7
+	
+insert value at j (where last replace happened)
+array= 1 5 10 2 7
+index= 0 1  2 3 4
+
+3rd Iteration i = 3
+value = array[3] = 2
+	j=i-1 condition j>=0 
+	j=2, array[2](10) > value
+	
+	true 10 > 2 -> Replace 2 with 10,
+	array= 1 5 10 10 7
+
+	j=1, array[1](5) > value
+	true 5 > 2 -> Replace 10(At index 2) with 5,
+	array= 1 5 5 10 7
+
+	j=0, array[0](1) > value
+	false
+
+insert value at j (where last replace happened, where condition was true)
+array= 1 2 5 10 7
+index= 0 1 2 3  4
+
+4th iteration i = 4
+value = array[4] = 7
+	j=i-1 condition j>=0 
+	j=3, array[3](10) > value
+	
+	true 10 > 7 -> Replace 7 with 10,
+	array= 1 2 5 10 10
+
+	j=2, array[2](5) > value
+	false
+
+	j=1, array[1](2) > value
+	false
+
+	j=0, array[0](1) > value
+	false
+
+insert value at j (where last replace happened, where condition was true)
+array= 1 2 5 7 10	
+		
+
+
+
+
+		

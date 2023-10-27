@@ -1,0 +1,13 @@
+1. Implement Bus Pass Module
+2. Implement Feedback Module
+3. Implement Bus Pass Suspension by Admin
+	Here, create a new method in BusPassService for Admin
+	Admin can add some number of months in the validity of the pass 
+	and update the pass with status as 4
+4. Create Test Cases to Test below modules
+	 4.1 Test Route Service (Add Route)
+	 4.2 Test Route Service (Add Stop)
+	 4.3 Test Route Service (Update Vehicle)
+	 4.4 Test BusPass Service (Approve Bus Pass by Admin)
+	 4.5 Test Feedback Service (Create a Feedback)
+5. Run Maven Build to Package the jar File and Test Your Application

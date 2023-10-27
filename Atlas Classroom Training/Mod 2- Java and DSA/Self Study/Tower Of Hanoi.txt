@@ -1,0 +1,85 @@
+F(3)
+n = 3
+source ="source"
+helper ="helper"
+dest ="dest"
+moveDisk(n-1,source,dest,helper)//moveDisk(2,source,dest,helper)
+-------------------
+	F(2)
+	n=2
+	source ="source"
+	helper ="dest"
+	dest ="helper"
+	moveDisk(n-1,source,dest,helper)//moveDisk(1,source,helper,helper)
+	---------------------
+		F(1)
+		n = 1
+		source ="source"
+		helper ="helper"
+		dest ="dest"
+		n == 1
+1.		move disk 1 from source to dest
+		Function end
+	----------------------
+	F(2) continues
+	/*
+	source ="source"
+	helper ="dest"
+	dest ="helper"
+	*/
+2. 	move disk 2 from source to helper
+	moveDisk(n-1,helper,source,dest)
+	----------------------
+		F(1)
+		source = dest
+		helper = source
+		dest = helper
+		n == 1
+3. 	move disk 1 from dest to helper
+	----------------------
+	F(2) ends.
+----------------------
+F(3) continues
+/*
+source ="source"
+helper ="helper"
+dest ="dest"
+*/
+4. move disk 3 from source to dest
+moveDisk(n-1,helper,source,dest)
+---------------------
+	F(2)
+	n = 2
+	source = "helper"
+	helper = "source"
+	dest ="dest"
+	moveDisk(n-1,Source,dest,Helper)
+	--------------------
+		F(1)
+		n = 1
+		source = "helper"
+		helper = "dest"
+		dest="source"
+5.		Move disk 1 From helper To source
+		---------------------
+	F(2) continues
+	/*
+	source = "helper"
+	helper = "source"
+	dest ="dest"
+	*/
+6. 	Move disk 2 From helper To dest
+	moveDisk(n-1,Helper,Source,dest)
+	---------------------
+		F(1)
+		n = 1
+		source = "source"
+		helper = "helper"
+		dest="dest"
+7.		Move disk 1 From source To dest
+		----------------------
+	F(2) ends
+	---------------------
+F(3) ends
+
+

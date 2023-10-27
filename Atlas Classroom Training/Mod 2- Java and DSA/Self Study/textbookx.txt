@@ -1,0 +1,28 @@
+var availabilityString = false;
+var temp = "";
+if (isdef SKU && SKU != "" && SKU != null) {
+  SKU = trim(SKU);
+  if (isdef EAN && EAN != "" && EAN != null) {
+    EAN = trim(EAN);
+
+    for (int i = 0; i < EAN.length; i++) {
+      if (EAN.substring(i, i + 1) == ',' || i == (EAN.length() - 1)) {
+        if (i == (EAN.length() - 1))
+          temp = temp + EAN.substring(i, i + 1);
+        if (matches(temp, SKU)) {
+          availabilityString = true;
+        }
+        temp = "";
+      } else {
+        temp = temp + EAN.substring(i, i + 1);
+      }
+    }
+
+    if (availabilityString)
+      return executeDefaultRule("availability", allattribs);
+
+    else
+      return iet;
+  }
+}
+return executeDefaultRule("availability", allattribs);

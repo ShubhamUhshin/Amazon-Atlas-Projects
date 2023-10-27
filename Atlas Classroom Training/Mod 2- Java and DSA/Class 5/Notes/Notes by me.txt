@@ -1,0 +1,67 @@
+Class 4
+	Data Structures
+		
+		ARRAYS
+			An Array is a finite number of homogeneous elements, i.e. same  data items.
+			The only problem with array is that it is finite, i.e. fixed sixze.
+			
+			
+		Lifetime of a Variable
+			> Is a runtime concept.
+			> Period of time which a variable has memory space associated with it.
+				Begins when space is allocated.
+				Ends when space is de-allocated.
+				
+			> Three categories of lifetime.
+				Static: Start to end of program execution
+				Automatic(Stack): Start to end of declaring function execution.
+					Note: Say there is a class A and class B. Class B creates two Objects of Class A. 
+					When the object 1 calls class A, or uses constructor etc, it assigns a value. 
+					After that when Object 2  is called, Object A memeory is de-allocated and a new 
+					stack is created for B. But if a static variable is present, the value won't be de-allocated, 
+					this is the use of static variable. 
+				Heap(Variable declared dynamic at runtime, also de-allocated at runtime.
+				
+				
+		LINKED LISTS
+			Linked List is used when the size is unknown, i.e. the data can be infinite.
+			It is also known as Self Referential Structure.
+			It is a Linear Data Structure.
+			Types of Linked List:
+				1. Singly Linked List - Contains two blocks, data block and address block, which contains the address of the next node.
+					It can only traverse in one direction.
+				2. Doubly Linked List - Contains three blocks, one data block and two address blocks, one containing the address of next
+					block and the other containing the address of the previous block. It can traverse in both directions.
+				3. Circular Doubly Linked List - Same as Doubly Linked list, it just can rotate. Basically the last node's next node address
+					stores the address of the first node instead of null. Same for the first node's left address.
+				
+			The problem with Linked List is that we need to traverse from the beginning of the list. Unlike
+			Arrays or other data structures, we can't traverse from the middle of the list.
+			
+			
+		STACK
+			Stack is a data structure in which insertion and deletion happens from one end, the top. It follows LIFO mechanism.
+				LIFO - Last In First Out
+				So basically it's like a stack of books, where we take the topmost book first, then 2nd and so on.
+				
+			Characteristic of Stack
+				We can push the data in stack at the end or top.
+				We can pop the data from the end or top.
+				
+			Application of Stack
+				We use stack when 
+					main method calls any other method.
+					The resume of main execution when return call is made from function method.
+					The values picked up in main method after execution of a sub progaram.
+					
+		QUEUE
+			Queue is a data structure in which elements are added from the one end (rear end) and removed from the other end (called the front end).
+			There are three types of Queues,
+				Linear Queue
+					In this structure, there is only one direction of flow.
+
+		HEAP
+			Heap is a complete binary tree that satisfies the heap property, where the given node is
+				Always greater than the child node and the key of the root node is the largest among all other nodes. This is also called Max Heap Property.
+				Always smaller than the child node and the key of the root node is the smallest among all other nodes. This is also called Min Heap Property.
+				

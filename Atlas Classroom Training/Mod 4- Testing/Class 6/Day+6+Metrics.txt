@@ -1,0 +1,346 @@
+Metrics:
+============
+Process Metrics:
+==================
+We use this on the process of test preparation and test
+execution phase of STLC.
+
+Test Case Preparation Productiity
+Test Design Coverage
+Test Execution Productivity
+Test Execution Coverage
+Test Cases Passed
+Test Cases Failed
+Test Cases Blocked
+
+
+Test Case Preparation Productvity:
+=====================================
+Calculate the number of test cases prepared and the efftort 
+spent on the test case preparation.
+
+Formula:
+===========
+Test Case Preparation Productvity = No of test cases / Effort spent for test case preparation
+
+Eg: No of test cases = 240
+Effort spent on test case creation (hours) = 10 hours
+
+Test Case Preparation Productvity =240/10 == 24 test cases/hour
+
+
+Test Design Coverage:
+===================
+It helps to measure the percentage of test cases coverage against the
+number of requirements.
+
+Formula:
+================
+Test Design Covergae= Total no of requirements mapped to test cases
+                      ---------------------------------------------- * 100
+                      Total no of requirements 
+Eg:
+========
+
+Total no of requirements = 100
+
+Total no of requirement mapped to the test cases = 98
+
+Test Design Coverage = 98/100  * 100 == 98%
+
+
+ 
+Test Execution Productivity:
+================================
+It determines the number of test cases that can be executed in an hour
+
+
+
+Formula:
+===========
+Test Execution Productivity = No of test cases executed
+                             -------------------------------
+                              Effort spent for execution of test cases
+
+Eg:
+=====
+No of test cases executed = 180
+Effort spent for execution of test cases = 10
+
+Test Execution Productivity = 180/10 == 18 test cases / hour
+
+
+
+Test Execution Coverage:
+============================
+To measure the number of test cases executed against number of test cases planned.
+
+Formula:
+===========
+Test Execution COverage -== Total No of test cases executed 
+                            -------------------------------- --------- * 100  
+                             Total No of test cases planned to execute
+
+ 
+
+ Eg:
+======
+Total No of test cases planned to execute = 240
+Total No of test cases executed  = 160
+
+Test Execution Coverage = 180/240 * 100 ======== 75%
+      
+
+
+
+Test Case Passed :
+======================
+To measure the percentage no of test cases are passed
+
+Formula: 
+Test Case passed = Total no of test cases passed  
+                  --------------------------------- * 100
+                   Total no of test cases executed 
+
+
+Eg:
+====
+Total no of test cases passed = 80
+Total no of test cases executed = 90
+ 
+Test cases passed = 80/90 * 100 ====88.8 == 89%
+
+
+Test Cases Failed:
+=================
+To measure the percentage no of test cases are failed
+
+Formula: 
+Test Case passed = Total no of test cases failee
+                  --------------------------------- * 100
+                  Total no of test cases executed 
+
+
+
+Eg:
+====
+Total no of test cases failed = 10
+Total no of test cases executed = 90
+ 
+Test cases passed = 10/90 * 100 ==== 11.2 %  == 11%
+
+
+Test Case Blocked:
+==================
+It is to measure the percentage no of test cases blocked
+
+
+
+Formula:
+==========
+Total no of test cases blocked
+-------------------------------- * 100
+Total no of test cases executed
+
+Eg:
+=====
+Total no of test cases blocked = 5
+Total no of test cases executed = 90
+
+Test cases blocked = 5/90 * 100 ====6 %
+
+
+
+Product Metrics:
+================
+It is used in the process of defect analysis phase of STLC.
+
+
+During the defect analysis phases of STLC, we do generate
+
+
+
+
+
+
+
+
+Error Discovery Rate
+Defect Fix Rate
+Defect Density
+Defect Leakage
+Defect Removal Efficiency
+
+
+
+
+
+Error Discovery Rate:
+=========================
+To determine the effectiveness of the test cases.
+
+Formula:
+================
+Total No of defects found
+-------------------------------- * 100
+Total No of test cases executed 
+
+
+
+Eg:
+------
+Total no of test cases executed = 240
+Total No of defects found = 60
+Error Discovery rate = 60/240 * 100 == 25% 
+
+
+Defect Fix Rate:
+==================
+It helps to know the quality of a build in terms of defect fixing.
+
+
+Formuala:
+==========
+
+Total No of defects reported as fixed - Total No of defects reopened 
+---------------------------------------------------------------------------  * 100
+Total no of defects reported as fixed + Total No of new bugs due to fix
+
+
+Eg:
+======
+Total no of defects reported as fixed == 10
+Total no of defects reopned ============ 2
+Total no of new bugs due to fix  ======= 1
+
+Defect fix rate == (10 -2)
+                   ------- * 100  ===== 8/11 * 100 ==== 72.7 %  -- 73%
+                    (10+1)           
+
+
+
+Defect Density:
+==================
+It os defined as the ratio of defects to the requirements.
+
+Formula:
+================
+Total no of defects identified
+-------------------------------
+Actual requirements size 
+
+Eg:
+====
+Total no of defects identified = 80
+Actual requirements size = 10
+
+Defect Density = 80/10  === 8
+
+
+
+
+
+Defect Leakage:
+===============
+It is used to review the efficiency of the testing process before UAT.
+
+Total no of defects found in UAT
+------------------------------------- * 100
+Total no of defects found before UAT
+
+
+
+Eg:
+======
+No of defects found in UAT = 20
+No of defects found before UAT = 120
+
+Defect Leakage == 20/120 * 100 === 16.5%
+
+
+Defect Removal Efficiency:
+===================================
+It allows to compare overall (pre and post release/delivery) defect removal efficiency.
+
+Total no of defects found pre-release
+-------------------------------------------------------------------------------------- *100
+(Total no of defects found in pre release +Total No of defects found in post release)
+
+
+
+Eg:
+==========
+Total no of defects found in pre release = 80
+Total no of defects found in post release = 10
+
+Defect Removal effiiceinecy = 80
+                              ------ * 100  === 80/90 * 100 === 89 %
+                              80+10 
+
+
+Defect Rejection Ratio 1:
+==============================
+% Rejected Defects/ Defect Rejection Ratio = # of Rejected Defects * 100
+                                             ------------------------
+                                            Total number of Defects logged
+
+
+ Defect Slippage:
+=====================
+# Of External Testing Defects * 100
+------------------------------
+ # Of Internal Testing Defect
+
+
+ Percentage Design Rework:
+==========================
+
+# Of Test Case Changed Due To Reqmt Changes * 10
+-------------------------------------------
+ Total # Of Test Cases
+
+
+ Test Design Effectiveness:
+============================
+Test Design Effectiveness = # Of Hours Reworked Due To Review Comments * 10
+                             ----------------------------------------------
+                               Total Hours Spent On Test Designing
+
+
+Review Efficiency :
+========================
+ Review Efficiency = # Of Review Defects * 100
+                     ---------------------------
+                       # Of Review Hours Spent
+
+
+ Percentage Query Resolution:
+==============================
+ % Query Resolution = # Of Queries Resolved * 100 
+                      --------------------------------
+                      # Of Queries Raised By The Testing Team
+
+
+
+ Environment Stability:
+=============================
+Environment Stability = # Of Hours Environment Uptime * 100
+                        ----------------------------------------
+                         Total Execution Time 
+
+
+
+ Percentage Automation Coverage:
+==================================
+Automation Coverage (%) = Number of Automated Test Cases * 100                
+                          -------------------------------------
+                           Total Number Of Test Case
+
+
+
+
+
+
+
+
+

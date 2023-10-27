@@ -1,0 +1,61 @@
+Selection Sort
+	Ascending
+	
+array = 5 2 10 1 6
+
+First Iteration i=0, j=i+1
+	5 2 10 1 6
+	0 1 2  3 4
+	 
+	index = i (0)
+	
+	array[0] > array [1]  -> array[index]> array[j]
+	index = 1
+
+	array[1] > array [2]
+
+	array[1] > array [3]
+	index = 3
+
+	array[3] > array [4]
+	
+Swap index(3) element with i(0) element
+1 2 10 5 6
+0 1 2  3 4
+Second iteration i=1
+
+	index = 1
+	array[1] > array[2]
+	
+	array[1] > array[3]
+
+	array[1] > array[4]
+
+Swap index(1) element with i(1) element
+1 2 10 5 6
+0 1 2  3 4
+
+Thirditeration i=2
+
+	index = 2
+	array[2] > array[3]
+	index = 3
+
+	array[3] > array[4]
+
+Swap index(3) element with i(2) element
+1 2 5 10 6
+0 1 2 3  4
+
+Fourth iteration i=3
+
+	index = 3
+	array[3] > array[4]
+	index=4
+	
+Swap index(4) element with i(3) element
+1 2 5 6 10
+0 1 2 3 4
+
+	
+	

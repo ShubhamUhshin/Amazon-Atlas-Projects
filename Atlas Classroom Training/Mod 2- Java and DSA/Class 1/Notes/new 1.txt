@@ -1,0 +1,135 @@
+CLASS 1
+Introduction to JAVA
+	Contents
+		Java Programming
+		Compilation Process
+		Features of Java
+		Data Types
+		Operators
+		Conditional Constructs
+		Intro to Methods
+	
+	Introduction
+		Computer->
+					Time
+					Accuracy
+		
+		Programming Language
+			PL is a language to interact with computer by creating a program.
+			To solve a problem
+		
+		Where which PL?
+			OS-> C/C++
+			Desktop/Mobile App-> Java, Python, C++
+			Web App-> Java, Python, JavaScript
+			ML and AI-> Python
+			Data Analysis-> Python, R
+			Backend-> Java
+			
+	Java Introduction
+		JDK-> Java Development Kit (It consists of compiler, Run Time Environment and more tools for developers to write and execute programs in java.)
+				https://docs.oracle.com/en/java/javase/13/install/installation-jdk-microsoft-windows-platforms.html#GUID-DAF345BA-B3E7-4CF2-B87A-B6662D691840
+				
+		IDE-> Eclipse IDE, IntelliJ, Visual Studio Code
+		
+		replet.com -> Online IDE
+		
+		History
+			Originally was named as OAK, made by James Gosling.
+			He saw an OAK tree outside and named it.
+			He loved coffee, which was first found on an island known as Java.
+			He loved coffee, so the symbol.
+			Released by Sun Microsystems.
+			
+		Software Development Architecture
+			SW is a piece of program which can be run on a computer.
+			
+			Model [Data Structures] -> Storage | Space Complexity
+				Data | Storage Container
+					Source Location, destination location, type, 
+					
+			View [User Experience | UX] -> Screen/Visuals 
+				UI
+					Visual INterface i.e. Screen | Input Fields, Maps, Button etc
+			
+			Controller [Algorithms] -> Time | Time Complexity
+				Logic
+				
+			Ref IMG1
+			
+		JAVA
+			JAVA Program and Compilation Process
+				Source (Source Code) -> Processing -> Result
+				Orange					Juicer		  Orange Juice
+		Features Of Java
+			Easy
+			Robust- If there is an error in code, compiler will track it. If there are errors, Java will handle it (Example: Net disconnects, rather than app crashing, it says no internet)
+			Portable- WORA
+			Distributed-Multiple uses, multithreading
+			Object Oriented-A way to store data
+			Platform Independent- Write Oncce Run everywhere (WORA)
+			Secure
+			Interpret
+			Multithreaded
+			
+			
+		JVM
+			Java Virtual Machine. It is an abstract machine, does not exist physically. 
+			Provides a runtime environment.
+			Converts source code into byte code.
+			
+			Ref IMG2
+				
+		JVM vs JRE vs JDK
+			JDK
+				It has 
+					compiler, which is accessible with command known as javac
+					Libraries
+					Java Runtime Environment (JRE) which is Java Virtual Machine.
+						JRE are libraries.
+						
+					Java Virtual Machine
+						has 3 components
+							Class Loader
+							ByteCode Verifier
+							JIT Compiler
+							
+					When we install JVM, JRE also gets installed		
+			
+					Compile Time Environment (CTE)
+					Run Time Environment	 (RTE)
+					IMG3
+					
+					
+		JDK is the component used to compile, debug and execute the code.
+		
+		Object class is the superclass of every class in Java.
+	https://github.com/ishantk/AmazonAtlas223
+					
+					
+					
+					
+		DataTypes in JAVA
+		MODEL -> Storage containers
+		
+			-Single Value Container
+				Primitive DataTypes
+					Integral
+					Floating
+					Character
+					Logical
+					
+			-Multi Value Container
+				Reference DataTypes
+					String
+					Arrays
+					Objects
+					Dynamic Data Structures
+					
+					
+		Controller
+			Operators
+			Conditional Constructs
+			Iterators
+			Intro to Methods
+		

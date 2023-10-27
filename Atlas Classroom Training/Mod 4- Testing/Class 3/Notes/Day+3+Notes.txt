@@ -1,0 +1,146 @@
+
+Input -- 1 to 100
+
+Partioning classes:
+======================
+<1  -- Invalid ============ -5
+>100 -- Invalid ===========  200
+1 -100 -- Valid ===========  50
+
+Eg: Age field
+Eligibilty Testing scores
+passwords
+OTP
+
+
+Boundary Value:
+=================
+1- 100 (+-1, 2 digits)
+
+<1  -- 0 -1 2 3
+>100 -- 98 99 101 102 
+
+Valid -- 2 3 98 99
+Invalid -- 0 -1 101 102
+
+
+Decision Table:
+====================
+
+A   B  o/p
+T   T   T    AND
+T   F   F    AND
+T   T   T    OR
+T   F   F    OR
+
+Conditions   Condition Alternative
+Actions       Action Entries
+
+
+Username   password     O/P
+T            T         Home page
+T            F          Error
+F            T          Error
+F            F          Error
+
+
+State Transition:
+===================
+For the same input the application gives different output
+depnding on the previous events
+
+Eg: Online banking
+5 times if I give an incorrect password
+After the 5th time, account gets locked
+
+Transition from Active to Locked status
+
+Eg: ATM pin #
+
+I keep entering the invalid pin for 3 times
+After the 3 rd time my card is locked
+
+Transition from Active to Locked status
+
+
+Use case:
+==========
+Deriving the scenarios from end user perspective
+
+Tool: Freemind
+
+
+Statment Testing:
+====================
+
+
+READ A
+READ B
+C = A + 2*B
+IF C > 50 THEN
+PRINT "Large C"
+ENDIF
+
+
+Test set 1: A=2, B =3
+Test set 2: A = 0, B=25
+Test set 3: A = 47 , B= 1
+Test set 4: 20 , B = 25
+
+
+Decision:
+===============
+
+READ A
+READ B
+C = A - 2*B
+IF C < 0 THEN
+PRINT " C is Negative"
+ENDIF
+
+
+Test set 1: A=20 B = 15
+Test set 2: A =10 B=0
+
+
+Consider the following Pseudo Code. 
+		IF A > B THEN
+		    C = A – B
+		ELSE
+		    C = A + B
+		ENDIF
+		Read D
+		IF C = D Then
+		     Print "Error"
+		ENDIF
+
+What is the minimum #  of Tests required for 100% statement and branch coverage?
+
+A)3 tests for statement coverage, 2 for branch coverage
+B)3 tests for statement coverage, 3 for branch coverage
+C)2 tests for statement coverage, 2 for branch coverage
+D) 2 tests for statement coverage, 3 for branch coverage
+
+
+
+What are tests required to ensure 100% statement coverage?
+
+If x=3 then
+    Display_messageX;
+    {   If y=2 then
+            Display_messageY;
+        Else
+	        Display_messageZ;}
+Else
+    Display_messageZ;
+
+A)x=3,y=2, z=10; 
+B)x=3, y=1, z=10;
+C)x=1, y=2, z=5;
+D)x=10, y=1, z=5;
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+1. show the count for number of fifo files in current directory
+-> find . -type p
+2. Display employee name and salary with highest salary
+->sort -t " " rk2 employeeTable | head -1 | cut -d " "-f1,2
+3. delete all files  with size <100c
+-> find . -size -100c - exec rm -f {}\;
+4. search for word "hello" in all files of size < 500c
+find .size -500c exec cat {hello}
+5. count and print number of lines avaialable in all files with .txt(use find command)
+find . -type f | wc 
+6. count and print number of words avaialable in all files with 0644(use find command)
+find . -perm0644 | wc 
+
+grep
+
+1) Find the words with exactly 8 letters using grep
+grep -P -n '^\w{8}$' f1
+2) Write a grep program that matches a string that has an a followed by zero or more b's
+grep -P-n 'ab*' file1
+3) Write a grep program that matches a string that has an a followed by one or more b's
+grep -P -n 'ab+' file1
+4) Write a grep program that matches a string that has an a followed by three 'b'
+grep -P -n 'ab{3}' file1
+5) Write a grep program that matches a string that has an a followed by two to three 'b'.
+grep -P -n 'ab{2,3} file1 
+6) Write a grep program that matches a string that has an 'a' followed by anything, ending in 'b'.
+grep -P -o 'a[\w]+b' f1  alt: grep -P -n '^a' f1 | grep -P -n 'b$'
+7) Write a grep program that matches a word at the beginning of a string.
+grep -P -n ^word f1

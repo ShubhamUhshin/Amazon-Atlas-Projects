@@ -1,0 +1,55 @@
+array -> 5 2 10 1 6
+Ascending Order
+
+
+1st Block-> array[0] - array [4]; i=0 j= 0->length-1			- loop 1
+	compare array[0] with array[1]  				- loop 2
+		if array[0] is greater, then swap
+
+	compare arrray[1] with array[2]
+		if array[1] is greater, then swap
+	
+	
+	compare arrray[2] with array[3]
+		if array[2] is greater, then swap
+
+	compare arrray[3] with array[4]
+		if array[3] is greater, then swap
+
+Block ends
+
+After 1st block array[4] has the greatest value.
+
+Block 2 -> array[0] - array[3] i=1 j =0->length-1-i
+	compare array[0] with array[1] 
+		if array[0] is greater, then swap
+
+	compare arrray[1] with array[2]
+		if array[1] is greater, then swap
+	
+	
+	compare arrray[2] with array[3]
+		if array[2] is greater, then swap
+
+Block ends
+
+After 2nd block array[3] has the second greatest value
+
+Block 3 -> array[0] - array[2] i =2; j=0 -> length-1-i(2) (Total-3)
+	compare array[0] with array[1]
+		if array[0] is greater, then swap
+
+	compare arrray[1] with array[2]
+		if array[1] is greater, then swap
+
+Block ends
+
+After 3rd block array[2] has the 3rd greatest value
+
+Block 4 -> array[0]-array[1] i=3 j =0 -> length-1-i(3)(Total-4)
+	compare array[0] with array[1]
+		if array[0] is greater, then swap
+
+Block ends
+Sorted Array.
+

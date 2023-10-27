@@ -1,0 +1,40 @@
+Project Implementation Steps:
+----------------------------
+	Step1
+	-----
+	1. Code the Menu
+	2. Code the Models
+	3. Write SQL Queries to create tables in the Database
+	4. Create a DataBase and then create tables
+	5. Insert some 10 different shares manually in the Share Table :)
+	
+	Step2
+	-----
+	Implement DataBase Module:
+	6. Create DAO Interface
+	7. Create DB Class
+	8. Connect to Database i.e. add dependencies and code DB Class
+	9. Create DAO Classes eg: UserDAO, ShareDAO, TransactionDAO, UserSharesDAO
+	
+	Step3
+	-----
+	Implement Service/Controller Module:
+	10. AuthenticationService
+	11. ShareService
+	12. TransactionService
+	
+	
+	Step4
+	-----
+	Integrate Service/Controller Module in Menu:
+	13. Ensure below featured are Working:
+		2 – Deposit Money
+		3 – Withdraw Money
+		4 – Buy transaction
+		5 – Sell transaction
+		6 – View transaction report
+		
+	Step5
+	-----
+	14. Write Test Cases
+	15. Package your Project as JAR File

@@ -1,0 +1,31 @@
+Trees
+	
+	BFS
+	DFS
+		DFS (Depth-first search) is a technique used for traversing trees or graphs. 
+		Here backtracking is used for traversal. In this traversal first, the deepest 
+		node is visited and then backtracks to its parent node if no sibling of that 
+		node exists.
+		DFS
+			Depth First Search/Traversal
+			In Order
+				Traverse the left subtree, i.e., call Inorder(left-subtree)
+				Visit the root
+				Traverse the right subtree, i.e., call Inorder(right-subtree)
+				Answer for Fig- 3 2 4 1 6 5
+			
+			Pre Order -		
+				Visit the root
+				Traverse the left subtree, i.e., call Preorder(left-subtree)
+				Traverse the right subtree, i.e., call Preorder(right-subtree)	
+				Time Complexity - O(n)
+				Space Complexity - O(n)
+				Answer for Fig- 1 2 3 4 5 6
+			
+			Post Order -
+				Traverse the left subtree, i.e., call Postorder(left-subtree)
+				Traverse the right subtree, i.e., call Postorder(right-subtree)
+				Visit the root
+				Postorder traversal is used to delete the tree
+				Postorder traversal is also useful to get the postfix expression of an expression tree
+				Answer for Fig- 3 4 2 6 5 1

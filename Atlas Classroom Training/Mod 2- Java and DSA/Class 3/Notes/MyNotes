@@ -1,0 +1,138 @@
+Class 3
+		
+	UI
+		- Model
+			Single Calue Container
+			Multi Value Containter
+			
+		-View
+			Scanner class to read
+			System.out to print
+			
+		- Controller
+			it uses view and model  to process the data and here we actually work with logic. i.e. Algorithm.
+			
+			Logic-
+				Operators
+				Conditional Flows
+				Iterators(Loops)
+				
+				
+	Data Structure and Algorithm.
+		Data Structures are dynamic storage containers.
+		
+		1. Algorithm
+			A finite set of instructions to accomplish a particular task.
+			Algorithm = Input+Process+Output
+			
+			- A Good Algorithm must be
+				correct
+				Finite(in terms of time and size)
+				Unambiguous
+				Efficient
+				Robust
+				Reusable
+				Adaptable
+				
+			- Analysis of Algorithm
+				+ Efficiency
+					= Running Time
+					= Space Used
+					
+				+ Efficiency as a function of input sixe
+					= Number of data Elements.
+					= A number of bits in an input number.
+					
+					The RAM Model
+						Data Types
+						Instruction
+						Arithmetic
+						Data Movement(Assign)
+						Control
+						
+						
+				
+				Time Complexity
+					Best Case
+						The minimum time taken by the code to executer
+					
+					Worst Case
+						The maximum time taken by the code to executer
+					
+					Average Case
+						Quadratic Time
+						
+						Say, there is an algorithm of insertion sort. The best case would be 
+						
+					ASYMPTOTIC NOTATION
+						Mathematical Notation used to describe the running time of an algorithm.
+							Three Asymptotic Notations:
+							Big-O Notation
+								It is used to find the upper bound of the running time of the algorithm. It gives the worst case scenario.
+								
+							Omega Notation
+								It represents the lower bound of the running time of an algorithm.  It prvides the best case scenario.
+								
+							Theta Notation
+								It represents the upper and the lower bound of an algorithm. It is used to find the average case scenario.
+								
+				
+				
+		Recursion
+			A function that calls itself is a recursive function.
+			Recursion can be used if the problem can be divided into simpler problems. i.e. It can be divided into simpler cases.
+			For example, factorial of a number, 
+				We know that Factoial of 1 is 1.
+				Factorial of 2 is 2,(2x1)
+				Factorial of 3 is 6. (3x2x1)
+				
+				Say I have to find the factorial of a number n, my solution is nxfactorial of (n-1).
+				Now factorial of n-1 is (n-1)x factorial of (n-2) and so on.
+				
+			When the recursive function is called, a new frame is created in the
+			stack is created to store the data and once the call ends, i.e. the value is returned, 
+			the stack is deleted from the memory.
+		
+
+	OOPS:
+		Object Oriented Programming is a methodology to design a program using classes and objects.
+		For instance
+			Real World
+				Object is anything that exists.
+				eg: bottle, laptop, chair.
+				
+				Class is a drawing of an object.
+				It is representation of object like memory.
+				
+				Class is a blueprint of an Object.
+				
+			Computer Science
+				Object is a Storage Container.
+				It is a Multi Value Container.
+				It can be homogenous or heterogeneous.
+				
+				Class is a way to define how the object will look in memory.
+				We code the object structure by writing classes.
+				 
+		Object are Related to each other as
+			1 to 1
+				eg: 1 user has 1 home address.
+			1 to Many
+				eg: A Restaurant has many dishes
+			Many to Many
+				eg: Many users can order many dishes.
+				
+			
+		System.gc()-> Will delete unused objects.
+		
+		OOP vs Procedure Programming
+			OOP has bottom up approach whereas procedure programming has top down approach.
+			OOp programming is divided into objects whereas procedure programming divides the code into functions.
+			OOP has actcess modifiers whereas Procedure Programming doesn't.
+			Object can move and communicate with each other through member functions whereas in Procedure Programming, data can move freely function to function in system.
+			OOP is more secure and supports overloading.
+				
+			
+			
+	
+			

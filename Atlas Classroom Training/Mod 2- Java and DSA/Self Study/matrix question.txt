@@ -1,0 +1,7 @@
+1) WAP to input two matrix and print the sum.
+eg- 1 2 3   1 2 3	 2 4  6
+    4 5 6 + 4 5 6  =  	 8 10 12
+    7 8 9   7 8 9	14 16 18
+2) WAP to input two matrix and find their cartesian product.
+eg- 1 2   1 2	 	1*1+2*4 1*2+2*5  =   9 12
+    4 5 * 4 5  =	4*1+5*4 4*2+5*5     24 33

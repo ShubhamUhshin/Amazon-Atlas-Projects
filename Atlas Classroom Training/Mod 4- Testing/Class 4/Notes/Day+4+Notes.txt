@@ -1,0 +1,49 @@
+Test Cases:
+============
+Test Scenario -- What to test?
+Test Steps  ---- How to test?
+
+
+Requirements
+
+Scenarios
+
+Test Cases
+
+Defects
+
+
+Agile:
+==========
+Epic
+
+User story
+
+Test cases
+
+Defects
+
+Severity:
+==========
+How severe this defect is affecting the appication
+Status: Critical, Major, Minor and Cosmetic.
+
+Critical: Testing is completely blockerd. Showstopper defect.
+
+Major: I have a workaround, but this workaround is complex.
+
+Minor: Workaround is easy.
+
+Cosmetic: spelling mistakes, alignment
+
+Priority:
+============
+They priotize which defects needs to be fixed first.
+
+Urgent: Immediately dev team needs to fix the defect
+
+High: Dev team needs to fix the defect in 2 days
+
+Medium: Dev can fix within that release
+
+Low: Either de team can fix it or not

@@ -1,0 +1,54 @@
+In this project, we are making manual commands for:
+1. cat as mycat
+2. head as myhead
+3. mytail as mytail
+4. cp as mycp
+5. mv as mymv
+6. rm as myrm
+history command to save the user input
+
+1.miniproj.c->  It has the main function where the we clear the screen.
+		We take two variables as input:
+		1. cmd-> command name, as mycat etc.
+		2. fname-> Filename to execute command on.
+		We will check if we have the command configured and
+		file present in our system or not, if not, we will print
+		"Sorry Wrong input, try again"
+		We will create 5 .h files, 1 for each operation, except mymv 
+		command.
+		From the main, based on the if else conditions and strcmp
+ 		command, we will call the respective header files.
+		Apart from this we have a history command, which will
+		save the command enter by the user.
+		Everything will be inside a do while loop with test
+		condition to check if the string entered is exit.
+		To add to the fun, I'll be adding a manual command as well
+		called the "myman" command. 
+
+2. Display.h->	It has the code to read the file using read() function.
+		It reads the file, displays it on the screen, and exits.
+		
+3. headLines.h->It will display first 10 lines or n lines depending upon 
+		the user input. This also uses the read command but with
+		count variable as 10.
+
+4. tailLines.h->It will display  last 10 lines or n lines depending upon 
+		the user input.
+
+5. copyFile.h-> This will open the file1 in read mode, file 2 in write mode
+		and copy the contents of file 1 to file 2.
+6. moveFile.h-> This will call copyFile.h with the two files as input.
+		After that, it will call removeFile.h with the two files as 
+		input.
+
+7. removeFile.h->This takes filename and deletes the file.
+
+8. history.h->	This will store the last 50 commands used in myshell.
+		In this, to delete the old commands, we are using a temp file
+		and deleting it after the old commands are removed.
+		
+9. manual.h->	In this, we are displaying the last 50 commands used by the
+		user.
+		
+10.myheader.h->	We have created a "myheader.h" to store the header files we
+		have used in the code.

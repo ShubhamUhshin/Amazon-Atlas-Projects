@@ -1,0 +1,158 @@
+Tell Me About Yourself?
+	Hi, My name is Shubham Srivastava, I am from Jamshedpur, Jharkhand, currently working in the Site Training Team as Catalog Analyst. ST is a 
+	part of CMT (Competitor Monitoring Team) and our primary role is to maintain competitor competitiveness throughout. 
+	While working in operations for around 3 years, I have developed a keen interest in the technical side of things as I got the chance to work 
+	on small scale implementation of java coding basics. 
+	Atlas provided a platform to move from non-tech to tech primarily focussing on Java. 
+	I have also discovered in the course of time that I have an interest in problem solving through playing chess professionally and online 
+	multiplayer games such as counter strike. 
+	Looking	forward to be nurtured and learn a lot from the mentors in the technical teams.
+	
+	Points to Remember
+		Name, 
+		Current designation
+		Role of Team
+		Atlas in the picture
+		Hobbies
+		
+		Note: We are not telling about educational background unless he mentions it in his introduction.
+		Keywords for him to work are: Java basics, Atlas training focused on Java Basics.
+		Expected Counter Question: Java Basics Theory or 1 coding Question (Approach 1) or Atlas (Approach 2)
+	
+Leadership Principle Questions (Expected to be asked at around 30-40 mins of the interview)
+Situation where you stepped up to help your peers? - Ownership
+	
+	Situation: During Sales, Our team has to take care of all the competitors (stores such as Ebay, Walmart) and maintain price competitiveness.
+		So, whenever there is an update in the competitor layout, say, the product page HTML content has been modified, there is a high chance
+		that our configurations fail or work incorrectly and we end up either reporting incorrect PARS (Price availability rebate shipping) causing 
+		escalation or no PARS and the ASINs get stuck in our error bucket.
+		
+	Task: During last year Q4, our team ended up having less support bandwidth heading towards sale. So, rather than a big group of people,
+		we had limited resourses to work with and had to monitor all the marketplaces, working on Sev 2s, error buckets, other retail and business 
+		escalations.
+		
+	Action: I took the ownership of AU marketplace, constantly working on SEV 2 and fixing it within the SLA (2 hours), also picking up retail 
+	escalation constantly. I was assigned with a set of mentees to delegate work to and was there first POC for queries. 
+	
+	Result: We were able to reduce 50% of the error and resolvced every ticket within the SLA which was a great success.
+
+Discuss a situation where you have delivered in time - Bias for Action
+	
+	Situation: Recently, there was a retail escalation for Mercadolibre-MX where the 3P sellers where not listed in the amazon product page
+		causing loss to Amazon.
+	
+	Task: The issue was identified and raised to our team on a saturday afternoon and weekend support had to pick up the issue and provide a root
+		cause and a fix. Since Mercadolibre-MX is a complex competitor, associates with a certain tenurity are allowed to work on it. The associate 
+		that was supposed to work on it was on a Sick Leave, I had to pick up the issue.
+	
+	Action: Without any proper approval, I had to provide a fix and the root cause. We can write java codes on the data we have scraped from the 
+		webpage, but, as we were unable to pick up the data from the webpage due to tool limitations, I came up with a solution, to use XPath in a 
+		manually created if-else conditional approach which was the only way to pick up the correct seller name for further segregation. Upon
+		testing the solution, we came to a conclusion that we were able to pick the necessary data from the page but it was a new approach, so, my
+		manager was hesitant to provide an approval for it. So, I dropped a mail to the higher management, with his agreement, explaining the
+		approach, the hypothetical boundary cases which we had considered, the rollback procedure if the solution doesn't get approved and the impact.
+		We also mentioned that due to the need of the hour we have decided to proceed with the implementation.
+		
+	Result: We implemented the solution within the SLA of 2 hours, resulting in clearing of 1.5 lakh ASINs. Later, the solution was approved and
+	appreciated by the higher management.
+	
+	
+	
+	
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Approach 1:
+Java Basic
+	+ OOPs Concept
+	+ JVM,JRE,JIT
+	+ Compiler and Interpreter
+	+ Object
+	+ Class
+	+ Polymorphism
+	+ Inheritance
+	+ Interface
+	+ Abstraction
+	
+	+ Solid Principle
+	+ Coupling
+	
+	+ Static Keyword
+	+ This Keyword
+	+ Garbage Collector
+	+ Why is java platform independent
+	
+	- Conditional Statements
+	- Loops
+		
+		
+	+ Coding Question Expected -> 	Prime Number
+									Palindrome Nunmber
+									Fibonacci Number
+									String
+									
+	+ Time Complexity, Space Complexity
+	
+	+ 2nd Coding Question or following Approach 2 or 3
+	
+Approach 2:						
+What algo did you learn in Atlas
+	- Searching - Linear Searching, Binary Searching
+	- Sorting - Bubble Sort, Selection Sort, Quick Sort
+	- Recursion - Factorial of a number.
+	- Trees - Tree Traversals, PreOrder, PostOrder, In Order
+	
+	Note: Describe a little about everything, that consumes time and gives him material to ask questions. Keep the keywords crisp and in your 
+		desired zone
+	
+	(=) 20-25 MINUTES GONE BY TILL NOW
+	
+	+ Coding Question Expected - Searching or Sorting. Recursion -> Factorial, fibonacci. Basic tree questions in theory or code
+
+	+ Less chance of LeetCode medium level code.
+	
+	(=) 30-40 MINUTES GONE BY NOW.
+	Most probably now he will ask about leadership principles
+	
+Approach 3:
+Checks CV and asks basic System Design and HTML Questions
+
+	System Design Basic Questions:
+		+ What is SD?
+		+ CAP Theorem?
+		+ What is Caching?
+		
+		Note: Mention about design models.
+		
+		+ Waterfall
+		+ Spiral
+	
+	HTML basic Questions:
+		+ What is a tag?
+		+ What is an element?
+		
+
+Approach 1: 
+	- Tell me about yourself?
+		keywords given-> Java Basics Atlas
+		
+		- Approach 1 -> Java Basics
+			Most common question -  + What is encapsulation
+				Keywords given - Objects, Methods
+				+ Leading Question- What is Object/Polymorphism?
+					Keywords given- Class/Compiletime Runtime Polymorphism.
+					+ Leading Question- What is Class/ compileTime Runtime polymorphism
+						Keywords Given- None, start a new topic/Inheritance
+							+ Leading Question- What is inheritance?
+								Keywords Given- Interface
+									+ Leading Question- Interface/ Abstract Class
+										Keyword Given (Vaguely) this and final keyword
+											+ Leading Question this and final keyword
+												No keywords given. Interviewer would like to end up to coding questions as expected time spent 20-30 mins
+												
+												
+		
+		- Approach 2
+			A basic question on searching or sorting?
+				Keywords given searching/sorting respectively
+				
+			Expected coding Question on Sorting/Searching
+			

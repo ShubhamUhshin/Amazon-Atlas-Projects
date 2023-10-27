@@ -1,0 +1,103 @@
+Assignment 1:
+Time limit: 30 minutes
+
+Problem Statement:
+	Write a Java Program which will do the below functionalities:
+		a. Implement Command Design Pattern for solving this problem.
+			Refer this example for understanding:
+			https://www.digitalocean.com/community/tutorials/command-design-pattern
+	
+		b. We need to build a remote control for home automation system which shall control different lights/electrical units of the home. A single button in remote may be able to perform same operation on similar devices e.g. a TV ON/OFF button can be used to turn ON/OFF different TV set in different rooms.
+
+		c. Implement the below classes and interfaces to solve the above problem:
+
+			1. ICommand interface which is the command interface
+			2. Light is one of a receiver component. It can accept multiple commands related to Light like turn on and off.
+			3. Fan is also another type of a receiver component. It can accept multiple commands related to Fan like turn on and off.
+			4. HomeAutomationRemote is the invoker object, which asks the command to carry out the request. Here Fan on/off, Light on/off.
+			5. StartFanCommand,StopFanCommand,TurnOffLightCommand,TurnOnLightCommand etc. are different type of command implementations.
+
+	d. Write a client program to test the above written code.
+
+Assignment 2:
+Time limit: 30 minutes
+
+Problem Statement:
+	Write a Java Program which will do the below functionalities:
+
+		a. Implement Facade Design Pattern for solving this problem.
+			Refer this example for understanding:
+			https://www.digitalocean.com/community/tutorials/facade-design-pattern-in-java
+
+		b. Let’s consider a hotel. This hotel has a hotel keeper. There are a lot of restaurants inside the hotel e.g. Veg restaurants, Non-Veg restaurants, and Veg/Non Both restaurants.
+
+		c. You, as a client want access to different menus of different restaurants. You do not know what are the different menus they have. You just have access to a hotel keeper who knows his hotel well.
+
+		d. Whichever menu you want, you tell the hotel keeper and he takes it out of the respective restaurants and hands it over to you.
+
+		e. Here, the hotel keeper acts as the facade, as he hides the complexities of the system hotel.
+
+		f. Implement the below classes and interfaces to solve the above problem:
+
+			1. Hotel Interface
+			2. NonVegRestaurant class
+			3. VegRestaurant class
+			4. VegNonBothRestaurant class
+			5. HotelKeeper Interface
+			6. Both class
+			7. HotelKeeperImplementation class
+
+		g. Write a client program to test the above written code.
+
+Assignment 3:
+Time limit: 30 minutes
+
+	Problem Statement:
+	Write a Java Program which will do the below functionalities:
+
+		a. Implement Facade Design Pattern for solving this problem.
+			Refer this example for understanding:
+			https://www.digitalocean.com/community/tutorials/facade-design-pattern-in-java
+
+		b. Let’s consider a hotel. This hotel has a hotel keeper. There are a lot of restaurants inside the hotel e.g. Veg restaurants, Non-Veg restaurants, and Veg/Non Both restaurants.
+
+		c. You, as a client want access to different menus of different restaurants. You do not know what are the different menus they have. You just have access to a hotel keeper who knows his hotel well.
+
+		d. Whichever menu you want, you tell the hotel keeper and he takes it out of the respective restaurants and hands it over to you.
+
+		e. Here, the hotel keeper acts as the facade, as he hides the complexities of the system hotel.
+
+		f. Implement the below classes and interfaces to solve the above problem:
+
+			1. Hotel Interface
+			2. NonVegRestaurant class
+			3. VegRestaurant class
+			4. VegNonBothRestaurant class
+			5. HotelKeeper Interface
+			6. Both class
+			7. HotelKeeperImplementation class
+
+		g. Write a client program to test the above written code.
+		
+		
+		
+Assignment3:
+Time Limit: 40 minutes
+
+	Create a Java based application and use appropriate OOPs concepts/Design patterns where ever applicable.
+	Also, draw the UML Class and Sequence Diagram for the below problem statement.
+
+	Problem Statement: Online Bookstore Application
+
+	Design and Create an online bookstore application using the MVC design pattern. The application should allow users to browse books, add them to a shopping cart, and place orders. Implement the MVC design pattern to ensure proper separation of concerns and modularity
+
+
+Assignment2:
+	Time Limit: 30 minutes
+
+	Create a Java based application and use appropriate OOPs concepts/Design patterns where ever applicable.
+	Also, draw the UML Class and Sequence Diagramfor the below problem statement.
+
+	Problem Statement: Organization Hierarchy Using Composite Pattern
+
+	You are required to implement an organization hierarchy using the Composite design pattern. Each node in the hierarchy could represent either an individual employee or a group of employees. Implement a solution that allows you to add employees to groups, create subgroups, and calculate the total salary of the entire organization.

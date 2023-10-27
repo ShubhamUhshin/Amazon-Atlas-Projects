@@ -1,0 +1,65 @@
+Project Development Sessions
+	1. Flow Mapping
+	2. OOPS -> Identity Objects and Attributes
+	3. ORM -> Entity Relationship
+	4. Code
+		4.1 Modules
+				eg: Admin
+				User etc.
+				
+		4.2 Well Packaging
+		4.3 Design Patterns
+			Singleton to design DB Structure
+			Factory for RTP Behaviour
+	5. Test Cases
+		TestNg framework
+	6. Build the Project	
+		Packaging of Project in a Jar File
+		JAR file using Maven
+	Requirements
+		Eclipse EE Identity
+		MS SQL
+		
+		
+	Objects
+		User
+			id, name, phone, email, address, type, CreatedOn
+				type:	1-> Admin
+						2-> User Seeking/has bus pass
+						3-> Driver
+					
+		Routes
+			id, title, description, AdminID, createdOn
+			
+		Stop
+			id, address, sequenceOrder, routeId, AdminID, createdOn
+			
+		Vehicle
+			id, registrationNumber, totalSeats, filledSeats, routeID, pickUpTime, dropOffTime, type, AdminID, createdOn, DriverID
+			type->	1. Bus
+					2. Innova
+					
+		BusPass
+			id, UserID, routeID requestedOn, approvedRejectedOn, validTill, status,
+			status:	1->Requested
+					2->Approved
+					3->Canceled
+					4->Suspended
+					
+		Feedback
+			id, UserID, title, description, type, raisedBy, createdOn
+			type:	1-> suggestion (Request new Route
+					2. Complaint
+	Relationships
+		User IS either Admin or Normal User | Inheritance, One to One
+		Route has Stops | 1 to Many
+		Route has Vehicle | 1 to Many
+		Vehicle has Route | 1 to 1
+		BusPass has a Route | 1 to 1
+		BusPass has a User | 1 to 1
+		
+		
+		
+	NOTE: 	Maven is used for Java project
+			Gradle is used for mobile apps.
+			Both are tools used for projects.

@@ -1,0 +1,37 @@
+Class 21
+	Design
+		Structural and Behavioural Patterns
+			Structural Design Pattern
+				There are 7 structural patterns.
+					-Bridge
+					-Adapter
+					-Composite
+					-Proxy
+					-FlyWeight
+					-Facade
+					-Decorator
+					
+					Bridge
+						It decouples an abstraction from it's implementations so that the two can vary independencies.
+						i.e. It works on eliminating the dependency.
+						
+						Inheritance has straight filled arrow whereas interface has dotted arrows.
+						
+						
+					Composite Pattern
+					
+					
+					
+					Decorator
+						Attaches additional responsibilities to an object dynamically.
+						Can provide a flexibility
+						
+					Facade
+						
+						
+					FlyWeight
+						Uses sharing to support large numbers of fine-grained objects efficiently.
+						
+					Proxy
+						Provides a placeholder, i.e. an object to use in the place of other object to access some function.
+			

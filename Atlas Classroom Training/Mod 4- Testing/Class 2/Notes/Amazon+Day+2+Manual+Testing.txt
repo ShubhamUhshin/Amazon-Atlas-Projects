@@ -1,0 +1,418 @@
+Agile:
+=========
+Effective Response to the change
+Effective Communication within the team
+
+
+Frequent delivery of product to the market
+Welcoming the change requirements (CR's) even
+at the last minute.
+Working software at short duration of time.
+Overall team have an interaction and communicates
+frequently.
+Face to face conversation.
+Work -- measurable -- progress of entire project
+Team work
+User stories (Should not use the term requirements in agile)
+Team grows effectively by time.
+
+Different Agile process:
+=======================
+Scrum
+Kanban
+Scrumban
+XP Development
+
+Scrum:
+==========
+Framework under agile process
+Helping us to deliver the software in short duration of time.
+Scrum (Sprint (Duration) --2 weeks , 10 working days, 3 weeks, 1 month).
+Team is Self managed. 
+Working model will be demoed for every 2 weeks.
+
+Jira (Project and Defect management tool)
+User stories/ Epics (Requirements) are captured in the "Product Backlog"
+Impediments (Issues)
+
+Waterfall:
+============
+VP
+AVP
+Tech Arc
+Offshore manager
+Dev manager
+QA manager
+Onshore manager
+
+
+
+Tool: Jira
+===============
+We will store all the epics and user stories
+
+Epics?:
+==========
+Develop the facebook application
+
+what are the changes?
+Technical dependency?
+Platforms?
+Types of customers?
+Impcat to existing app?
+
+
+User stories:
+===============
+Epic is divided into smaller componesnts
+
+Develop and test the login page of facebook app
+
+Given the customer has valid credentials
+There should be Username and Email field
+Username should not accept any special characters
+Email can accept @ special charater alone
+Password should be in 12 characters (1 numberical, uppercase)
+
+
+3 Roles:
+===========
+Product Owner (~BA Business Analyst)
+Scrum master (~Manager)
+Scrum Team (~Developers + Testers)
+
+
+Epic
+User Story
+Sub Task
+Bug
+
+
+
+
+Agile Definitions:
+======================================
+User Story: High level definition of requirements.
+
+Product Owner: The Person responsible for maintaining the product backlogs by representing the interest of stakeholders 
+and ensuring the value of work the development team does.
+
+Development Team: A cross functional group of people responsible for delivering potential shippable increment of product 
+at the end of every sprint.
+
+Product Backlog: A prioritized list of high level requirements.
+
+Sprint Backlog: A prioritized list of high level requirements that needs to be completed in the sprint.
+
+Sprint: A time period in which developments occurs on a set of backlog items that the team has committed to.
+
+Impediments: Anything that prevents the team members from performing work as efficiently as possible
+
+Definition of Done (DOD) Acceptance criteria: Exit criteria to determine the product backlogs items are completed.
+
+Spill out user stories: If a particular story is not completed within the Sprint its called spill out user story.
+
+Velocity: The total effort a team is capable of.
+It is calculated from the previous sprint work. 
+Example: A team can work on 65 user points.
+
+====================================================================================
+Agile Mainfestos:
+===================
+1) Individual & Interactions:
+    
+    Continuos intercation, self orgnanization & motivation
+
+2) Working software:
+    
+    Short duration intervals helps gain customer trust
+
+3) Responding to Change:
+  
+    When there are changes in the FDS, we need to accept and deliver it respectively.
+
+Agile Models/ Methodlogies
+==========================
+Scrum 
+Kanban 
+Srumban
+Lean
+Dynamic System Development methodlogy
+Test Driven Development
+Extreme programming
+
+Roles in Agile:
+====================
+Product Owner ~ Client
+Scrum master ~ Manager
+Scrum Team ~ Developers + Testers
+
+Epic: Overall Requirements are called Epic (Eg: User should able to book the tickets)
+
+User story: Small part of requirement
+Eg: User id and password field developing
+Eg: Only 5 characters should be entered in password field
+
+Agile ceremonies:
+=========================
+Sprint Planning
+Sprint Grooming
+Daily scrum/ standup
+Sprint Demo
+Sprint Retrospective
+
+Jira (Project management or defect management tool) - Qtest will be integrated with Jira to maintain the test cases
+
+Main tabs in the Jira application == Backlog, Active sprint and Issues 
+
+POC: Proof of concept
+
+Sprint Planning:
+==================
+Duration: 3 hrs
+Who? : Product owner, Scrum master and Scrum Team
+What? : They will size the user stories and Tag the persons to it.
+
+
+10 - team size (4:1)
+Duration: 14 days ==== 9 days
+8 hrs -- 800 hrs : 600 hrs 
+Agile working - 6 hrs  
+Capacity: 54 hrs(9*6)- One day leave (48 hrs)  
+Team Velocity --- Team capacity hours (Team size = 10) -- (10*54=540)
+Creation of Tasks ----QA_Test scenarios (What to do) ,QA_Test cases (How to do), Identification of locators,Test Data Conditioning, Test case execution,
+ Test Case Review,Story Acceptance Document, Test case Reviews.
+
+Sprint Grooming/ Refinement:
+==========================
+Duration: 3 hrs
+Who? : Product owner, Scrum master and Scrum Team
+What? :Sizing the user stories 
+
+Poker points --- Fibnoccai series
+1 - very simple ----- 6hrs - 8hrs
+2 - simple ---------- 16hrs - 20hrs
+3 - medium ---------- 24hrs - 32hrs
+5 - large 
+8 - complex
+13
+
+
+
+Staus:
+---------------
+Defined / To Do
+In - progrees
+Acceptance pending
+Completed
+
+Daily Scrum / Daily Meeting / Stand Up call:
+===========================================
+Who: Scrum Master, Scrum Team.
+Duration: 15 mins
+What? : What you did today, what your gonna do tomorrow and any impediments (Issues)
+
+
+Sprint Review/ Demo:
+======================================================================
+Who: Product Owner, Scrum Master, Scrum Team.
+Duration: 3 hrs
+What?: Demo of what you did during the sprint
+
+Sprint Retrospective
+========================================================
+
+Who: Product Owner, Scrum Master, Scrum Team.
+Duration: 15 mins
+
+
+
+
+TABLE OF CONTENTS
+INTRODUCTION.....
+1 TEST STRATEGY
+
+1.1 Test Type
+
+1.2 Scope of Testing
+
+1.2.1 Feature to be tested 
+1.2.2 Feature not to be tested
+1.3 Risk and Issue
+1.4 Test Logistics
+1.4.1 Who will test?
+1.4.2 When will test occur?
+
+
+2 TEST OBJECTIVE 
+3 TEST CRITERIA
+................................................................................................................... 6
+3.1 Suspension Criteria
+.................................................................................................... 6
+3.2 Exit Criteria 
+................................................................................................................ 6
+4 RESOURCE PLANNING 
+....................................................................................................... 6
+4.1 System Resource 
+
+....................................................................................................... 6
+4.2 Human Resource 
+....................................................................................................... 7
+5 TEST ENVIRONMENT
+ ......................................................................................................... 7
+6 SCHEDULE & ESTIMATION
+................................................................................................. 8
+6.1 All project task and estimation ................................................................................. 8
+6.2 Schedule to complete these tasks............................................................................. 9
+7 TEST DELIVERABLES........................................................................................................... 9
+7.1 Before testing phase ................................................................................................. 9
+7.2 During the testing...................................................................................................... 9
+7.3 After the testing cycles is over.................................................................................. 
+
+
+
+
+Tools to Maintain Test cases and defects:
+=======================================
+ALM/ MLQC
+Qtest
+
+Test Scenario -- What to test?
+Test Steps  --   How to test?
+
+
+STLC: Software Testing LifeCycle
+==============================
+•	Requirement Analysis
+•	Test Planning
+•	Test Design
+•	Test Execution
+•	Test Closure
+
+
+Entry criteria  - Pre requisitie that needs to be completed before testing begins
+Exit criteria - Pre requisitie that needs to be completed before testing is concluded.
+
+Requirement Analysis:
+========================
+
+1)	Identify types of test to be performed.
+2)	Testing priorities and focus
+3)	Prepare RTM (Requirement traceability matrix) We need to map the TC’s to the req
+4)	Identify downstream test env (dev1, dev2, dev3, cert1, cert2, sev1, sev2) dev = delopment env ,  cert/sit = Integrated
+5)	Automation feasibility
+
+Entry criteria: BRD, FDS
+Exit criteria: Finalized scope
+
+
+Test Planning/ Strategy:
+================================
+•	Prepare test plan/strategy 
+•	Test tool selection
+•	Testing team effort estimation
+•	Resource planning
+
+Entry criteria: Finalized scope
+Exit criteria: Test plan document.
+
+
+Test Design:
+==============================
+•	Create test cases 
+•	Review test cases/ Peer review
+•	Create test data
+
+Test scenarios - What to test
+Test Steps - How to test
+
+Entry Criteria: Test plan
+Exit Criteria: Test case/ Test suite (Collection of TC’s), Test data
+
+
+Test Execution:
+===================================
+
+•	Execute tests as per plan
+•	Document test results
+•	Raise the defects and follow up or track the defect
+•	Retest and close the defect.
+
+Entry Criteria: Test case/ Test suite (Collection of TC’s), Test data
+Exit Criteria: Execution Result, Defects log
+
+
+Test Closure: (sign off/ sign off certfication)
+==============================================
+
+•	Learning document
+•	Test metrics
+•	Test Result analysis
+•	Test closure document
+
+Entry criteria: Execution Result, defects
+Exit: Closure Document
+
+
+Non- Functional:
+=====================
+•	Load Testing
+•	Volume Testing
+•	Stress Testing
+•	Security Testing
+•	Compatibility Testing
+•	Migration Testing
+
+
+Load Testing:
+=============
+•	Non- functional testing
+•	It is a type of software testing which is conducted to understand the behaviour of application under a specific expected load.
+•	Normal and peak conditions.
+
+
+Volume Testing/ Flood Testing:
+================================
+
+•	Subjected to huge volume of data.
+•	Analyse how the system performs under the increase volume of data.
+
+Stress Testing:
+====================
+
+That determines the robustness of software by testing beyond the limits of normal operation.
+
+
+
+
+
+
+
+Quality:
+=========
+Meeting the requirements.
+
+Assurance:
+============
+Given by management/ organization a positive declaration about the product.
+
+Quality Assurance:
+======================
+The process/ apporaches/ methods designed are implemeteted correctly
+
+
+Control?
+==========
+To test or verify actual results by comparing with standatards.
+
+Quality COntrol:
+====================
+Focus on identifying the defects.
+
+
+
+
+
+
+
+

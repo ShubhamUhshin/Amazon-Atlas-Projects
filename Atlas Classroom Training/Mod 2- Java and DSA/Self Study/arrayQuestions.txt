@@ -1,0 +1,4 @@
+WAP to input 10 numbers in an array and find the greatest.
+WAP to input 10 numbers in an array and find the sum of all elements.
+WAP to input 10 numbers in an array and find the sum of all even elements.
+WAP to input n numbers in an array and find the sum of all numbers in even position.

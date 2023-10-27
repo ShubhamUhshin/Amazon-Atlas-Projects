@@ -1,0 +1,72 @@
+Project 2
+
+	Amazon Internal Classifieds
+	
+		Classifieds  - Small Ads 
+		OLX System
+			2 Feature -> Buy and Sell
+			
+			
+		Profiles
+		Admin																						
+			
+		-	Admin can approve/reject Classifieds
+										|-> Attribute for classifieds table:ClassifiedsStatus 1,0 
+		-	Admin can view/control User
+						|-> Activate/Deactivate
+							(Attribute for user table: Active UserStatus 1,0)
+		-	Admin can Add/Remove Classifieds.
+						|-> Add??-> Doubt
+						|-> Remove -> Delete a posted classified - when we delete we will remove the Classified from Classified Table
+						
+		-	Admin can manage Type/Category of Classifieds.
+								|-> Real Estate, Automobile -> Car, Bike. Electronics (For eg: House, Bike, Mobile)
+		
+		
+		
+		User
+		-	Post a classifieds
+		-	Manage profile
+		-	View All Classified
+				-> Search filter?-> Car, bike, House
+		-	Connect/chat with other user and perform sell or buy
+		-	Integrate payment
+				-> Using Choice, we will ask the user to "confirm payment Y, N".
+					If Y, we change the status to Sold, and remove the classified from the classified table.
+					FOR FUN, WE CAN CREATE A TABLE AS CLASSIFIED HISTORY OR TRANSACTION DATA, WHERE WE CAN ADD THE CLASSIFIED AND USER DATA WHO BOUGHT IT.
+		
+		
+		Tables:
+		
+		classifieds
+			+ClassifiedID - Int (AutoIncrement) [Primary Key]
+			+HeadLine - String (100)
+			+Product Name - String(50)
+			+Brand - String(25) (can be null)
+			+Condition - String {Brand New(Sealed Pack), Lightly used, Moderately Used, Heavily Used, Damaged/Dented, Not Working}
+			+Description - String(500)
+			+Price - Integer (If recurring, mention recurrence unit. For example, if it is an apartment for
+								rent, mention the price as Rs. 20,000 per month).
+			+Pictures - String or image-in-sql
+				https://www.kodyaz.com/t-sql/save-image-to-database-table-in-sql-server.aspx
+			+ClassifiedStatus - Bit (1-Approved 0-Rejected)	
+			
+				
+		User
+			+UserID - Int (AutoIncrement)  [Primary Key]
+			+Name - String
+			+Email - String
+			+Password - String
+			+UserType - Int (1-Admin, 2-Buyer, 3-Seller)
+			+UserStatus - Bit (1-Active, 0 inactive)
+			
+		ClassifiedCategories
+			+CategoryID - Int [Primary Key]
+			+BuyerID - Int [Foreign Key, UserID]
+			+SellerID - Int [Foreign Key, USer ID]
+			+ProductName - String
+			+ClassifiedID - Foreign Key
+		
+		Display Image: https://www.javatpoint.com/Displaying-image-in-swing
+		Uploading Image: https://www.tutorialspoint.com/java_dip/downloading_uploading_images.htm
+		(To search in Java: Headline, color print, unary code for colour, font size)

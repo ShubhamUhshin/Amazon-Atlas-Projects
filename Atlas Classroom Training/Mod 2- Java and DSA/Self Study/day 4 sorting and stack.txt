@@ -1,0 +1,23 @@
+Day4 - Sorting
+		+ Insertion Sort
+			Adaptive Sorting
+			Efficient for smaller arrays
+			
+			
+	Stack
+		LIFO(Last In First Out) principle
+		Insertion (Push) and deletion(pop) happens from the same end (Top).
+		
+		
+	Queue
+		FIFO (First In First Out) principle
+		Insertion happens at the rear end and deletion happens at the front end.
+		
+		Linear Queue
+			If the front end is empty but rear has reached the end of the Queue, it shows queue is full, even though there is empty 
+			space in the beginning of the queue.
+			This is the drawback of linear queue, which is why we have circular queue.
+		
+		Circular Queue
+			If the rear and front reaches the end of the queue, the front and rear becomes 0.
+			

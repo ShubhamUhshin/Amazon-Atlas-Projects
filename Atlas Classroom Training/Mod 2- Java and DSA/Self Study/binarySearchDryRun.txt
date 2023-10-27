@@ -1,0 +1,65 @@
+array -> 5 10 15 20 25 search element 25. 
+	index -> 0  1  2  3  4
+	middle -> (0+4)/2  -> 2
+	(lower + upper) / 2
+	upper -> array.length - 1;-> 4
+	lower -> 0;
+
+after comparing 15 and 25
+	array -> 20 25 search element 25. 
+	index -> 3  4
+	lower -> 3 (middle + 1)
+	upper -> 4
+	middle -> (lower + upper) / 2
+		     (3   +  4) /2 -> 3.5 = 3
+
+20 compare to 25
+	lower -> 4 (middle + 1)
+	upper -> 4
+	middle -> 4
+
+25 compare to 25
+	array -> 5 10 15 20 25 search element 5. 
+	index -> 0  1  2  3  4
+	lower -> 0
+	upper -> 4
+	middle -> 2
+
+15 compare to 5
+	array -> 5 10 search element 5. 
+	index -> 0  1
+	lower -> 0
+	uppper -> middle - 1 -> 1
+	middle -> (1+0) / 2 -> 0.5 -> 0
+
+5 compare to 5 
+	array -> 5 10 15 20 25 search element 7. 
+	index -> 0  1  2  3  4
+	lower -> 0
+	upper 4
+	middle -> 2
+
+15 compare to 5
+	array -> 5 10 search element 7. 
+	index -> 0  1
+	lower -> 0
+	uppper -> middle - 1 -> 1
+	middle -> (1+0) / 2 -> 0.5 -> 0
+
+5 compare to 7
+	array -> 10 search element 7. 
+	index -> 1
+	lower middle + 1 -> 1
+	upper -> 1
+	middle -> 1
+
+10 compare to 7
+	lower -> 1
+	upper -> middle -1 -> 0	
+
+
+
+
+
+
+ 

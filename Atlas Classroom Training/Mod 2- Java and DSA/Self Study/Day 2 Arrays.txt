@@ -1,0 +1,46 @@
+Day 2
+	
+	- Array
+			+ Single Dimension
+			+ 2d / Multi Dimension
+		- Stack
+		- Queue
+			+ Single Queue
+			+ Circular Queue
+			+ Dequeue
+			
+		- Linked List
+			+ Singly Linked List
+			+ Doubly Linked List
+			
+			
+	- Array 
+		Collection of similar datatypes.
+		Index -> 0
+		Fixed Length
+		int a[]; int[] a
+		int a[] = new int [10];
+		int a[] ={5,10,15}; -> 15 -index 2;
+		a.length -> 3
+		for (int i =0; i< a.length; i++) -> index out of bound exception
+		
+		-Searching
+			+Linear Searching -> It linearly compares each element of array with search element
+				Works on both sorted and unsorted array.
+				Consumes more time since it checks with every element.
+				
+				Refer searching.java
+				
+			+Binary Search
+				Works on sorted array.
+				Comparetively faster (than linear search)
+	
+				Divide the array in two parts -> Finding the middle
+				Check searchElement, whether greater than middle or less than or equal to.
+				
+				Refer binarySearch.java
+				Refer binarySearchDryRun.txt
+				
+		
+		
+		

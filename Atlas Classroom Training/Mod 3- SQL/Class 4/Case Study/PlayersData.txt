@@ -1,0 +1,14 @@
+2	Everett	R	09/01/48	M	1975	Stoney Road	43	3575NH	Stratford	070-237893	2411
+6	Parmenter	R	6/25/1964	M	1977	Haseltine Lane	80	1234KK	Stratford	070-476537	8467
+7	Wise	GWS	5/11/1963	M	1981	Edgecombe Way	39	9758VB	Stratford	070-347689	
+8	Newcastle	B	7/8/1962	F	1980	Station Road	4	6584RO	Inglewood	070-458458	2983
+27	Collins	DD	12/28/1964	F	1983	Long Drive	804	8457DK	Eltham	079-234857	2513
+28	Collins	C	6/22/1963	F	1983	Old Main Road	10	1294QK	Midhurst	071-659599	
+39	Bishop	D	10/29/1956	M	1980	Eaton Square	78	9629CD	Stratford	070-393435	
+44	Baker	E	1/9/1963	M	1980	Lewis Street	23	4444LJ	Inglewood	070-368753	1124
+57	Brown	M	8/17/1971	M	1985	Edgecombe Way	16	4377CB	Stratford	070-473458	6409
+83	Hope	PK	11/11/1956	M	1982	Magdalene Road	16A	1812UP	Stratford	070-353548	1608
+95	Miller	P	5/14/1963	M	1972	High Street	33A	5746OP	Douglas	070-867564	
+100	Parmenter	P	2/28/1963	M	1979	Haseltine Lane	80	1234KK	Stratford	070-494593	6524
+104	Moorman	D	5/10/1970	F	1984	Stout Street	65	9437AO	Eltham	079-987571	7060
+112	Bailey	IP	10/1/1963	F	1984	Vixen Road	8	6392LK	Plymouth	010-548745	1319

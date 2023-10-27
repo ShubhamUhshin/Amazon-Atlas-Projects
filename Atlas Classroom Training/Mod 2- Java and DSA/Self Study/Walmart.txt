@@ -1,0 +1,18 @@
+Walmart
+	-> Check source page once
+		- ASIN: B09HN81WBY
+			https://epi-crawl-console-na.amazon.com/epi/har-crawl-log/cmt-crawl-console-na/Walmart__59b51a44-e72c-4a4c-8c94-7f26ce6d5218/view
+
+		- ASIN: B09Y5J1NCT
+			https://epi-crawl-console-na.amazon.com/epi/har-crawl-log/cmt-crawl-console-na/Walmart__bfcb0899-d106-4841-bfeb-711be9a9a9ef/view
+
+		Command Used
+		"waitForMatches","//checking","2000";
+		"clickAt","//button[descendant-or-self::text()='See more seller options']";
+		"waitForMatches","//checking","2000";
+		
+		
+		URL: https://www.walmart.com/ip/Vans-unisex-Era-tm-Core-Classics-Black-Sneaker-Men-s-5-5-Women-s-7-Medium/104201880?from=/search
+			https://www.walmart.com/ip/Keevoom-Plaid-Pants-for-Men-Mens-Stretch-Skinny-Flat-Front-Casual-Slim-Fit-Business-Dress-Chinos-Pants-T4-32-Grey/2517340189?from=/search
+	
+	We are monitoring the layout with "See more seller options.". The rule description mentioned that there is no PARS details in the live page. As we report PARS for 3P sellers also, we can navigate "See more seller option" and extract PARS

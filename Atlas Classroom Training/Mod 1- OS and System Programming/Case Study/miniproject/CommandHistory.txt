@@ -1,0 +1,50 @@
+exit
+mv testfile.txt
+/home/shubham mymv
+testfile.txt /home/shubham
+clear
+mycp testfile.txt file1.txt
+mycp testfile.txt /home/shubham/file1.txt
+mymv file1.txt /home/shubham/file2.txt
+exit
+mycat testfile.txt
+exit
+mycat testfile.txt
+mycat testfile.txt
+clear
+clear
+mycat f1.txt
+mycat f1.txt
+exit
+mycat f1.txt
+exit
+mycat f1.txt
+exit
+mycat f1.txt
+mycat f1.txt
+clear
+myhead -5 testfile.txt
+exit
+mycat f1.txt
+mycat f1.txt
+exit
+mycat f1.txt
+mycat f1.txt
+exit
+mycat f1.txt
+mycat f1.txt
+clear
+exit
+mycat f1.txt
+mycat f1.txt
+exit
+mycat f1.txt
+mycat f1.txt
+exit
+mycat f1.txt
+mycat f1.txt
+exit
+mycat f1
+exit
+mycat file1.txt
+exit
